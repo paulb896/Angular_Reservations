@@ -61,6 +61,9 @@ angular.module('userCalendar.controllers', []).
         daysObject[i] = i;
       }
 
+      // Remove first element because my solution sucks.. REMOVE THIS
+      daysObject.splice(0,1);
+
       return daysObject;
     };
 

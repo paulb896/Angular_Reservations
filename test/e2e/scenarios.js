@@ -15,7 +15,7 @@ describe('Reservation System', function() {
     describe('calendar controls', function() {
       it('should change days shown based on month, day selection', function() {
 
-        // Verify that app changes days shown for edge case
+        // Verify that app reflects days shown when user changes calendar restraints
         input('month').enter("2");
         input('year').enter("2013");
         expect(repeater('input.day').count()).toEqual(28);
