@@ -8,13 +8,21 @@ describe('Reservation System', function() {
   });
 
   describe('Calendar', function() {
-    
     beforeEach(function() {
       browser().navigateTo('#/calendar');
     });
 
+    describe('calendar controls', function() {
+      it('should change days shown based on month, day selection', function() {
+
+        // Verify that app changes days shown for edge case
+        input('month').enter("2");
+        input('year').enter("2013");
+        expect(repeater('input.day').count()).toEqual(28);
+      });
+    });
+
     describe('status modification', function() {
-      
       it('should display a div with a status class', function() {
         expect(element('[ng-view] div.status').attr('class')).toMatch(/status/);
       });
