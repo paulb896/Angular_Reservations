@@ -1,0 +1,27 @@
+<div ng-controller=ReservationCtrl ng-init="init=('hey')">
+    <div class="selectedStatus">
+      <input ng-model="selectedDateStatus" class="textStatus" id="textStatus">
+      <div ng-class="selectedDateStatus" ng-model="selectedDateStatus" class="status {{selectedDateStatus}}" ng-click="toggleStatus(selectedDateStatus)"></div>
+    </div>
+    <div class="selectedDate">
+      <span ng-bind=month></span>
+      <span ng-bind=day></span>
+      <span ng-bind=company></span>
+      <ol>
+        <li ng-repeat="reservation in getReservations(day, month, year)">
+          {{reservation}}
+        </li>
+      </ol>
+    </div>
+    <div class="calendar">
+      <input ng-model=month>
+      <input ng-model=year>
+      <br /><br /><br /><br />
+      <div ng-repeat="day in getDays(month, year)" class="floatingTile">
+        <label for="day" class="dayOfMonth">
+          {{day | extractDay}}
+        </label>
+        <input name="day" type="radio" class="day" id="day_{{day}}" ng-click="getReservations(day, month, year)">
+      </div>
+    </div>
+</div>

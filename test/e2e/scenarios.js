@@ -1,0 +1,35 @@
+'use strict';
+
+/* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
+
+describe('Reservation System', function() {
+  beforeEach(function() {
+    browser().navigateTo('../../app/index.html');
+  });
+
+  describe('Calendar', function() {
+    
+    beforeEach(function() {
+      browser().navigateTo('#/calendar');
+    });
+
+    describe('status modification', function() {
+      
+      it('should display a div with a status class', function() {
+        expect(element('[ng-view] div.status').attr('class')).toMatch(/status/);
+      });
+
+      it('should toggle status states when clicked', function() {
+        input('selectedDateStatus').enter("INVALID");
+        element("div.status").click();
+        expect(element('[ng-view] div.status').attr('class')).toMatch(/declined/);
+
+        element("div.status").click();
+        expect(element('[ng-view] div.status').attr('class')).toMatch(/pending/);
+
+        element("div.status").click();
+        expect(element('[ng-view] div.status').attr('class')).toMatch(/approved/);
+      });
+    });
+  });
+});

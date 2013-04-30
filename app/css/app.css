@@ -1,0 +1,165 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.user_name {
+  border-style:solid;
+  border-bottom:3px;
+  margin-left: 15px;
+  padding:40px;
+  background-color:#55aa77;
+}
+
+div.spacer{
+  background-color:light-orange;
+  padding:40px;
+  width:100%;
+  height:45px;
+}
+
+span{
+  margin-right:10px;
+}
+
+.textStatus{
+  padding-left:20px;
+  width: 70px;
+}
+
+div.status{
+  width:250px;
+  height:250px;
+  background-color:grey;
+  border-color:grey;
+  border-width:10px;
+  border-style:solid;
+  border-radius:200px;
+}
+
+div.status:hover {
+  border-color:black;
+}
+
+div.status {
+  -webkit-transition: background-color 0.8s ease-in-out;
+  background-color:grey;
+}
+
+div.status.approved{
+  background-color:green;
+}
+
+div.status.declined{
+  background-color:red;
+}
+
+div.status.pending{
+  background-color:yellow;
+}
+
+.floatingTile:hover {
+	-webkit-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+	-moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+	-ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+	transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+	border-width: 3px;
+	border-style:solid; 
+}
+
+.floatingTile {
+ background-color: #D8512B;
+ border-color: #DC6241;
+ width: 80px;
+ height: 80px;
+ padding: 5px;
+ color: #FFF;
+ font-family: sans-serif;
+ font-size: 12px;
+ border-width: 3px;
+ border-style: solid;
+ cursor: default;
+ -webkit-transition: 0.1s all;
+ -moz-transition: 0.1s all;
+ -ms-transition: 0.1s all;
+ transition: 0.1s all;
+ margin:14px;
+ display:inline;
+ margin-top:25px;
+ float:left;
+}
+
+.selectedDate{
+width:100px;
+height: 200px;
+}
+
+.selectedStatus{
+  width:200px;
+  height:200px;
+  float:right;
+  margin-right:100px;
+  border-color:red;
+}
+
+.calendar{
+  width:700px;
+  height: 1200px;
+  overflow:hidden;
+}
+
+input[type="radio"]{
+  width:40px;
+  height:40px;
+  opacity:0.25;
+}
+
+label.dayOfMonth{
+  float:right;
+  font-size:18px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  -ms-appearance: checkbox;     /* not currently supported */
+  -o-appearance: checkbox;      /* not currently supported */
+  margin-top:-33px;
+  margin-left:-10px;
+  width:110px;
+  height:110px;
+}
+
+div.floatingTile < input[type="radio"] {
+  background-color:green !important;
+}
+
+input[type="radio"]:checked {
+    color:red;
+}
