@@ -4,16 +4,16 @@
       <input ng-model="selectedDateStatus" class="textStatus" id="textStatus">
     </div>
     <div class="selectedDate">
-      <span ng-bind="selectedDate.month"></span>
-      <span ng-bind="selectedDate.day"></span>
-      <span ng-bind="selectedDate.company"></span>
-      <ol>
+      <span ng-bind="selectedDate.month" class="month-selected"></span>
+      <span ng-bind="selectedDate.day" class="day-selected"></span>
+      <span ng-bind="selectedDate.company" class="company-selected"></span>
+      <ul>
         <li ng-repeat="reservation in getReservations(selectedDate.day, selectedDate.month, selectedDate.year)">
           {{reservation}}
         </li>
-      </ol>
+      </ul>
     </div>
-    <div class="calendar">
+    <div class="calendar" ng-init="selectedDate.month=09; selectedDate.year=1985">
       <input ng-model=selectedDate.month>
       <input ng-model=selectedDate.year>
       <br /><br /><br /><br />

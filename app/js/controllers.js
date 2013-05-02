@@ -11,10 +11,10 @@ var initializeScope = function($scope) {
 }
 
 var getRervations = function(day, month, year) {
-    return {
-      "company":"The White Spot" + day + month + year+"stuff",
-      "Phone Number": "213-123-3432"
-    } 
+    return [
+      "On the " + day + " day of " + month + " in " + year + " : ",
+      "On the " + day + " day of " + month + " in " + year + " : "
+    ];
 };
 
 angular.module('userCalendar.controllers', []).

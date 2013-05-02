@@ -70,8 +70,9 @@ div.status {
   border-color:white;
   border-width:28px;
   border-style:groove;
-  border-radius:200px;
+  border-radius:80px;
   -webkit-transition: border-color 2s ease-in-out;
+  opacity:0.25;
 }
 
 
@@ -79,6 +80,7 @@ div.status:hover {
   border-color:#222259;
   -webkit-animation-duration: 1.5s;
   -webkit-transition: border-color 1s;
+  opacity:0.75;
 }
 
 div.selectedDateStatus:hover{
@@ -89,18 +91,19 @@ div.status.approved{
   background-color:green;
   -webkit-transition: background-color 0.5s;
   -webkit-transition: border-color 1s;
+  -webkit-transition: opacity 1s;
 }
 
 div.status.declined{
   background-color:red;
-  -webkit-transition: background-color 0.5;
-  -webkit-transition: border-color 1s;
+  -webkit-transition: border-color 1.5;
 }
 
 div.status.pending{
   background-color:yellow;
   -webkit-transition: background-color 0.5s;
   -webkit-transition: border-color 1s;
+  
 }
 
 .floatingTile:hover {
@@ -135,8 +138,12 @@ div.status.pending{
 }
 
 .selectedDate{
-width:100px;
+width:500px;
 height: 200px;
+}
+
+div label.day{
+  background-color:green;
 }
 
 .selectedStatus{
@@ -182,3 +189,22 @@ div.floatingTile < input[type="radio"] {
 input[type="radio"]:checked {
     color:red;
 }
+
+.month-selected{
+border-left:10px;
+border-right:10px;
+}
+
+
+
+ul{
+  padding:40px;
+  margin-left:100px;
+}
+
+
+
+
+
+
+
