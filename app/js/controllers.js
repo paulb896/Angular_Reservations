@@ -6,8 +6,6 @@ var initializeScope = function($scope) {
   $scope.company = "The White Spot";
   $scope.address = "4129 Lougheed Hwy";
   $scope.selectedDateStatus = "pending";
-  $scope.month = 10;
-  $scope.day = 21;
   $scope.time = "12:42:11";
   $scope.year = "2013";
 }
@@ -31,9 +29,9 @@ angular.module('userCalendar.controllers', []).
    * 
    */
   .controller('CalendarCtrl', ['$scope', function($scope) {
-    $scope.month = "October";
+    $scope.month = 10;
     var days = [{"date":"10/07/13"},{"date":"10/08/13"}, {"date":"10/09/13"}];
-    $scope.days = days;
+    $scope.days = 5;
   }])
   .controller('ReservationCtrl', ['$scope', 'selectedDay', function($scope, selectedDay) {
     //console.log($scope);
@@ -48,8 +46,8 @@ angular.module('userCalendar.controllers', []).
     console.log("The following is my selectedDay: ");
     console.log(selectedDay);
 
-    // Extract into function
-    
+    // Extract this function into separate module
+
     //var days = [{"date":"10/07/13"},{"date":"10/08/13"}, {"date":"10/09/13"}];
     //$scope.days = days;
     $scope.getDays = function(month, year){
@@ -63,7 +61,7 @@ angular.module('userCalendar.controllers', []).
 
       // Remove first element because my solution sucks.. REMOVE THIS
       daysObject.splice(0,1);
-
+      console.log("Getting days" + daysInMonth);
       return daysObject;
     };
 
