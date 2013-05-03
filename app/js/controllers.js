@@ -11,9 +11,12 @@ var initializeScope = function($scope) {
 }
 
 var getRervations = function(day, month, year) {
+    var monthNames = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+  
     return [
-      "On the " + day + " day of " + month + " in " + year + " : ",
-      "On the " + day + " day of " + month + " in " + year + " : "
+      "On the " + day + " day of " + monthNames[month-1] + " in the year " + year + " : ",
+      "On the " + day + " day of " + monthNames[month-1] + " in the year " + year + " : "
     ];
 };
 
@@ -29,9 +32,7 @@ angular.module('userCalendar.controllers', []).
    * 
    */
   .controller('CalendarCtrl', ['$scope', function($scope) {
-    $scope.month = 10;
-    var days = [{"date":"10/07/13"},{"date":"10/08/13"}, {"date":"10/09/13"}];
-    $scope.days = 5;
+
   }])
   .controller('ReservationCtrl', ['$scope', 'selectedDay', function($scope, selectedDay) {
     //console.log($scope);

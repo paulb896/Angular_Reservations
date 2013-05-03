@@ -63,7 +63,7 @@ background-color:green;
 }
 
 div.status {
-  -webkit-transition: background-color 0.8s ease-in-out;
+#  -webkit-transition: background-color 0.8s ease-in-out;
   width:70px;
   height:200px;
   background-color:grey;
@@ -71,15 +71,17 @@ div.status {
   border-width:28px;
   border-style:groove;
   border-radius:80px;
-  -webkit-transition: border-color 2s ease-in-out;
+#  -webkit-transition: border-color 2s ease-in-out;
   opacity:0.25;
+  -webkit-transition: all 1s;
 }
 
 
 div.status:hover {
   border-color:#222259;
-  -webkit-animation-duration: 1.5s;
-  -webkit-transition: border-color 1s;
+#  -webkit-animation-duration: 1.5s;
+#  -webkit-transition: border-color 1s;
+  -webkit-transition: all 1s;
   opacity:0.75;
 }
 
@@ -89,9 +91,10 @@ div.selectedDateStatus:hover{
 
 div.status.approved{
   background-color:green;
-  -webkit-transition: background-color 0.5s;
-  -webkit-transition: border-color 1s;
-  -webkit-transition: opacity 1s;
+#  -webkit-transition: background-color 0.5s;
+#  -webkit-transition: border-color 1s;
+#  -webkit-transition: opacity 1s;
+  -webkit-transition: all 1s;
 }
 
 div.status.declined{
@@ -101,9 +104,8 @@ div.status.declined{
 
 div.status.pending{
   background-color:yellow;
-  -webkit-transition: background-color 0.5s;
-  -webkit-transition: border-color 1s;
-  
+  -webkit-transition: background-color 3.5s
+  #-webkit-transition: border-color 1s;
 }
 
 .floatingTile:hover {
@@ -127,10 +129,10 @@ div.status.pending{
  border-width: 3px;
  border-style: solid;
  cursor: default;
- -webkit-transition: 0.1s all;
- -moz-transition: 0.1s all;
- -ms-transition: 0.1s all;
- transition: 0.1s all;
+ -webkit-transition: 0.3s all;
+ -moz-transition: 0.3s all;
+ -ms-transition: 0.3s all;
+ transition: 0.3s all;
  margin:14px;
  display:inline;
  margin-top:25px;
@@ -140,6 +142,7 @@ div.status.pending{
 .selectedDate{
 width:500px;
 height: 200px;
+padding:50px;
 }
 
 div label.day{
@@ -151,19 +154,12 @@ div label.day{
   height:200px;
   float:right;
   margin-right:100px;
-  border-color:red;
 }
 
 .calendar{
   width:88%;
   height: 1200px;
   overflow:hidden;
-}
-
-input[type="radio"]{
-  width:40px;
-  height:40px;
-  opacity:0.25;
 }
 
 label.dayOfMonth{
@@ -174,27 +170,36 @@ label.dayOfMonth{
 input[type="radio"] {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
-  -ms-appearance: checkbox;     /* not currently supported */
-  -o-appearance: checkbox;      /* not currently supported */
-  margin-top:-33px;
+  margin-top:-92%;
   margin-left:-10px;
-  width:110px;
-  height:110px;
-}
-
-div.floatingTile < input[type="radio"] {
-  background-color:green !important;
+  width:100px;
+  height:190px;
+  opacity:0.7;
 }
 
 input[type="radio"]:checked {
-    color:red;
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  margin-top:-92%;
+  margin-left:-10px;
+  width:100px;
+  height:190px;
+  opacity:0.4;
 }
 
 .month-selected{
-border-left:10px;
-border-right:10px;
+  border-left:10px;
+  border-right:10px;
+  font-size:200%;
 }
 
+.day-selected{
+  font-size:220%;
+}
+
+.year-selected{
+  font-size:150%;
+}
 
 
 ul{

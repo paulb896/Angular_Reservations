@@ -4,8 +4,9 @@
       <input ng-model="selectedDateStatus" class="textStatus" id="textStatus">
     </div>
     <div class="selectedDate">
-      <span ng-bind="selectedDate.month" class="month-selected"></span>
+      <span ng-bind="selectedDate.month | monthName" class="month-selected"></span>
       <span ng-bind="selectedDate.day" class="day-selected"></span>
+      <span ng-bind="selectedDate.year" class="year-selected"></span>
       <span ng-bind="selectedDate.company" class="company-selected"></span>
       <ul>
         <li ng-repeat="reservation in getReservations(selectedDate.day, selectedDate.month, selectedDate.year)">
