@@ -7,7 +7,7 @@
 // In this case it is a simple value service.
 angular.module('userCalendar.services', []).
   value('version', '0.1')
-  .factory('selectedDay', function(){
+  .factory('selectedDate', function(){
       return {
           "company" : "The White Spot",
           "address" : "4129 Lougheed Hwy",
@@ -15,7 +15,8 @@ angular.module('userCalendar.services', []).
           "month" : 10,
           "day" : 21,
           "time" : "12:42:11",
-          "year" : "2013"
+          "year" : "2013",
+          "status" : "approved"
       }
   });
 

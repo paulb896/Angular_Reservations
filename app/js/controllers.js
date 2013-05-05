@@ -2,14 +2,6 @@
 
 /* Controllers */
 
-var initializeScope = function($scope) {
-  $scope.company = "The White Spot";
-  $scope.address = "4129 Lougheed Hwy";
-  $scope.selectedDateStatus = "pending";
-  $scope.time = "12:42:11";
-  $scope.year = "2013";
-}
-
 var getRervations = function(day, month, year) {
     var monthNames = [ "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December" ];
@@ -34,18 +26,12 @@ angular.module('userCalendar.controllers', []).
   .controller('CalendarCtrl', ['$scope', function($scope) {
 
   }])
-  .controller('ReservationCtrl', ['$scope', 'selectedDay', function($scope, selectedDay) {
-    //console.log($scope);
-    
-    //var reservation = reservationService.getSelectedReservation();
-    // $scope.month = reservation.month;
-    
-    // replace with style from above
-    initializeScope($scope);
+  .controller('ReservationCtrl', ['$scope', 'selectedDate', function($scope, selectedDate) {
 
     $scope.dateNow = new Date();
     console.log("The following is my selectedDay: ");
-    console.log(selectedDay);
+    console.log(selectedDate);
+    $scope.selectedDate = selectedDate;
 
     // Extract this function into separate module
 
@@ -79,7 +65,9 @@ angular.module('userCalendar.controllers', []).
         }
       }
 
-      $scope.selectedDateStatus = nextStatus;
+      // Remove when moving this function to service
+      $scope.selectedDate.status = nextStatus;
+      currentStatus = nextStatus;
       return currentStatus;
     }
 
