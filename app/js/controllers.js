@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var getRervations = function(day, month, year) {
+var getReservations = function(day, month, year) {
     var monthNames = [ "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December" ];
   
@@ -31,15 +31,16 @@ angular.module('userCalendar.controllers', []).
     $scope.dateNow = new Date();
     console.log("The following is my selectedDay: ");
     $scope.selectedDate = defaultSelectedDate;
-
-    myService.async(defaultSelectedDate.month, defaultSelectedDate.year).then(function(d) {
-      $scope.selectedDate = d;
-    });
+    $scope.selectedDate.month = 10;
 
     $scope.updateSelected = function(day, month, year) {
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
       myService.async(day, month, year).then(function(d) {
-        $scope.selectedDate = d;
+        //$scope.selectedDate = d;
+        $scope.selectedDate.company = d.company;
+        $scope.selectedDate.address = d.address;
+        $scope.selectedDate.status = d.status;
+        $scope.selectedDateReservations = [d];
       });
     }
 
@@ -62,7 +63,7 @@ angular.module('userCalendar.controllers', []).
       return daysObject;
     };
 
-    $scope.toggleStatus = function(selectedDate){
+    $scope.toggleStatus = function(currentStatus){
       var toggleStates = ["declined", "pending", "approved"];
 
       // This way we don't have to check for the last element or null,
@@ -74,13 +75,15 @@ angular.module('userCalendar.controllers', []).
           break;
         }
       }
+      
+      currentStatus = nextStatus;
 
       // Remove when moving this function to service
-      $scope.selectedDate.status = nextStatus;
-      return nextStatus;
+      //$scope.selectedDate.status = nextStatus;
+      return currentStatus;
     }
 
 
 
-    $scope.getReservations = getRervations;
+    $scope.getReservations = getReservations;
   }]);

@@ -7,24 +7,24 @@
 </head>
 <body>
   <div ng-controller=ReservationCtrl ng-init="init=('hey')">
-      <div class="selectedStatus">
-        <div ng-class="selectedDate.status" ng-model="selectedDate.status" class="status {{selectedDate.status}}" ng-click="toggleStatus(selectedDate.status)"></div>
-        <input ng-model="selectedDate.status" class="textStatus" id="textStatus">
-      </div>
       <div class="selectedDate">
         <span ng-bind="selectedDate.month | monthName" class="month-selected"></span>
         <span ng-bind="selectedDate.day" class="day-selected"></span>
         <span ng-bind="selectedDate.year" class="year-selected"></span>
         <span ng-bind="selectedDate.company" class="company-selected"></span>
         <ul>
-          <li ng-repeat="reservation in getReservations(selectedDate.day, selectedDate.month, selectedDate.year)">
+          <li ng-repeat="reservation in selectedDateReservations">
             {{reservation}}
+            <div class="selectedStatus">
+              <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(reservation)"></div>
+              <input ng-model="reservation.status" class="textStatus" id="textStatus">
+            </div>
           </li>
         </ul>
       </div>
       
       <span>{{data}}</span>
-      <div class="calendar" ng-init="selectedDate.month=09; selectedDate.year=1985">
+      <div class="calendar">
         <div>
           <span>Tile Colour: </span>
           <input ng-model="calendar.tile.colour" ng-init="calendar.tile.colour='77777a'">
@@ -36,7 +36,7 @@
           <label for="day" class="dayOfMonth">
             {{day | extractDay}}
           </label>
-          <input name="day" type="radio" class="day" id="day_{{day}}" ng-click="getReservations(day, selectedDate.month, selectedDate.year); selectedDate.day=day; updateSelected(day, selectedDate.month, selectedDate.year);">
+          <input name="day" type="radio" class="day" id="day_{{day}}" ng-click="selectedDate.day=day; updateSelected(day, selectedDate.month, selectedDate.year);">
         </div>
     </div>
   </div>

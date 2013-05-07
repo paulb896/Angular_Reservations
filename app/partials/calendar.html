@@ -1,7 +1,7 @@
 <div ng-controller=ReservationCtrl ng-init="init=('hey')">
     <div class="selectedStatus">
-      <div ng-class="selectedDateStatus" ng-model="selectedDateStatus" class="status {{selectedDateStatus}}" ng-click="toggleStatus(selectedDateStatus)"></div>
-      <input ng-model="selectedDateStatus" class="textStatus" id="textStatus">
+      <div ng-class="selectedDateStatus" ng-model="selectedDate.status" class="status {{selectedDate.status}}" ng-click="toggleStatus(selectedDate.status)"></div>
+      <input ng-model="selectedDate.status" class="textStatus" id="textStatus">
     </div>
     <div class="selectedDate">
       <span ng-bind="selectedDate.month | monthName" class="month-selected"></span>

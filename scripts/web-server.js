@@ -69,12 +69,8 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
     var mockDataObject = {
       "company" : "Mc Donalds",
       "address" : "Lougheed Hwy",
-      "selectedDateStatus" : "pending",
-      "month" : 10,
-      "day" : 11,
-      "time" : "12:42:11",
-      "year" : "2013",
-      "status" : "approved"
+      "status" : "pending",
+      "time" : "12:42:11"
     };
     res.write(JSON.stringify(mockDataObject));
     res.end();

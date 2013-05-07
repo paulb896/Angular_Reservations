@@ -64,11 +64,11 @@ background-color:green;
 
 div.status {
 #  -webkit-transition: background-color 0.8s ease-in-out;
-  width:70px;
-  height:200px;
+  width:35px;
+  height:80px;
   background-color:grey;
   border-color:white;
-  border-width:28px;
+  border-width:10px;
   border-style:groove;
   border-radius:80px;
 #  -webkit-transition: border-color 2s ease-in-out;
