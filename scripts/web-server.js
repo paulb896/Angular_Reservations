@@ -70,7 +70,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
       "company" : "Mc Donalds",
       "address" : "Lougheed Hwy",
       "status" : "pending",
-      "time" : "12:42:11"
+      "date_time" : new Date("November 12, 1955 16:55:00")
     };
     res.write(JSON.stringify(mockDataObject));
     res.end();

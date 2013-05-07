@@ -6,24 +6,28 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <div ng-controller=ReservationCtrl ng-init="init=('hey')">
+  <div ng-controller=ReservationCtrl>
       <div class="selectedDate">
         <span ng-bind="selectedDate.month | monthName" class="month-selected"></span>
         <span ng-bind="selectedDate.day" class="day-selected"></span>
         <span ng-bind="selectedDate.year" class="year-selected"></span>
         <span ng-bind="selectedDate.company" class="company-selected"></span>
-        <ul>
-          <li ng-repeat="reservation in selectedDateReservations">
+        <div class="days-view">
+          <div ng-repeat="reservation in selectedDateReservations" style="float:left;">
             {{reservation}}
-            <div class="selectedStatus">
-              <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(reservation)"></div>
+            <div class="selectedStatus" style="margin-left:{{reservation.date_time | getChartPosition}}px;">
+              <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(reservation.status)">
+              </div>
               <input ng-model="reservation.status" class="textStatus" id="textStatus">
+              <div class="arrow"></div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-      
-      <span>{{data}}</span>
+        <p>12:00 AM</p><p style="float:right;">11:59 PM</p>
+        <div class="day-chart">
+          
+        </div>
       <div class="calendar">
         <div>
           <span>Tile Colour: </span>

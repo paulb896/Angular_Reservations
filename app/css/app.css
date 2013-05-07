@@ -64,16 +64,17 @@ background-color:green;
 
 div.status {
 #  -webkit-transition: background-color 0.8s ease-in-out;
-  width:35px;
-  height:80px;
-  background-color:grey;
+  width:28px;
+  height:50px;
+  background-color:#a2a3a4;
   border-color:white;
-  border-width:10px;
+  border-width:8px;
   border-style:groove;
-  border-radius:80px;
+  border-radius:90px;
 #  -webkit-transition: border-color 2s ease-in-out;
-  opacity:0.25;
+  opacity:0.45;
   -webkit-transition: all 1s;
+  float:right;
 }
 
 
@@ -83,10 +84,6 @@ div.status:hover {
 #  -webkit-transition: border-color 1s;
   -webkit-transition: all 1s;
   opacity:0.75;
-}
-
-div.selectedDateStatus:hover{
-  width:110px;
 }
 
 div.status.approved{
@@ -212,8 +209,30 @@ ul{
   margin-left:100px;
 }
 
+.day-chart{
+  height:190px;
+  width:1440px;
+  background-color:#EEEEEE;
+  margin-left:50px;
+}
 
-
+.arrow{
+border-style: dashed;
+border-color: transparent;
+border-width: 0.53em;
+display: -moz-inline-box;
+display: inline-block;
+font-size: 100px;
+height: 0;
+line-height: 0;
+position: relative;
+vertical-align: middle;
+width: 0;
+border-top-width: 1em;
+border-top-style: solid;
+border-top-color: #666;
+top: 0.25em;
+}
 
 
 

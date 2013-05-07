@@ -22,5 +22,14 @@ angular.module('userCalendar.filters', []).
 
       return monthNames[monthNumber-1];
     }
-  }]);
+  }])
+  .filter('getChartPosition', [function(dateTime) {
+    return function(dateTime) {
+      //console.log("Using this datetime to determine chart position: " + dateTime);
+      var dateTime = new Date(dateTime);
+      //console.log("AND THE HOURS IN TIME ARE: ");
+      //console.log(dateTime.getHours());
+      return (dateTime.getHours() * 60) + dateTime.getMinutes();
+    }
+  }])
   
