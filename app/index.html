@@ -24,9 +24,10 @@
           </div>
         </div>
       </div>
-        <p>12:00 AM</p><p style="float:right;">11:59 PM</p>
-        <div class="day-chart">
-          
+        <div class="day-chart" ng-click="addOnClick($event)">
+           <p>12:00 AM</p><p style="float:right;">11:59 PM</p>
+           <div class="requestedTime">{{requestedTime}}</div>
+           <span>Click to request time</span>
         </div>
       <div class="calendar">
         <div>

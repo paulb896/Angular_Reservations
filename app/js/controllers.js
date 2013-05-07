@@ -83,6 +83,14 @@ angular.module('userCalendar.controllers', []).
       return currentStatus;
     }
 
+    $scope.addOnClick = function(event) {
+      console.log("Add reservation request");
+      console.log(event.x);
+      //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
+      var requestedTime = Math.floor(event.x / 60) + " : " + (event.x % 60);
+      console.log("Requested time " + requestedTime);
+      $scope.requestedTime = requestedTime;
+    };
 
 
     $scope.getReservations = getReservations;
