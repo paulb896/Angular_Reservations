@@ -22,10 +22,12 @@
           </li>
         </ul>
       </div>
+      
+      <span>{{data}}</span>
       <div class="calendar" ng-init="selectedDate.month=09; selectedDate.year=1985">
         <div>
           <span>Tile Colour: </span>
-          <input ng-model="calendar.tile.colour" ng-init="calendar.tile.colour='aabbaa'">
+          <input ng-model="calendar.tile.colour" ng-init="calendar.tile.colour='77777a'">
         </div>
         <input ng-model=selectedDate.month>
         <input ng-model=selectedDate.year>
@@ -34,7 +36,7 @@
           <label for="day" class="dayOfMonth">
             {{day | extractDay}}
           </label>
-          <input name="day" type="radio" class="day" id="day_{{day}}" ng-click="getReservations(day, selectedDate.month, selectedDate.year); selectedDate.day=day">
+          <input name="day" type="radio" class="day" id="day_{{day}}" ng-click="getReservations(day, selectedDate.month, selectedDate.year); selectedDate.day=day; updateSelected(day, selectedDate.month, selectedDate.year);">
         </div>
     </div>
   </div>

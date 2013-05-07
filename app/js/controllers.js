@@ -26,12 +26,22 @@ angular.module('userCalendar.controllers', []).
   .controller('CalendarCtrl', ['$scope', function($scope) {
 
   }])
-  .controller('ReservationCtrl', ['$scope', 'selectedDate', function($scope, selectedDate) {
+  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', function($scope, defaultSelectedDate, myService) {
 
     $scope.dateNow = new Date();
     console.log("The following is my selectedDay: ");
-    console.log(selectedDate);
-    $scope.selectedDate = selectedDate;
+    $scope.selectedDate = defaultSelectedDate;
+
+    myService.async(defaultSelectedDate.month, defaultSelectedDate.year).then(function(d) {
+      $scope.selectedDate = d;
+    });
+
+    $scope.updateSelected = function(day, month, year) {
+      console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
+      myService.async(day, month, year).then(function(d) {
+        $scope.selectedDate = d;
+      });
+    }
 
     // Extract this function into separate module
 
@@ -52,7 +62,7 @@ angular.module('userCalendar.controllers', []).
       return daysObject;
     };
 
-    $scope.toggleStatus = function(currentStatus){
+    $scope.toggleStatus = function(selectedDate){
       var toggleStates = ["declined", "pending", "approved"];
 
       // This way we don't have to check for the last element or null,
@@ -67,8 +77,7 @@ angular.module('userCalendar.controllers', []).
 
       // Remove when moving this function to service
       $scope.selectedDate.status = nextStatus;
-      currentStatus = nextStatus;
-      return currentStatus;
+      return nextStatus;
     }
 
 

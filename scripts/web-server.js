@@ -51,12 +51,35 @@ HttpServer.prototype.parseUrl_ = function(urlString) {
 };
 
 HttpServer.prototype.handleRequest_ = function(req, res) {
+
   var logEntry = req.method + ' ' + req.url;
   if (req.headers['user-agent']) {
     logEntry += ' ' + req.headers['user-agent'];
   }
   util.puts(logEntry);
   req.url = this.parseUrl_(req.url);
+  console.log("THIS IS A REQUEST TO THE SYSTEM\n\n\n");
+
+  if (req.url.pathname == "/mock_data") {
+    console.log("Sending mock data");
+    res.writeHead(200, {
+      'Content-Type': 'application/json'
+    });
+
+    var mockDataObject = {
+      "company" : "Mc Donalds",
+      "address" : "Lougheed Hwy",
+      "selectedDateStatus" : "pending",
+      "month" : 10,
+      "day" : 11,
+      "time" : "12:42:11",
+      "year" : "2013",
+      "status" : "approved"
+    };
+    res.write(JSON.stringify(mockDataObject));
+    res.end();
+    return true;
+  }
   var handler = this.handlers[req.method];
   if (!handler) {
     res.writeHead(501);
@@ -165,9 +188,19 @@ StaticServlet.prototype.sendRedirect_ = function(req, res, redirectUrl) {
 };
 
 StaticServlet.prototype.sendFile_ = function(req, res, path) {
+    console.log("PATH VV");
+  console.log(path);
+  console.log("PATH ^^");
+  
+  if (path == "/THISISATTEST") {
+    console.log("SENDING MOCK REQUEST DATA");
+    
+  }
+  
   var self = this;
   var file = fs.createReadStream(path);
   res.writeHead(200, {
+    'Access-Control-Allow-Origin' : 'http://localhost:1896/',
     'Content-Type': StaticServlet.
       MimeMap[path.split('.').pop()] || 'text/plain'
   });
@@ -214,9 +247,12 @@ StaticServlet.prototype.sendDirectory_ = function(req, res, path) {
 };
 
 StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
+  
   path = path.substring(1);
+  //res.header('Access-Control-Allow-Origin', "*")
   res.writeHead(200, {
-    'Content-Type': 'text/html'
+    'Content-Type': 'text/html',
+    'Access-Control-Allow-Origin' : 'http://localhost:1896/'
   });
   if (req.method === 'HEAD') {
     res.end();

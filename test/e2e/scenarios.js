@@ -24,7 +24,7 @@ describe('Reservation System', function() {
       });
 
       it('should toggle status states when clicked', function() {
-        input('selectedDateStatus').enter("INVALID");
+        input('selectedDate.status').enter("INVALID");
         element("div.status").click();
         expect(element('div.status').attr('class')).toMatch(/declined/);
 
@@ -37,3 +37,15 @@ describe('Reservation System', function() {
     });
   });
 });
+
+
+
+      /*
+      $http({method: 'GET', url: 'localhost:1896'}).
+        success(function(data, status, headers, config) {
+          console.log("SUCCESS MOFO");
+        }).
+        error(function(data, status, headers, config) {
+          console.log("THATS A NO-GO MOFO");
+      });
+      */

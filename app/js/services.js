@@ -7,18 +7,69 @@
 // In this case it is a simple value service.
 angular.module('userCalendar.services', []).
   value('version', '0.1')
-  .factory('selectedDate', function(){
-      return {
-          "company" : "The White Spot",
-          "address" : "4129 Lougheed Hwy",
-          "selectedDateStatus" : "pending",
-          "month" : 10,
-          "day" : 21,
-          "time" : "12:42:11",
-          "year" : "2013",
-          "status" : "approved"
+  .factory('defaultSelectedDate', function($http){
+    return {
+      "company" : "Restaurant Name",
+      "address" : "Restaurant Address",
+      "selectedDateStatus" : "Current Booking Status",
+      "month" : 2,
+      "day" : 21,
+      "time" : "12:42:11",
+      "year" : "2013",
+      "status" : "pending"
+    };
+  }).factory('myService', function($http) {
+    var myService = {
+      async: function(day, month, year) {
+        console.log(day);
+        console.log(month);
+        console.log(year);
+        
+        // $http returns a promise, which has a then function, which also returns a promise
+        var promise = $http.get("/mock_data?day="+day+"&month="+month+"&year="+year).then(function (response) {
+          // The then function here is an opportunity to modify the response
+          console.log(response);
+          // The return value gets picked up by the then in the controller.
+          return response.data;
+        });
+        // Return the promise to the controller
+        return promise;
       }
+    };
+    return myService;
+  });  
+  
+  
+  
+  
+/**
+ * 
+
+app.factory('myService', function($http) {
+  var myService = {
+    async: function() {
+      // $http returns a promise, which has a then function, which also returns a promise
+      var promise = $http.get('test.json').then(function (response) {
+        // The then function here is an opportunity to modify the response
+        console.log(response);
+        // The return value gets picked up by the then in the controller.
+        return response.data;
+      });
+      // Return the promise to the controller
+      return promise;
+    }
+  };
+  return myService;
+});
+
+app.controller('MainCtrl', function( myService,$scope) {
+  // Call the async method and then do stuff with what is returned inside our own then function
+  myService.async().then(function(d) {
+    $scope.data = d;
   });
+});
+
+**/
 
 /**
   .reservationService: function(){
