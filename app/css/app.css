@@ -139,7 +139,7 @@ div.status.pending{
 
 .selectedDate{
 width:500px;
-height: 200px;
+height: 80px;
 padding:50px;
 }
 
@@ -147,8 +147,8 @@ div label.day{
   background-color:green;
 }
 
-.selectedStatus{
-  width:200px;
+.reservation{
+  width:100px;
   height:200px;
   float:right;
   margin-right:100px;

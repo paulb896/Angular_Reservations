@@ -75,7 +75,7 @@ angular.module('userCalendar.controllers', []).
           break;
         }
       }
-      
+
       currentStatus = nextStatus;
 
       // Remove when moving this function to service

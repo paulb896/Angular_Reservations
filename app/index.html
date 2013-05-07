@@ -15,7 +15,7 @@
         <div class="days-view">
           <div ng-repeat="reservation in selectedDateReservations" style="float:left;">
             {{reservation}}
-            <div class="selectedStatus" style="margin-left:{{reservation.date_time | getChartPosition}}px;">
+            <div class="reservation" style="margin-left:{{reservation.date_time | getChartPosition}}px;">
               <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(reservation.status)">
               </div>
               <input ng-model="reservation.status" class="textStatus" id="textStatus">
