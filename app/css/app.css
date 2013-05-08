@@ -150,8 +150,7 @@ div label.day{
 .reservation{
   width:100px;
   height:200px;
-  float:right;
-  margin-right:100px;
+  position:absolute;  
 }
 
 .calendar{
@@ -197,10 +196,10 @@ input[type="radio"]:checked {
 
 .year-selected{
   font-size:150%;
-}
+} 
 
 label{
-margin-left: 5%;
+  margin-left: 5%;
 }
 
 
@@ -214,29 +213,35 @@ ul{
   width:1440px;
   background-color:#EEEEEE;
   margin-left:50px;
+  margin-top:100px;
 }
 
 .arrow{
-border-style: dashed;
-border-color: transparent;
-border-width: 0.53em;
-display: -moz-inline-box;
-display: inline-block;
-font-size: 100px;
-height: 0;
-line-height: 0;
-position: relative;
-vertical-align: middle;
-width: 0;
-border-top-width: 1em;
-border-top-style: solid;
-border-top-color: #666;
-top: 0.25em;
+  border-style: dashed;
+  border-color: transparent;
+  border-width: 0.53em;
+  display: -moz-inline-box;
+  display: inline-block;
+  font-size: 100px;
+  height: 0;
+
+  line-height: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 0;
+  border-top-width: 1em;
+  border-top-style: solid;
+  border-top-color: #666;
+  top: 0.25em;
 }
 
 .requestedTime{
-font-size:250%;
+  font-size:250%;
 }
 
+.days-view{
+  width:1440px;
+  height:400px;
+}
 
 

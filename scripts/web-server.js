@@ -50,6 +50,42 @@ HttpServer.prototype.parseUrl_ = function(urlString) {
   return url.parse(url.format(parsed), true);
 };
 
+function sendMockData(req, res) {
+  console.log("Sending mock data");
+  res.writeHead(200, {
+   'Content-Type': 'application/json'
+  });
+
+  var mockDataObject = [{
+    "company" : "Mc Donalds",
+    "address" : "Lougheed Hwy",
+    "status" : "pending",
+    "date_time" : new Date("November 12, 1955 16:55:00")
+  },{
+    "company" : "Mc Donalds",
+    "address" : "Lougheed Hwy",
+    "status" : "pending",
+    "date_time" : new Date("November 12, 1955 16:55:00")
+  },
+  {
+    "company" : "Mc Donalds",
+    "address" : "Lougheed Hwy",
+    "status" : "pending",
+    "date_time" : new Date("November 12, 1955 16:55:00")
+  },
+  {
+    "company" : "Mc Donalds",
+    "address" : "Lougheed Hwy",
+    "status" : "pending",
+    "date_time" : new Date("November 12, 1955 16:55:00")
+  }];
+  console.log(mockDataObject);
+  res.write(JSON.stringify(mockDataObject));
+  res.end();
+  return true;
+}
+
+
 HttpServer.prototype.handleRequest_ = function(req, res) {
 
   var logEntry = req.method + ' ' + req.url;
@@ -66,16 +102,35 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
       'Content-Type': 'application/json'
     });
 
-    var mockDataObject = {
-      "company" : "Mc Donalds",
-      "address" : "Lougheed Hwy",
-      "status" : "pending",
-      "date_time" : new Date("November 12, 1955 16:55:00")
-    };
+    var mockDataObject = [
+      {
+        "company" : "Mc Donalds",
+        "address" : "Lougheed Hwy",
+        "status" : "pending",
+        "start_time" : new Date("November 12, 1955 4:55:00")
+      },
+      {
+        "company" : "Mc Donalds",
+        "address" : "Lougheed Hwy",
+        "status" : "pending",
+        "start_time" : new Date("November 12, 1955 9:30:00")
+      },{
+        "company" : "Mc Donalds",
+        "address" : "Lougheed Hwy",
+        "status" : "pending",
+        "start_time" : new Date("November 12, 1955 16:55:00")
+      },{
+        "company" : "Mc Donalds",
+        "address" : "Lougheed Hwy",
+        "status" : "pending",
+        "start_time" : new Date("November 12, 1955 21:15:00")
+      }];
     res.write(JSON.stringify(mockDataObject));
     res.end();
     return true;
   }
+  
+  
   var handler = this.handlers[req.method];
   if (!handler) {
     res.writeHead(501);

@@ -20,28 +20,39 @@ angular.module('userCalendar.controllers', []).
     //user = "Paul";
     $scope.user_name = "paul";
   }])
+
   /**
    * 
    */
   .controller('CalendarCtrl', ['$scope', function($scope) {
 
   }])
-  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', function($scope, defaultSelectedDate, myService) {
+
+  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', function($scope, defaultSelectedDate, myService, monthNames) {
 
     $scope.dateNow = new Date();
     console.log("The following is my selectedDay: ");
     $scope.selectedDate = defaultSelectedDate;
     $scope.selectedDate.month = 10;
+    $scope.monthNames = monthNames;
 
     $scope.updateSelected = function(day, month, year) {
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
       myService.async(day, month, year).then(function(d) {
         //$scope.selectedDate = d;
-        $scope.selectedDate.company = d.company;
-        $scope.selectedDate.address = d.address;
-        $scope.selectedDate.status = d.status;
-        $scope.selectedDateReservations = [d];
+        //$scope.selectedDate.company = d.company;
+        //$scope.selectedDate.address = d.address;
+        //$scope.selectedDate.status = d.status;
+        
+        // Send view an array of reservations for the current state
+console.log("reservations are: ");
+console.log(d)
+        $scope.selectedDateReservations = d;
       });
+    }
+
+    $scope.getMonths = function() {
+      return monthNames;
     }
 
     // Extract this function into separate module
@@ -63,6 +74,7 @@ angular.module('userCalendar.controllers', []).
       return daysObject;
     };
 
+/*
     $scope.toggleStatus = function(currentStatus){
       var toggleStates = ["declined", "pending", "approved"];
 
@@ -82,14 +94,20 @@ angular.module('userCalendar.controllers', []).
       //$scope.selectedDate.status = nextStatus;
       return currentStatus;
     }
+*/
+
 
     $scope.addOnClick = function(event) {
       console.log("Add reservation request");
       console.log(event.x);
       //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
-      var requestedTime = Math.floor(event.x / 60) + " : " + (event.x % 60);
-      console.log("Requested time " + requestedTime);
-      $scope.requestedTime = requestedTime;
+      var requestedTime = (Math.floor(event.x / 60)-1) + " : " + (event.x % 60);
+      
+      var timeSelected = new Date();
+      timeSelected.setHours((Math.floor(event.x / 60)-1));
+      timeSelected.setMinutes((event.x % 60));
+
+      $scope.requestedTime = timeSelected.toLocaleTimeString();
     };
 
 

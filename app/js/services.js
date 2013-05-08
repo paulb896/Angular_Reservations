@@ -6,7 +6,8 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('userCalendar.services', []).
-  value('version', '0.1')
+  value('monthNames', [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ])
   .factory('defaultSelectedDate', function($http){
     return {
       "company" : "Restaurant Name",
@@ -29,8 +30,13 @@ angular.module('userCalendar.services', []).
           // The then function here is an opportunity to modify the response
           console.log(response);
           // The return value gets picked up by the then in the controller.
-          return response.data;
+          if (response.status == 200) {
+            return response.data;
+          }
+
+          return [];
         });
+
         // Return the promise to the controller
         return promise;
       }
