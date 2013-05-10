@@ -40,14 +40,7 @@ angular.module('userCalendar.controllers', []).
     $scope.updateSelected = function(day, month, year) {
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
       myService.async(day, month, year).then(function(d) {
-        //$scope.selectedDate = d;
-        //$scope.selectedDate.company = d.company;
-        //$scope.selectedDate.address = d.address;
-        //$scope.selectedDate.status = d.status;
-        
         // Send view an array of reservations for the current state
-console.log("reservations are: ");
-console.log(d)
         $scope.selectedDateReservations = d;
       });
     }
