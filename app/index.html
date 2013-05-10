@@ -15,7 +15,6 @@
         <select>
           <option ng-repeat="month in getMonths()" ng-selected="">{{month}}</option>
         </select>
-        <input type="date" />
       </div>
       <div class="selectedDate">
         <span ng-bind="selectedDate.month | monthName" class="month-selected"></span>
@@ -35,7 +34,7 @@
         </div>
       </div>
         <div class="day-chart" ng-click="addOnClick($event)">
-           <p>12:00 AM</p><p style="float:right;">11:59 PM</p>
+           <p>12:00 AM</p><p style="float:right;">11:59 PM | >>></p>
            <div class="requestedTime" style="margin-left:{{requestedTime | getChartPosition}}px;">{{requestedTime}}</div>
            <span>Click to request time</span>
         </div>
@@ -46,11 +45,7 @@
           </label>
           <input name="day" type="radio" class="day" id="day_{{day}}" ng-click="selectedDate.day=day; updateSelected(day, selectedDate.month, selectedDate.year);">
         </div>
-    
   </div>
-
-  <div class="spacer"></div>
-
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
   -->
