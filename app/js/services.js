@@ -24,7 +24,7 @@ angular.module('userCalendar.services', []).
         console.log(day);
         console.log(month);
         console.log(year);
-        
+
         // $http returns a promise, which has a then function, which also returns a promise
         var promise = $http.get("/mock_data?day="+day+"&month="+month+"&year="+year).then(function (response) {
           // The then function here is an opportunity to modify the response

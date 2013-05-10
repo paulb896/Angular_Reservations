@@ -30,6 +30,7 @@ angular.module('userCalendar.controllers', []).
 
   .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', function($scope, defaultSelectedDate, myService, monthNames) {
 
+
     $scope.dateNow = new Date();
     console.log("The following is my selectedDay: ");
     $scope.selectedDate = defaultSelectedDate;
@@ -106,6 +107,7 @@ console.log(d)
       var timeSelected = new Date();
       timeSelected.setHours((Math.floor(event.x / 60)-1));
       timeSelected.setMinutes((event.x % 60));
+      
 
       $scope.requestedTime = timeSelected.toLocaleTimeString();
     };

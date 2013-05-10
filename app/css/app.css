@@ -65,7 +65,7 @@ background-color:green;
 div.status {
 #  -webkit-transition: background-color 0.8s ease-in-out;
   width:28px;
-  height:50px;
+  height:28px;
   background-color:#a2a3a4;
   border-color:white;
   border-width:8px;
@@ -79,7 +79,7 @@ div.status {
 
 
 div.status:hover {
-  border-color:#222259;
+  border-color:#55a159;
 #  -webkit-animation-duration: 1.5s;
 #  -webkit-transition: border-color 1s;
   -webkit-transition: all 1s;
@@ -213,7 +213,17 @@ ul{
   width:1440px;
   background-color:#EEEEEE;
   margin-left:50px;
-  margin-top:100px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: #000;
+  padding:15px;
+}
+
+.calendar-controls{
+  float:right;
+  margin-top:30%;
+  background-color:20%;
+  opacity:0.8;
 }
 
 .arrow{
@@ -240,8 +250,9 @@ ul{
 }
 
 .days-view{
-  width:1440px;
+  width:100%;
   height:400px;
 }
+
 
 
