@@ -59,22 +59,22 @@ function sendMockData(req, res) {
   var mockDataObject = [{
     "company" : "Mc Donalds",
     "address" : "Lougheed Hwy",
-    "status" : "pending",
+    "status" : "invalid",
     "date_time" : new Date("November 12, 1955 16:55:00")
   },{
-    "company" : "Mc Donalds",
+    "company" : "Joey's Only",
     "address" : "Lougheed Hwy",
-    "status" : "pending",
+    "status" : "approved",
     "date_time" : new Date("November 12, 1955 16:55:00")
   },
   {
-    "company" : "Mc Donalds",
+    "company" : "The White Spot",
     "address" : "Lougheed Hwy",
-    "status" : "pending",
+    "status" : "declined",
     "date_time" : new Date("November 12, 1955 16:55:00")
   },
   {
-    "company" : "Mc Donalds",
+    "company" : "Earls",
     "address" : "Lougheed Hwy",
     "status" : "pending",
     "date_time" : new Date("November 12, 1955 16:55:00")
@@ -102,29 +102,29 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
       'Content-Type': 'application/json'
     });
 
-    var mockDataObject = [
-      {
-        "company" : "Mc Donalds",
-        "address" : "Lougheed Hwy",
-        "status" : "pending",
-        "start_time" : new Date("November 12, 1955 4:55:00")
-      },
-      {
-        "company" : "Mc Donalds",
-        "address" : "Lougheed Hwy",
-        "status" : "pending",
-        "start_time" : new Date("November 12, 1955 9:30:00")
-      },{
-        "company" : "Mc Donalds",
-        "address" : "Lougheed Hwy",
-        "status" : "pending",
-        "start_time" : new Date("November 12, 1955 16:55:00")
-      },{
-        "company" : "Mc Donalds",
-        "address" : "Lougheed Hwy",
-        "status" : "pending",
-        "start_time" : new Date("November 12, 1955 21:15:00")
-      }];
+    var mockDataObject = [{
+      "company" : "Mc Donalds",
+      "address" : "Lougheed Hwy",
+      "status" : "invalid",
+      "start_time" : new Date("November 12, 1955 2:15:00")
+    },{
+      "company" : "Joey's Only",
+      "address" : "Lougheed Hwy",
+      "status" : "approved",
+      "start_time" : new Date("November 12, 1955 8:55:00")
+    },
+    {
+      "company" : "The White Spot",
+      "address" : "Lougheed Hwy",
+      "status" : "declined",
+      "start_time" : new Date("November 12, 1955 12:55:00")
+    },
+    {
+      "company" : "Earls",
+      "address" : "Lougheed Hwy",
+      "status" : "pending",
+      "start_time" : new Date("November 12, 1955 16:55:00")
+    }];
     res.write(JSON.stringify(mockDataObject));
     res.end();
     return true;

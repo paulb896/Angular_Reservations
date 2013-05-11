@@ -9,6 +9,12 @@
 background-color:green;
 }
 
+.chart-left-time{
+  float:left;
+  font-size:200%;
+}
+
+
 .textStatus::selection {
 background-color:green;
 }
@@ -26,11 +32,13 @@ div.status {
   opacity:0.45;
   -webkit-transition: all 1s;
   float:right;
+  position:absolute;
+  z-index:100;
 }
 
 
 div.status:hover {
-  border-color:#55a159;
+  border-color:#BABABA;
 #  -webkit-animation-duration: 1.5s;
 #  -webkit-transition: border-color 1s;
   -webkit-transition: all 1s;
@@ -168,6 +176,8 @@ ul{
   border-style: solid;
   border-color: #000;
   padding:10px;
+  opacity:0.1;
+  position:absolute;
 }
 
 .calendar-controls{
@@ -196,13 +206,23 @@ ul{
   top: 0.25em;
 }
 
+.arrow:hover{
+  background-color:blue;
+}
+
 .requestedTime{
   font-size:250%;
+  margin-left:50%;
+  opacity:1 !important;
 }
 
 .days-view{
   width:100%;
   height:400px;
+}
+
+.reservations{
+  
 }
 
 

@@ -101,8 +101,9 @@ angular.module('userCalendar.controllers', []).
       timeSelected.setHours((Math.floor(event.x / 60)-1));
       timeSelected.setMinutes((event.x % 60));
       
-
-      $scope.requestedTime = timeSelected.toLocaleTimeString();
+      $scope.requestedTime = {};
+      $scope.requestedTime.time = timeSelected;
+      $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
     };
 
 
