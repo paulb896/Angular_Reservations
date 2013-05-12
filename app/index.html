@@ -21,10 +21,10 @@
         <span ng-bind="selectedDate.day" class="day-selected"></span>
         <span ng-bind="selectedDate.year" class="year-selected"></span>
         <div class="days-view">
-          <div ng-repeat="reservation in selectedDateReservations" class="reservations">
+          <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservations">
             <div class="reservation" style="margin-left:{{reservation.start_time | getChartPosition}}px;">
               <span>{{reservation.company}}</span>
-                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(reservation.status)"></div>
+                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
               <input ng-model="reservation.status" class="textStatus" id="textStatus">
               <div class="arrow"></div>
             </div>

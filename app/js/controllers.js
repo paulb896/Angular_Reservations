@@ -41,7 +41,7 @@ angular.module('userCalendar.controllers', []).
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
       myService.async(day, month, year).then(function(d) {
         // Send view an array of reservations for the current state
-        $scope.selectedDateReservations = d;
+        $scope.selectedDate.reservations = d;
       });
     }
 
@@ -68,8 +68,8 @@ angular.module('userCalendar.controllers', []).
       return daysObject;
     };
 
-/*
-    $scope.toggleStatus = function(currentStatus){
+
+    $scope.toggleStatus = function(selectedDate, key, currentStatus){
       var toggleStates = ["declined", "pending", "approved"];
 
       // This way we don't have to check for the last element or null,
@@ -82,13 +82,11 @@ angular.module('userCalendar.controllers', []).
         }
       }
 
-      currentStatus = nextStatus;
+      selectedDate.reservations[key].status = nextStatus;
 
-      // Remove when moving this function to service
-      //$scope.selectedDate.status = nextStatus;
       return currentStatus;
     }
-*/
+
 
 
     $scope.addOnClick = function(event) {
@@ -105,6 +103,7 @@ angular.module('userCalendar.controllers', []).
       $scope.requestedTime.time = timeSelected;
       $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
     };
+    
 
 
     $scope.getReservations = getReservations;

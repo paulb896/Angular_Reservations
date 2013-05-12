@@ -8,7 +8,7 @@
 angular.module('userCalendar.services', []).
   value('monthNames', [ "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December" ])
-  .factory('defaultSelectedDate', function($http){
+  .factory('defaultSelectedDate', function(){
     return {
       "company" : "Restaurant Name",
       "address" : "Restaurant Address",

@@ -32,14 +32,5 @@ angular.module('userCalendar.filters', []).
       return (dateTime.getHours() * 60) + dateTime.getMinutes();
     }
   }])
-  .filter('setHours', [function(dateTime) {
-    return function(dateTime) {
-      //console.log("Using this datetime to determine chart position: " + dateTime);
-      //var dateTime = new Date(dateTime);
-      //console.log("AND THE HOURS IN TIME ARE: ");
-      //console.log(dateTime.getHours());
-      dateTime.setHours(4);
-      return dateTime;
-    }
-  }])
+
   

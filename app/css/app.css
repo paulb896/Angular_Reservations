@@ -204,7 +204,7 @@ ul{
   border-top-style: solid;
   border-top-color: #666;
   z-index:100;
-  margin-top:40px;
+  margin-top:60px;
    -webkit-transition: 3.3s all;
  -moz-transition: 3.3s all;
  -ms-transition: 3.3s all;
@@ -213,7 +213,6 @@ ul{
 
 .arrow:hover{
   border-top-color: blue;
-  margin-top:115px;
  -webkit-transition: 1.2s all;
  -moz-transition: 1.2s all;
  -ms-transition: 1.2s all;
