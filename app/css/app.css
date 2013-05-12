@@ -3,6 +3,9 @@
   width: 68px;
   opacity:0.25;
   text-align:center;
+  margin-top:40px;
+  position:absolute;
+  z-index:100;
 }
 
 .textStatus::-moz-selection {
@@ -102,6 +105,11 @@ height:0px;
 padding:50px;
 }
 
+day-selected{
+margin-left:20px;
+margin-right:20px;
+}
+
 div label.day{
   background-color:green;
 }
@@ -109,7 +117,8 @@ div label.day{
 .reservation{
   width:100px;
   height:200px;
-  position:absolute;  
+  position:absolute;
+  margin-top:20px;
 }
 
 .calendar{
@@ -170,13 +179,11 @@ ul{
 .day-chart{
   height:190px;
   width:90%;
-  background-color:#EEEEEE;
   margin-left:50px;
-  border-width: 0 1px 1px 1px;
-  border-style: solid;
+  border-width: 0 1px 5% 1px;
+  border-style: solid solid dashed;
   border-color: #000;
   padding:10px;
-  opacity:0.1;
   position:absolute;
 }
 
@@ -191,28 +198,32 @@ ul{
   border-style: dashed;
   border-color: transparent;
   border-width: 0.53em;
-  display: -moz-inline-box;
-  display: inline-block;
-  font-size: 100px;
-  height: 0;
-
-  line-height: 0;
-  position: relative;
-  vertical-align: middle;
-  width: 0;
+  font-size: 75px;
+  position: absolute;
   border-top-width: 1em;
   border-top-style: solid;
   border-top-color: #666;
-  top: 0.25em;
+  z-index:100;
+  margin-top:40px;
+   -webkit-transition: 3.3s all;
+ -moz-transition: 3.3s all;
+ -ms-transition: 3.3s all;
+ transition: 3.3s all;
 }
 
 .arrow:hover{
-  background-color:blue;
+  border-top-color: blue;
+  margin-top:115px;
+ -webkit-transition: 1.2s all;
+ -moz-transition: 1.2s all;
+ -ms-transition: 1.2s all;
+ transition: 1.2s all;
 }
 
 .requestedTime{
   font-size:250%;
   margin-left:50%;
+  margin-top:155px;
   opacity:1 !important;
 }
 

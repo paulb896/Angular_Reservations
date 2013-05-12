@@ -20,7 +20,6 @@
         <span ng-bind="selectedDate.month | monthName" class="month-selected"></span>
         <span ng-bind="selectedDate.day" class="day-selected"></span>
         <span ng-bind="selectedDate.year" class="year-selected"></span>
-        <span ng-bind="selectedDate.company" class="company-selected"></span>
         <div class="days-view">
           <div ng-repeat="reservation in selectedDateReservations" class="reservations">
             <div class="reservation" style="margin-left:{{reservation.start_time | getChartPosition}}px;">
@@ -34,8 +33,8 @@
       </div>
       <div class="day-chart" ng-click="addOnClick($event)">
         <div>
-           <div class="requestedTime">{{requestedTime.localized}}</div>
-           <span>Click to request time</span>
+           <div class="requestedTime" style="margin-left:{{(requestedTime.time | getChartPosition) - 20}}px;">{{requestedTime.localized}}</div>
+           <span >Click to request time</span>
         </div>
       </div>
       <div class="calendar">
