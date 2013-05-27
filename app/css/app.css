@@ -27,9 +27,8 @@ div.status {
   height:28px;
   background-color:#a2a3a4;
   border-color:white;
-  border-width:8px;
+  border-width:5px;
   border-style:groove;
-  border-radius:90px;
 #  -webkit-transition: border-color 2s ease-in-out;
   opacity:0.45;
   -webkit-transition: all 1s;
@@ -123,6 +122,9 @@ div label.day{
   background-color:55aaaa;
   opacity:0.9;
   padding:14px;
+  font-family:"Trebuchet MS, Helvetica, sans-serif";
+  font-weight:500;
+  letter-spacing:2px;
 }
 
 
@@ -138,7 +140,7 @@ div label.day{
 
 .calendar{
   position:absolute;
-  width:100%;
+  width:70%;
   height:400px;
   overflow:hidden;
   padding-left:100px;
@@ -150,7 +152,8 @@ div label.day{
   margin-top:100px;
   -webkit-transition: all 2s;
   z-index: 2002;
-  background-color:blue;
+  background-color:#bcbcbd;
+  height:800px;
 }
 
 label.dayOfMonth{
@@ -212,11 +215,6 @@ ul{
   padding:10px;
   position:absolute;
   background-color:#FAFAFA;
-  
-}
-
-.day-chart:hover{
-  z-index:3001;
   
 }
 
