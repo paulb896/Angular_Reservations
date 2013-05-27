@@ -4,8 +4,16 @@
   <meta charset="utf-8">
   <title>Restaurant Booking Service</title>
   <link rel="stylesheet" href="css/app.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic' rel='stylesheet' type='text/css'>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.js"></script>
+    <script>
+    $(function() {
+    $( ".horizontalConstraint" ).draggable({ axis: "x" });
+    });
+    </script>
 </head>
-<body>
+<body style="font-family: 'Noto Serif', serif;">
   <div ng-controller=ReservationCtrl>
       <div class="calendar-controls">
         <span>Tile Colour: </span>
@@ -22,28 +30,34 @@
         <span ng-bind="selectedDate.year" class="year-selected"></span>
         <div class="days-view">
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservations">
-            <div class="reservation" style="margin-left:{{reservation.start_time | getChartPosition}}px;">
+            <div class="reservation floatingTile" style="margin-left:{{reservation.start_time | getChartPosition}}px;">
+              <div style="width=200px;">
+               
+               <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
+              <input ng-model="reservation.status" class="textStatus"></input>
+              </div>
               <span>{{reservation.company}}</span>
-                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
-              <input ng-model="reservation.status" class="textStatus" id="textStatus">
-              <div class="arrow"></div>
+              <span>{{reservation.start_time | niceTime}}</span>
             </div>
           </div>
         </div>
       </div>
       <div class="day-chart" ng-click="addOnClick($event)">
-        <div>
-           <div class="requestedTime" style="margin-left:{{(requestedTime.time | getChartPosition) - 20}}px;">{{requestedTime.localized}}</div>
+        <div style="width:500px;">
+           <div class="requestedTime" style="margin-left:{{(requestedTime.time | getChartPosition)}}px;">
+             {{requestedTime.localized}}
+           <div class="arrow arrow-up"></div>
+           </div>
            <span >Click to request time</span>
         </div>
       </div>
       <div class="calendar">
-        <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)" class="floatingTile" style="background-color:#{{calendar.tile.colour}};">
+        <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)" class="floatingTile horizontalConstraint draggable ui-widget-content" style="background-color:#{{calendar.tile.colour}};">
           <label for="day" class="dayOfMonth">
             {{day | extractDay}}
           </label>
           <input name="day" type="radio" class="day" id="day_{{day}}" ng-click="selectedDate.day=day; updateSelected(day, selectedDate.month, selectedDate.year);">
-        </div>
+      </div>
   </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>

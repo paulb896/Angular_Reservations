@@ -91,7 +91,7 @@ angular.module('userCalendar.controllers', []).
 
     $scope.addOnClick = function(event) {
       console.log("Add reservation request");
-      console.log(event.x);
+      event.x = event.clientX;
       //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
       var requestedTime = (Math.floor(event.x / 60)-1) + " : " + (event.x % 60);
       
@@ -102,6 +102,8 @@ angular.module('userCalendar.controllers', []).
       $scope.requestedTime = {};
       $scope.requestedTime.time = timeSelected;
       $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
+      console.log("starting with" + event.x);
+      console.log(event);
     };
     
 

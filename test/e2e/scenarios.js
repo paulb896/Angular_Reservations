@@ -20,18 +20,18 @@ describe('Reservation System', function() {
 
     describe('status modification', function() {
       it('should display a div with a status class', function() {
-        expect(element('div.status').attr('class')).toMatch(/status/);
+        expect(element('reservation.status').attr('class')).toMatch(/status/);
       });
 
       it('should toggle status states when clicked', function() {
         input('selectedDate.status').enter("INVALID");
-        element("div.status").click();
+        element(".status").click();
         expect(element('div.status').attr('class')).toMatch(/declined/);
 
-        element("div.status").click();
+        element(".status").click();
         expect(element('div.status').attr('class')).toMatch(/pending/);
 
-        element("div.status").click();
+        element(".status").click();
         expect(element('div.status').attr('class')).toMatch(/approved/);
       });
     });

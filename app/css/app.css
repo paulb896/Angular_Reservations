@@ -1,11 +1,10 @@
 
 .textStatus{
-  width: 68px;
+  width: 38px;
   opacity:0.25;
   text-align:center;
-  margin-top:40px;
-  position:absolute;
-  z-index:100;
+  float:right;
+  font-size:10px;
 }
 
 .textStatus::-moz-selection {
@@ -35,8 +34,6 @@ div.status {
   opacity:0.45;
   -webkit-transition: all 1s;
   float:right;
-  position:absolute;
-  z-index:100;
 }
 
 
@@ -73,11 +70,11 @@ div.status.pending{
 	-ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
 	transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
 	border-width: 3px;
-	border-style:solid; 
+	border-style:solid;
 }
 
 .floatingTile {
- background-color: #D8a1AB;
+ background-color: #111111;
  border-color:#EEEEEE;
  width: 80px;
  height: 80px;
@@ -114,17 +111,46 @@ div label.day{
   background-color:green;
 }
 
-.reservation{
-  width:100px;
-  height:200px;
-  position:absolute;
-  margin-top:20px;
+.reservation > span{
+  display:block;
 }
 
+.reservation{
+  width:200px;
+  height:100px;
+  position:absolute;
+  z-index:1000;
+  background-color:55aaaa;
+  opacity:0.9;
+  padding:14px;
+}
+
+
+.reservation:hover{
+  opacity:1;
+  position:absolute;
+  margin-left:50px;
+  -webkit-transition: all 2s;
+  z-index: 1002;
+}
+
+.draggable { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
+
 .calendar{
-  width:88%;
-  height:600px;
+  position:absolute;
+  width:100%;
+  height:400px;
   overflow:hidden;
+  padding-left:100px;
+  margin-top:300px;
+  -webkit-transition: all 1s;
+}
+
+.calendar:hover{
+  margin-top:100px;
+  -webkit-transition: all 2s;
+  z-index: 2002;
+  background-color:blue;
 }
 
 label.dayOfMonth{
@@ -185,12 +211,18 @@ ul{
   border-color: #000;
   padding:10px;
   position:absolute;
+  background-color:#FAFAFA;
+  
+}
+
+.day-chart:hover{
+  z-index:3001;
+  
 }
 
 .calendar-controls{
   float:right;
-  margin-top:30%;
-  background-color:20%;
+  background-color:111111;
   opacity:0.8;
 }
 
@@ -198,11 +230,9 @@ ul{
   border-style: dashed;
   border-color: transparent;
   border-width: 0.53em;
-  font-size: 75px;
+  font-size: 45px;
   position: absolute;
-  border-top-width: 1em;
-  border-top-style: solid;
-  border-top-color: #666;
+
   z-index:100;
   margin-top:60px;
    -webkit-transition: 3.3s all;
@@ -211,7 +241,20 @@ ul{
  transition: 3.3s all;
 }
 
-.arrow:hover{
+.arrow-down{
+  border-top-width: 1em;
+  border-top-style: solid;
+  border-top-color: #666;
+}
+
+.arrow-up{
+  border-bottom-width: 1em;
+  border-bottom-style: solid;
+  border-bottom-color: #666;
+  margin-top:-25px;
+}
+
+.arrow-down:hover{
   border-top-color: blue;
  -webkit-transition: 1.2s all;
  -moz-transition: 1.2s all;
@@ -220,14 +263,13 @@ ul{
 }
 
 .requestedTime{
-  font-size:250%;
   margin-left:50%;
   margin-top:155px;
   opacity:1 !important;
 }
 
 .days-view{
-  width:100%;
+  width:75%;
   height:400px;
 }
 
@@ -235,5 +277,7 @@ ul{
   
 }
 
-
+.month-selected{
+  margin-left:100%;
+}
 
