@@ -7,11 +7,6 @@
   <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic' rel='stylesheet' type='text/css'>
   <script src="js/jquery.js"></script>
   <script src="js/jquery-ui.js"></script>
-    <script>
-    $(function() {
-    $( ".horizontalConstraint" ).draggable({ axis: "x" });
-    });
-    </script>
 </head>
 <body style="font-family: 'Noto Serif', serif;">
   <div ng-controller=ReservationCtrl>
@@ -24,10 +19,13 @@
           <option ng-repeat="month in getMonths()" ng-selected="">{{month}}</option>
         </select>
       </div>
-      <div class="selectedDate">
+      <div style="width:800px; height:50px; position:absolute; z-index:5000;">
         <span ng-bind="selectedDate.month | monthName" class="month-selected"></span>
         <span ng-bind="selectedDate.day" class="day-selected"></span>
         <span ng-bind="selectedDate.year" class="year-selected"></span>
+      </div>
+      <div class="selectedDate">
+        <span style="font-size:22px; margin-left:40px; background-color:transparent; padding:30px;">You Have The Following Reserations</span>
         <div class="days-view">
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservations">
             <div class="reservation floatingTile" style="margin-left:{{reservation.start_time | getChartPosition}}px;">
@@ -36,8 +34,8 @@
                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
               <input ng-model="reservation.status" class="textStatus"></input>
               </div>
-              <span>{{reservation.company}}</span>
               <span>{{reservation.start_time | niceTime}}</span>
+              <span>{{reservation.company}}</span>
             </div>
           </div>
         </div>
@@ -52,7 +50,7 @@
         </div>
       </div>
       <div class="calendar">
-        <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)" class="floatingTile horizontalConstraint draggable ui-widget-content" style="background-color:#{{calendar.tile.colour}};">
+        <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)" class="floatingTile" style="background-color:#{{calendar.tile.colour}};">
           <label for="day" class="dayOfMonth">
             {{day | extractDay}}
           </label>
@@ -68,5 +66,7 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <div class="draggable ui-widget-content" style="width:100%; height:600px; background-color:#444444;">
+  </div>
 </body>
 </html>

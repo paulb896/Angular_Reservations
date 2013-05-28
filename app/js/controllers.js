@@ -34,11 +34,12 @@ angular.module('userCalendar.controllers', []).
     $scope.dateNow = new Date();
     console.log("The following is my selectedDay: ");
     $scope.selectedDate = defaultSelectedDate;
-    $scope.selectedDate.month = 10;
+    defaultSelectedDate.month = 10;
     $scope.monthNames = monthNames;
 
     $scope.updateSelected = function(day, month, year) {
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
+      defaultSelectedDate.day = day;
       myService.async(day, month, year).then(function(d) {
         // Send view an array of reservations for the current state
         $scope.selectedDate.reservations = d;

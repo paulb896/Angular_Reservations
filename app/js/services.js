@@ -16,7 +16,8 @@ angular.module('userCalendar.services', []).
       "month" : "10",
       "time" : "12:42:11",
       "year" : "2013",
-      "status" : "pending"
+      "status" : "pending",
+      "day": 1
     };
   }).factory('myService', function($http) {
     var myService = {

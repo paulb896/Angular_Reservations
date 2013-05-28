@@ -1,10 +1,10 @@
 
 .textStatus{
-  width: 38px;
-  opacity:0.25;
+  width: 58px;
+  opacity:0.35;
   text-align:center;
   float:right;
-  font-size:10px;
+  font-size:14px;
 }
 
 .textStatus::-moz-selection {
@@ -98,12 +98,12 @@ div.status.pending{
 .selectedDate{
 width:500px;
 height:0px;
-padding:50px;
+padding-top:50px;
 }
 
-day-selected{
-margin-left:20px;
-margin-right:20px;
+.day-selected{
+  margin-left:15px;
+  font-size:40px;
 }
 
 div label.day{
@@ -125,6 +125,7 @@ div label.day{
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
   letter-spacing:2px;
+  -webkit-transition: all 0.5s;
 }
 
 
@@ -146,6 +147,7 @@ div label.day{
   padding-left:100px;
   margin-top:300px;
   -webkit-transition: all 1s;
+  font-size:300%;
 }
 
 .calendar:hover{
@@ -153,18 +155,20 @@ div label.day{
   -webkit-transition: all 2s;
   z-index: 2002;
   background-color:#bcbcbd;
-  height:800px;
+  height:920px;
+    border-right-style:solid;
+  border-width:3px;
 }
 
 label.dayOfMonth{
-  float:right;
-  font-size:18px;
+  padding-left:50%;
+  font-size:38px;
 }
 
 input[type="radio"] {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
-  margin-top:-92%;
+  margin-top:-42%;
   margin-left:-10px;
   width:100px;
   height:190px;
@@ -182,13 +186,13 @@ input[type="radio"]:checked {
 }
 
 .month-selected{
-  border-left:10px;
-  border-right:10px;
+  margin-left:70px;
   font-size:200%;
 }
 
 .day-selected{
   font-size:220%;
+  margin-right:30px;
 }
 
 .year-selected{
@@ -197,6 +201,7 @@ input[type="radio"]:checked {
 
 label{
   margin-left: 5%;
+  font-family:"Georgia, serif";
 }
 
 
@@ -210,12 +215,20 @@ ul{
   width:90%;
   margin-left:50px;
   border-width: 0 1px 5% 1px;
-  border-style: solid solid dashed;
-  border-color: #000;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: #bbbbbb;
   padding:10px;
   position:absolute;
-  background-color:#FAFAFA;
-  
+  background-color:#EAEAEA;
+  opacity:0.3;
+  -webkit-transition: all 1s;
+}
+
+.day-chart:hover{
+  background-color:#FFFFFF;
+  opacity:0.5;
+  -webkit-transition: all 1s;
 }
 
 .calendar-controls{
@@ -269,13 +282,5 @@ ul{
 .days-view{
   width:75%;
   height:400px;
-}
-
-.reservations{
-  
-}
-
-.month-selected{
-  margin-left:100%;
 }
 
