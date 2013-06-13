@@ -29,7 +29,8 @@ angular.module('userCalendar.filters', []).
       var dateTime = new Date(dateTime);
       //console.log("AND THE HOURS IN TIME ARE: ");
       //console.log(dateTime.getHours());
-      return (dateTime.getHours() * 60) + dateTime.getMinutes();
+      //return (dateTime.getHours() * 60) + dateTime.getMinutes();
+      return (dateTime.getHours() * 60);
     }
   }])
   .filter('niceTime', [function(time) {

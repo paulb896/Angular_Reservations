@@ -89,8 +89,14 @@ angular.module('userCalendar.controllers', []).
     }
 
 
-
+    $scope.requestedTime = {};
     $scope.addOnClick = function(event) {
+      //if ($scope.requestedTime.x
+      //  && ($scope.requestedTime.x < event.x)
+      //) {
+      //  return true;
+      //}
+      
       console.log("Add reservation request");
       event.x = event.clientX;
       //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
@@ -98,16 +104,29 @@ angular.module('userCalendar.controllers', []).
       
       var timeSelected = new Date();
       timeSelected.setHours((Math.floor(event.x / 60)-1));
+      //timeSelected.setMinutes((event.x % 60));
       timeSelected.setMinutes((event.x % 60));
+      //timeSelected.setMinutes(15);
+      timeSelected.setSeconds(0);
 
-      $scope.requestedTime = {};
-      $scope.requestedTime.time = timeSelected;
+      $scope.requestedTime.x = event.x;
+      $scope.requestedTime.date = timeSelected;
+      $scope.requestedTime.duration_minutes = 320;
       $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
+      $scope.requestedTime.nice = timeSelected.toString("hh:mm tt");
       console.log("starting with" + event.x);
       console.log(event);
-    };
-    
 
+    };
+
+    $scope.requestedTime.reserve = function(){
+      console.log("Attempting to request time: ");
+      // use s$scope.requestedTime.date
+      console.log($scope.requestedTime.localized);
+      console.log(" for " + $scope.requestedTime.duration_minutes + " minutes");
+    }
 
     $scope.getReservations = getReservations;
+    
+    return $scope.ReservationCtrl = this;
   }]);

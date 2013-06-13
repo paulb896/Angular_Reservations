@@ -1,10 +1,22 @@
 
+body{
+  background-color:grey;
+  border-style:solid;
+  border-width:1px;
+  position:absolute;
+  z-index:99999;
+  width:100%;
+  
+}
+
+
 .textStatus{
   width: 58px;
   opacity:0.35;
   text-align:center;
   float:right;
   font-size:14px;
+  margin-top:55px;
 }
 
 .textStatus::-moz-selection {
@@ -27,8 +39,8 @@ div.status {
   height:28px;
   background-color:#a2a3a4;
   border-color:white;
-  border-width:5px;
-  border-style:groove;
+  border-width:3px;
+  border-style:solid;
 #  -webkit-transition: border-color 2s ease-in-out;
   opacity:0.45;
   -webkit-transition: all 1s;
@@ -70,6 +82,10 @@ div.status.pending{
 	transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
 	border-width: 3px;
 	border-style:solid;
+}
+
+.reserve{
+  float:right;
 }
 
 .floatingTile {
@@ -118,7 +134,7 @@ div label.day{
   width:200px;
   height:100px;
   position:absolute;
-  z-index:1000;
+  z-index:9999;
   background-color:55aaaa;
   opacity:0.9;
   padding:14px;
@@ -132,7 +148,7 @@ div label.day{
 .reservation:hover{
   opacity:1;
   position:absolute;
-  margin-left:50px;
+  margin-left:5px;
   -webkit-transition: all 2s;
   z-index: 1002;
 }
@@ -141,23 +157,25 @@ div label.day{
 
 .calendar{
   position:absolute;
-  width:70%;
+  width:80%;
   height:400px;
   overflow:hidden;
-  padding-left:100px;
+  padding-left:20px;
   margin-top:300px;
   -webkit-transition: all 1s;
   font-size:300%;
 }
 
+
 .calendar:hover{
   margin-top:100px;
   -webkit-transition: all 2s;
   z-index: 2002;
-  background-color:#bcbcbd;
-  height:920px;
-    border-right-style:solid;
-  border-width:3px;
+  background-color:transparent;
+  height:540px;
+  outline: 1px solid #111;
+  border: 1px solid #111119;
+  #padding: 100px 10px 10px 10px;
 }
 
 label.dayOfMonth{
@@ -168,7 +186,7 @@ label.dayOfMonth{
 input[type="radio"] {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
-  margin-top:-42%;
+  margin-top:-120%;
   margin-left:-10px;
   width:100px;
   height:190px;
@@ -178,7 +196,7 @@ input[type="radio"] {
 input[type="radio"]:checked {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
-  margin-top:-92%;
+  margin-top:-120%;
   margin-left:-10px;
   width:100px;
   height:190px;
@@ -191,12 +209,12 @@ input[type="radio"]:checked {
 }
 
 .day-selected{
-  font-size:220%;
+  font-size:200%;
   margin-right:30px;
 }
 
 .year-selected{
-  font-size:150%;
+  font-size:200%;
 } 
 
 label{
@@ -210,6 +228,10 @@ ul{
   margin-left:100px;
 }
 
+.duration{
+margin-top:50px;
+}
+
 .day-chart{
   height:190px;
   width:90%;
@@ -221,13 +243,7 @@ ul{
   padding:10px;
   position:absolute;
   background-color:#EAEAEA;
-  opacity:0.3;
-  -webkit-transition: all 1s;
-}
-
-.day-chart:hover{
-  background-color:#FFFFFF;
-  opacity:0.5;
+  opacity:0.9;
   -webkit-transition: all 1s;
 }
 
@@ -262,7 +278,8 @@ ul{
   border-bottom-width: 1em;
   border-bottom-style: solid;
   border-bottom-color: #666;
-  margin-top:-25px;
+  margin-top:-29px;
+  margin-left:23px;
 }
 
 .arrow-down:hover{
@@ -275,8 +292,8 @@ ul{
 
 .requestedTime{
   margin-left:50%;
-  margin-top:155px;
   opacity:1 !important;
+  z-index:9999;
 }
 
 .days-view{

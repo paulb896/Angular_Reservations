@@ -16,7 +16,7 @@
         <input ng-model="selectedDate.month">
         <input ng-model="selectedDate.year">
         <select>
-          <option ng-repeat="month in getMonths()" ng-selected="">{{month}}</option>
+          <option ng-repeat="month in ReservationCtrl.getMonths()" ng-selected="">{{month}}</option>
         </select>
       </div>
       <div style="width:800px; height:50px; position:absolute; z-index:5000;">
@@ -25,14 +25,14 @@
         <span ng-bind="selectedDate.year" class="year-selected"></span>
       </div>
       <div class="selectedDate">
-        <span style="font-size:22px; margin-left:40px; background-color:transparent; padding:30px;">You Have The Following Reserations</span>
+        <span style="position: absolute; z-index: 100; font-size:22px; margin-left:40px; background-color:transparent; color:#111111; padding:30px;">You Have The Following Reserations</span>
         <div class="days-view">
-          <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservations">
+          <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation">
             <div class="reservation floatingTile" style="margin-left:{{reservation.start_time | getChartPosition}}px;">
               <div style="width=200px;">
                
                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
-              <input ng-model="reservation.status" class="textStatus"></input>
+              <input ng-model="reservation.status" class="textStatus">
               </div>
               <span>{{reservation.start_time | niceTime}}</span>
               <span>{{reservation.company}}</span>
@@ -40,23 +40,26 @@
           </div>
         </div>
       </div>
+
       <div class="day-chart" ng-click="addOnClick($event)">
-        <div style="width:500px;">
-           <div class="requestedTime" style="margin-left:{{(requestedTime.time | getChartPosition)}}px;">
+        <div>
+           <div class="requestedTime reservation floatingTile" style="width:{{requestedTime.duration_minutes}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
              {{requestedTime.localized}}
-           <div class="arrow arrow-up"></div>
+             <div class="arrow arrow-up"></div>
+             <input ng-model="requestedTime.duration_minutes" class="duration">
+             <button type="button" class="reserve" ng-click="requestedTime.reserve();">Reserve</button>
            </div>
-           <span >Click to request time</span>
         </div>
       </div>
+
       <div class="calendar">
         <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)" class="floatingTile" style="background-color:#{{calendar.tile.colour}};">
           <label for="day" class="dayOfMonth">
             {{day | extractDay}}
           </label>
           <input name="day" type="radio" class="day" id="day_{{day}}" ng-click="selectedDate.day=day; updateSelected(day, selectedDate.month, selectedDate.year);">
-      </div>
-  </div>
+        </div>
+     </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
   -->
