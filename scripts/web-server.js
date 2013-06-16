@@ -106,24 +106,28 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
       "company" : "Mc Donalds",
       "address" : "Lougheed Hwy",
       "status" : "invalid",
-      "start_time" : new Date("November 12, 1955 2:15:00")
+      "start_time" : new Date("November 12, 1955 2:15:00"),
+      "duration": "32min"
     },{
       "company" : "Joey's Only",
       "address" : "Lougheed Hwy",
       "status" : "approved",
-      "start_time" : new Date("November 12, 1955 8:55:00")
+      "start_time" : new Date("November 12, 1955 8:55:00"),
+      "duration": "27min"
     },
     {
       "company" : "The White Spot",
       "address" : "Lougheed Hwy",
       "status" : "declined",
-      "start_time" : new Date("November 12, 1955 12:55:00")
+      "start_time" : new Date("November 12, 1955 12:55:00"),
+      "duration": "30min"
     },
     {
       "company" : "Earls",
       "address" : "Lougheed Hwy",
       "status" : "pending",
-      "start_time" : new Date("November 12, 1955 16:55:00")
+      "start_time" : new Date("November 12, 1955 16:55:00"),
+      "duration": "34min"
     }];
     res.write(JSON.stringify(mockDataObject));
     res.end();

@@ -111,7 +111,7 @@ angular.module('userCalendar.controllers', []).
 
       $scope.requestedTime.x = event.x;
       $scope.requestedTime.date = timeSelected;
-      $scope.requestedTime.duration_minutes = 320;
+      $scope.requestedTime.duration_minutes = 60;
       $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
       $scope.requestedTime.nice = timeSelected.toString("hh:mm tt");
       console.log("starting with" + event.x);
@@ -127,6 +127,15 @@ angular.module('userCalendar.controllers', []).
     }
 
     $scope.getReservations = getReservations;
-    
+
+
+    $scope.getColor = function(defaultColor, day){
+        if (day == $scope.selectedDate.day) {
+            return "0000a0";
+        }
+
+        return defaultColor;
+    };
+
     return $scope.ReservationCtrl = this;
   }]);

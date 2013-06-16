@@ -1,0 +1,91 @@
+{
+   "debug_info" : [],
+   "html_attributions" : [
+      "Listings by \u003ca href=\"http://www.yellowpages.ca/\"\u003eYellowPages.ca\u003c/a\u003e"
+   ],
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.2801930,
+               "lng" : -122.9666190
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "ca06b63d1c3b392ffe1543ecb8cb8e272795620b",
+         "name" : "Cockney Kings Fish & Chips",
+         "rating" : 4.0,
+         "reference" : "CoQBeQAAAPTBmBPZJ-JvYBD4oZ-FhNzUL1UCyJS5il7QeyRUDdzgVWgivCebKDsjcIWL35gn_yEJEhW99zcwQY0moZnwJ75JMKaVyjmHycEvwJRaFyHwFLZmnZ_oDNjE0x5yXhHerFyWF4ZRLiyTyV6QG2MJyaZ5bacEQuPJutO-g9tHSV2FEhBV-OzQuoyLIymLfgIpo9rGGhRvc7HTDIDrEUaBVh11tPx8mp5qcA",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "6574 Hastings Street, Burnaby"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.2809190,
+               "lng" : -123.0156450
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+         "id" : "fdc37eac7818e0eee015755a538069f473950f54",
+         "name" : "Regent Fish Market",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "rating" : 5.0,
+         "reference" : "CnRwAAAAg_40arWYs5eFyby-LtSu7vvh3vOfTyGby_oBHOlWpSa3H4f1hlVf8erQPi4g_QwLIWxcTjQTu7kYvSGEbejQjTpef404fYS9ci38fGegC3SGdjra33sNURnOa2Kij4wuNJsfa_50bVKUO6s9kyTl3BIQ1CEgts3Yg-aVP9CqExVz6xoU6kJRbV9lmej2V35HmtAIiUQp1Sc",
+         "types" : [ "food", "establishment" ],
+         "vicinity" : "4020 Hastings Street, Burnaby"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.2690540,
+               "lng" : -123.0459330
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "552af292dabbeda061f0c495011a6fb1cb17438d",
+         "name" : "Duotian & Fish Soup Noodles Restaurant",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "reference" : "CpQBhAAAAIYTGRBzj4iRdJK6P-X1oCzWbL26xHqAHcKXEqC7-FG00qVCKCTVOj7OUat_TKypLNms7TfwwGrbppQ2m0WqDEDfYh8AogrMaZNASxHl7we2XI_hz-ceI-pWROoqUmPKNqx4zsMZGu-3PMq2z9PTSnTKQRxx9cl0l_DQOYxQYAHFCkr0lqlkGbmCKHJCwDRDgRIQRKZP2TtRlxmbVTwBEmAYmxoUS8iqKTr87Uxx00pjHyllXsx30DE",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "2800 East 1st Avenue #212, Vancouver"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.2360930,
+               "lng" : -123.0421790
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "583babd1a2d135c7b0f6706f9bfaa17ef9dd4e07",
+         "name" : "Sea House Fish Chips",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "rating" : 3.80,
+         "reference" : "CoQBcwAAADYswHsrrgXC_NFahDTMHW5VWjtaZawLtZhZQnOYp6NqEXaAXRwX-06G_vaCRBlBXPhmE5cZ6GXUXWeY86zLQD2Mfe2vY4gquMJVJRwcGRlrKElwpDtQSbkb8_P_tgJxTdDZkcBVzQZPXeSdOoXCI_h75SAwagvmr_BRgO84gr1OEhAp-z2F50Ia5-BxkLOoGrsZGhTn0MU9rZaunJ6Zl0znAOcu4KKjww",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "3003 Kingsway, Vancouver"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 49.249910,
+               "lng" : -123.0338980
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "641dd5ac4b9e240c2a76df080c47280fcae37a8d",
+         "name" : "Golden Fish Café",
+         "reference" : "CnRwAAAAunKOyOCmVH4rWaE-a119c5CjWaK-3KrB-SWMmYsFbvaJi05VPf-EpoulrIgftP7rY_6Mg8_aD6yiWcHZjsnZhDYEZvMt0YvunLKcOXf-9hVtiWEieMVoeMj1VfFcrV0RqOCp5o-7U_o-QAP4q2s5yhIQLiVEuL7n_9b0hUc9oNooYhoUMgWOMqSmlrwSONjeaa2ySmO8ikE",
+         "types" : [ "restaurant", "food", "establishment" ],
+         "vicinity" : "3883 Rupert, Vancouver, Colombie Britanique,"
+      }
+   ],
+   "status" : "OK"
+}
