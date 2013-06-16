@@ -186,39 +186,49 @@ div label.day{
   width:80%;
   border-top-width: 8px;
   border-top-style: solid;
-  border-top-color: #0000a0;
+  border-top-color: #000044;
 
   border-bottom-width: 8px;
   border-bottom-style: solid;
-  border-bottom-color: #0000a0;
+  border-bottom-color: #000044;
   #padding: 100px 10px 10px 10px;
   outline:#111111 solid 1px;
+
+
+
+
+    background-image: -moz-linear-gradient(45deg, #666 25%, transparent 25%),
+    -moz-linear-gradient(-45deg, #666 25%, transparent 25%),
+    -moz-linear-gradient(45deg, transparent 75%, #666 75%),
+    -moz-linear-gradient(-45deg, transparent 75%, #666 75%);
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #666), color-stop(.25, transparent)),
+    -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #666), color-stop(.25, transparent)),
+    -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #666)),
+    -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #666));
+    background-image: -webkit-linear-gradient(45deg, #666 25%, transparent 25%),
+    -webkit-linear-gradient(-45deg, #666 25%, transparent 25%),
+    -webkit-linear-gradient(45deg, transparent 75%, #666 75%),
+    -webkit-linear-gradient(-45deg, transparent 75%, #666 75%);
+    background-image: -o-linear-gradient(45deg, #666 25%, transparent 25%),
+    -o-linear-gradient(-45deg, #666 25%, transparent 25%),
+    -o-linear-gradient(45deg, transparent 75%, #666 75%),
+    -o-linear-gradient(-45deg, transparent 75%, #666 75%);
+    background-image: linear-gradient(45deg, #666 25%, transparent 25%),
+    linear-gradient(-45deg, #666 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #666 75%),
+    linear-gradient(-45deg, transparent 75%, #666 75%);
+    -moz-background-size: 2px 2px;
+    background-size: 2px 2px;
+    -webkit-background-size: 2px 2.1px; /* override value for webkit */
+    background-position: 0 0, 1px 0, 1px -1px, 0px 1px;
 }
 
-label.dayOfMonth{
-  padding-left:50%;
-  font-size:38px;
+span.dayOfMonth{
+  font-size:42px;
+  float:right;
+  margin-right:5px;
 }
 
-input[type="radio"] {
-  -webkit-appearance: checkbox;
-  -moz-appearance: checkbox;
-  margin-top:-120%;
-  margin-left:-10px;
-  width:100px;
-  height:190px;
-  opacity:0.2;
-}
-
-input[type="radio"]:checked {
-  -webkit-appearance: checkbox;
-  -moz-appearance: checkbox;
-  margin-top:-120%;
-  margin-left:-10px;
-  width:100px;
-  height:190px;
-  opacity:0.1;
-}
 
 .month-selected{
   margin-left:130px;
@@ -269,6 +279,11 @@ margin-top:50px;
   background-color:111111;
   opacity:0.8;
 }
+
+.reservation_company{
+    font-style: italic;
+}
+
 
 .arrow{
   border-style: dashed;
@@ -324,3 +339,51 @@ margin-top:50px;
   height:400px;
 }
 
+/* ---------- month styles ------------- */
+.month > .one {
+    -webkit-transform: translateZ(380px);
+}
+
+.month > .two {
+    -webkit-transform: rotateY(30deg) translateZ(380px);
+}
+
+.month > .three {
+    -webkit-transform: rotateY(60deg) translateZ(380px);
+}
+
+.month > .four {
+    -webkit-transform: rotateY(90deg) translateZ(380px);
+}
+
+.month > .five {
+    -webkit-transform: rotateY(120deg) translateZ(380px);
+}
+
+.month > .six {
+    -webkit-transform: rotateY(150deg) translateZ(380px);
+}
+
+.month > .seven {
+    -webkit-transform: rotateY(180deg) translateZ(380px);
+}
+
+.month > .eight {
+    -webkit-transform: rotateY(210deg) translateZ(380px);
+}
+
+.month > .nine {
+    -webkit-transform: rotateY(-120deg) translateZ(380px);
+}
+
+.month > .ten {
+    -webkit-transform: rotateY(-90deg) translateZ(380px);
+}
+
+.month > .eleven {
+    -webkit-transform: rotateY(300deg) translateZ(380px);
+}
+
+.month > .twelve {
+    -webkit-transform: rotateY(330deg) translateZ(380px);
+}

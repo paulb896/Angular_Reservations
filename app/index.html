@@ -9,7 +9,7 @@
   <script src="js/jquery-ui.js"></script>
 </head>
 <body style="font-family: 'Noto Serif', serif;">
-<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:120px; height:80px;"/>
+<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:120px; height:80px; z-index: 9005;"/>
   <div ng-controller=ReservationCtrl>
       <div class="calendar-controls">
         <span>Tile Colour: </span>
@@ -34,8 +34,8 @@
                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
               <input ng-model="reservation.status" class="textStatus">
               </div>
-              <span>{{reservation.start_time | niceTime}}</span>
-              <span>{{reservation.company}}</span>
+              <span >{{reservation.start_time | niceTime}}</span>
+              <span class="reservation_company">{{reservation.company}}</span>
               <span>{{reservation.duration}}</span>
             </div>
           </div>
