@@ -1,6 +1,6 @@
 
 body{
-  background-color:grey;
+  background-color:#ddddde;
   position:absolute;
   z-index:99999;
   width:100%;
@@ -88,7 +88,6 @@ div.status.pending{
 	-moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
 	-ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
 	transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-	border-width: 3px;
 	border-style:solid;
 }
 
@@ -97,15 +96,15 @@ div.status.pending{
 }
 
 .floatingTile {
- background-color: #111111;
- border-color:#EEEEEE;
+ background-color: rgba(11,11,11,0.4);
+ border-color:#999999;
  width: 80px;
  height: 80px;
  padding: 5px;
  color: #FFF;
  font-family: sans-serif;
  font-size: 22px;
- border-width: 3px;
+ border-width: 1px;
  border-style: solid;
  cursor: default;
  -webkit-transition: 0.3s all;
@@ -184,11 +183,11 @@ div label.day{
   background-color:rgba(50,50,50,0.4);
   height:540px;
   width:80%;
-  border-top-width: 8px;
+  border-top-width: 3px;
   border-top-style: solid;
   border-top-color: #000044;
 
-  border-bottom-width: 8px;
+  border-bottom-width: 3px;
   border-bottom-style: solid;
   border-bottom-color: #000044;
   #padding: 100px 10px 10px 10px;
@@ -231,7 +230,7 @@ span.dayOfMonth{
 
 
 .month-selected{
-  margin-left:130px;
+  margin-left:180px;
   font-size:200%;
 }
 
@@ -269,8 +268,7 @@ margin-top:50px;
   border-color: #bbbbbb;
   padding:10px;
   position:absolute;
-  background-color:#EAEAEA;
-  opacity:0.9;
+  background-color:#ddddde;
   -webkit-transition: all 1s;
 }
 
@@ -331,7 +329,6 @@ margin-top:50px;
 .requestedTime{
   opacity:1 !important;
   z-index:9999;
-  display: none;
 }
 
 .days-view{

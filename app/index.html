@@ -9,18 +9,17 @@
   <script src="js/jquery-ui.js"></script>
 </head>
 <body style="font-family: 'Noto Serif', serif;">
-<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:120px; height:80px; z-index: 9005;"/>
+<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:120px; height:80px; z-index: 9005; margin-left: 45px;"/>
   <div ng-controller=ReservationCtrl>
       <div class="calendar-controls">
-        <span>Tile Colour: </span>
-        <input ng-model="calendar.tile.colour" ng-init="calendar.tile.colour='000'">
         <input ng-model="selectedDate.month">
         <input ng-model="selectedDate.year">
         <select>
           <option ng-repeat="month in ReservationCtrl.getMonths()" ng-selected="">{{month}}</option>
         </select>
       </div>
-      <div style="width:800px; height:50px; position:absolute; z-index:5000;">
+      <div style="width:800px; height:50px; position:absolute; z-index:5000;
+      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:4px; margin-top:5px;">
         <span ng-bind="selectedDate.month | monthName" class="month-selected"></span>
         <span ng-bind="selectedDate.day" class="day-selected"></span>
         <span ng-bind="selectedDate.year" class="year-selected"></span>
