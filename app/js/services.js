@@ -44,4 +44,34 @@ angular.module('userCalendar.services', []).
       }
     };
     return myService;
-  });
+  }).factory('ReservationRequest', function($http) {
+    var ReservationRequest = {
+        async: function(reservation) {
+            console.log('Before reservation request post');
+            // $http returns a promise, which has a then function, which also returns a promise
+
+            //$http.jsonp()
+
+            var promise = $http.post("/reserve", reservation).then(function (response) {
+                // The then function here is an opportunity to modify the response
+                console.log("response from post");
+                console.log(response);
+                // The return value gets picked up by the then in the controller.
+                if (response.status == 200) {
+                    return response.data;
+                }
+
+                return [];
+            });
+
+            // Return the promise to the controller
+            return promise;
+        }
+    };
+    return ReservationRequest;
+}).factory('UserModel', function(){
+    return {
+        "user_name" : "paulb896",
+        "user_email" : "paulb896@gmail.com"
+    };
+});

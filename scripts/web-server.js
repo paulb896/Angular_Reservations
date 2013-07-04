@@ -11,7 +11,8 @@ var DEFAULT_PORT = 8000;
 function main(argv) {
   new HttpServer({
     'GET': createServlet(StaticServlet),
-    'HEAD': createServlet(StaticServlet)
+    'HEAD': createServlet(StaticServlet),
+    //'POST': createServlet(StaticServlet)
   }).start(Number(argv[2]) || DEFAULT_PORT);
 }
 
@@ -50,43 +51,58 @@ HttpServer.prototype.parseUrl_ = function(urlString) {
   return url.parse(url.format(parsed), true);
 };
 
-function sendMockData(req, res) {
-  console.log("Sending mock data");
-  res.writeHead(200, {
-   'Content-Type': 'application/json'
-  });
 
-  var mockDataObject = [{
-    "company" : "Mc Donalds",
-    "address" : "Lougheed Hwy",
-    "status" : "invalid",
-    "date_time" : new Date("November 12, 1955 16:55:00")
-  },{
-    "company" : "Joey's Only",
-    "address" : "Lougheed Hwy",
-    "status" : "approved",
-    "date_time" : new Date("November 12, 1955 16:55:00")
-  },
-  {
-    "company" : "The White Spot",
-    "address" : "Lougheed Hwy",
-    "status" : "declined",
-    "date_time" : new Date("November 12, 1955 16:55:00")
-  },
-  {
-    "company" : "Earls",
-    "address" : "Lougheed Hwy",
-    "status" : "pending",
-    "date_time" : new Date("November 12, 1955 16:55:00")
-  }];
-  console.log(mockDataObject);
-  res.write(JSON.stringify(mockDataObject));
-  res.end();
-  return true;
-}
-
+var MongoClient = require('mongodb').MongoClient
+    , format = require('util').format;
 
 HttpServer.prototype.handleRequest_ = function(req, res) {
+
+  /**
+   * Handle writes to db here
+   */
+  if (req.method == "POST") {
+      var data = '';
+      res.end("Post received");
+
+      console.log("The post is here");
+      req.data;
+
+
+      req.on('data', function (chunk) {
+          console.log('BODY: ' + chunk);
+          data += chunk;
+      });
+
+      req.on('end', function() {
+          var querystring = require('querystring');
+          console.log("Complete data");
+          console.log(JSON.parse(data));
+
+
+          MongoClient.connect('mongodb://127.0.0.1:3001/reservation_system', function(err, db) {
+              if(err) throw err;
+
+              var collection = db.collection('reservation');
+
+              collection.insert(JSON.parse(data), function(err, docs) {
+
+                  collection.count(function(err, count) {
+                      console.log(format("count = %s", count));
+                  });
+
+                  // Locate all the entries using find
+                  collection.find().toArray(function(err, results) {
+                      console.dir(results);
+                      // Let's close the db
+                      db.close();
+                  });
+              });
+          })
+
+      });
+  }
+
+
 
   var logEntry = req.method + ' ' + req.url;
   if (req.headers['user-agent']) {
@@ -133,7 +149,21 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
     res.end();
     return true;
   }
-  
+
+
+  if (req.url.pathname.indexOf("/reservation")) {
+      MongoClient.connect('mongodb://127.0.0.1:3001/reservation_system', function(err, db) {
+          if(err) throw err;
+          var collection = db.collection('reservation');
+
+          // Locate all the entries using find
+          collection.find().toArray(function(err, results) {
+              console.dir(results);
+              // Let's close the db
+              db.close();
+          });
+      })
+  }
   
   var handler = this.handlers[req.method];
   if (!handler) {
@@ -255,7 +285,7 @@ StaticServlet.prototype.sendFile_ = function(req, res, path) {
   var self = this;
   var file = fs.createReadStream(path);
   res.writeHead(200, {
-    'Access-Control-Allow-Origin' : 'http://localhost:1896/',
+    'Access-Control-Allow-Origin' : 'http://localhost:8000/',
     'Content-Type': StaticServlet.
       MimeMap[path.split('.').pop()] || 'text/plain'
   });
@@ -333,3 +363,7 @@ StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
 
 // Must be last,
 main(process.argv);
+
+
+
+

@@ -28,13 +28,14 @@ angular.module('userCalendar.controllers', []).
 
   }])
 
-  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', function($scope, defaultSelectedDate, myService, monthNames) {
+  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', function($scope, defaultSelectedDate, myService, monthNames, ReservationRequest, UserModel) {
 
 
     $scope.dateNow = new Date();
     console.log("The following is my selectedDay: ");
     $scope.selectedDate = defaultSelectedDate;
-    defaultSelectedDate.month = 10;
+    defaultSelectedDate.month = $scope.dateNow.getMonth();
+    defaultSelectedDate.day = $scope.dateNow.getDay();
     $scope.monthNames = monthNames;
 
     $scope.updateSelected = function(day, month, year) {
@@ -101,13 +102,24 @@ angular.module('userCalendar.controllers', []).
       event.x = event.clientX;
       //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
       var requestedTime = (Math.floor(event.x / 60)-1) + " : " + (event.x % 60);
-      
-      var timeSelected = new Date();
-      timeSelected.setHours((Math.floor(event.x / 60)-1));
-      //timeSelected.setMinutes((event.x % 60));
-      timeSelected.setMinutes((event.x % 60));
-      //timeSelected.setMinutes(15);
-      timeSelected.setSeconds(0);
+
+
+      var timeSelected = new Date(defaultSelectedDate.year,
+          defaultSelectedDate.month,
+          defaultSelectedDate.day,
+          (Math.floor(event.x / 60)-1), (event.x % 60), 0, 0);
+
+//      var timeSelected = new Date();
+//      timeSelected.setHours((Math.floor(event.x / 60)-1));
+//      //timeSelected.setMinutes((event.x % 60));
+//      timeSelected.setMinutes((event.x % 60));
+//      //timeSelected.setMinutes(15);
+//      timeSelected.setSeconds(0);
+//
+//      timeSelected.setDays(defaultSelectedDate.day);
+//      timeSelected.setMonths(defaultSelectedDate.month);
+//      timeSelected.setYears(defaultSelectedDate.year);
+
 
       $scope.requestedTime.x = event.x;
       $scope.requestedTime.date = timeSelected;
@@ -124,6 +136,10 @@ angular.module('userCalendar.controllers', []).
       // use s$scope.requestedTime.date
       console.log($scope.requestedTime.localized);
       console.log(" for " + $scope.requestedTime.duration_minutes + " minutes");
+      var reservation = angular.extend({start: $scope.requestedTime.date, duration_minutes: $scope.requestedTime.duration_minutes}, defaultSelectedDate, UserModel);
+      ReservationRequest.async(reservation).then(function(responseMessage) {
+        // Set success/failure message
+      });
     }
 
     $scope.getReservations = getReservations;
