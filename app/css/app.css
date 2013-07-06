@@ -95,11 +95,11 @@ div.status.pending{
 .reserve{
   float:right;
   background-color: #EEEEEE;
-  padding:5px;
   border:2px solid black;
   cursor: pointer;
-  margin-top: 80px;
+  margin-top: 50px;
   position:absolute;
+  padding: 5px;
 }
 
 .floatingTile {
@@ -174,9 +174,10 @@ div label.day{
 .reservation-length-indicator{
    -webkit-transition: width 2.5s, margin 0.5s;
    background-color: #0000a0;
-   height: 50px;
+   height: 40px;
    position:absolute;
    z-index: 500;
+   margin-top: 100px;
 }
 
 .calendar{
@@ -270,8 +271,11 @@ ul{
 }
 
 .duration{
+ padding-left:2px;
+ font-size: 20px;
  margin-top:25px;
- width:50px;
+ width:40px;
+ height: 30px;
  opacity: 0.8;
  border: none;
  font-style: italic;

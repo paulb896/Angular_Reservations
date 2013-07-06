@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="requestedTime reservation" style="width:{{requestedTime.duration_minutes | minuteWidth}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
-          {{requestedTime.localized}}
+          <div>{{requestedTime.localized}}</div>
           <input ng-model="requestedTime.duration_minutes" class="duration"><span>minutes</span>
           <span class="reserve" ng-click="requestedTime.reserve();">Reserve</span>
       </div>
