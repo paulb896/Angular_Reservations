@@ -109,6 +109,14 @@ angular.module('userCalendar.controllers', []).
       //) {
       //  return true;
       //}
+
+      if (!$scope.requestedTime.hasOwnProperty("x")
+        || $scope.requestedTime.x != null
+      ) {
+          $scope.requestedTime.x = null;
+          return;
+      }
+
       
       console.log("Add reservation request");
       event.x = event.clientX;
@@ -133,13 +141,14 @@ angular.module('userCalendar.controllers', []).
 //      timeSelected.setYears(defaultSelectedDate.year);
 
 
-      $scope.requestedTime.x = event.x;
-      $scope.requestedTime.date = timeSelected;
-      $scope.requestedTime.duration_minutes = 60;
-      $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
-      $scope.requestedTime.nice = timeSelected.toString("hh:mm tt");
-      console.log("starting with" + event.x);
-      console.log(event);
+
+          $scope.requestedTime.x = event.x;
+          $scope.requestedTime.date = timeSelected;
+          $scope.requestedTime.duration_minutes = 60;
+          $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
+          $scope.requestedTime.nice = timeSelected.toString("hh:mm tt");
+          console.log("starting with" + event.x);
+          console.log(event);
 
     };
 

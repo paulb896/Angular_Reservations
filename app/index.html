@@ -46,7 +46,7 @@
            <div class="requestedTime reservation" style="width:{{requestedTime.duration_minutes | minuteWidth}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
              {{requestedTime.localized}}
              <input ng-model="requestedTime.duration_minutes" class="duration">
-             <button type="button" class="reserve" ng-click="requestedTime.reserve();">Reserve</button>
+             <span type="button" class="reserve" ng-click="requestedTime.reserve();">Reserve</span>
            </div>
            <div style="margin-top: 150px">
              <div ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{indicator | getChartPosition}}px;">{{indicator | niceTime}}</div>

@@ -94,6 +94,11 @@ div.status.pending{
 
 .reserve{
   float:right;
+  background-color: #EEEEEE;
+  padding:5px;
+  border:2px solid black;
+  cursor: pointer;
+  margin-top: 80px;
 }
 
 .floatingTile {
@@ -166,8 +171,7 @@ div label.day{
 .draggable { height: 90px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
 
 .reservation-length-indicator{
-   -webkit-transition: width 2.5s;
-   -wdebkit-transition: margin 1.5s;
+   -webkit-transition: width 2.5s, margin 0.5s;
    background-color: #0000a0;
    height: 50px;
    position:absolute;
@@ -183,7 +187,6 @@ div label.day{
   margin-top:210px;
   -webkit-transition: all 1.4s;
   font-size:300%;
-  transform:rotate3d(1,32,58,58deg)
 }
 
 
@@ -266,7 +269,8 @@ ul{
 }
 
 .duration{
-margin-top:50px;
+ margin-top:25px;
+ width:50px;
 }
 
 .day-chart{
