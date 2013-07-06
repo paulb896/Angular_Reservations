@@ -97,7 +97,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
                       db.close();
                   });
               });
-          })
+          });
 
       });
   }
@@ -112,65 +112,42 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
   req.url = this.parseUrl_(req.url);
   console.log("THIS IS A REQUEST TO THE SYSTEM\n\n\n");
 
-  if (req.url.pathname == "/mock_data") {
+  if (req.url.pathname == "/reservations") {
     console.log("Sending mock data");
     res.writeHead(200, {
       'Content-Type': 'application/json'
     });
 
-    var mockDataObject = [{
-      "company" : "Mc Donalds",
-      "address" : "Lougheed Hwy",
-      "status" : "invalid",
-      "start_time" : new Date("November 12, 1955 2:15:00"),
-      "duration": "32min"
-    },{
-      "company" : "Joey's Only",
-      "address" : "Lougheed Hwy",
-      "status" : "approved",
-      "start_time" : new Date("November 12, 1955 8:55:00"),
-      "duration": "27min"
-    },
-    {
-      "company" : "The White Spot",
-      "address" : "Lougheed Hwy",
-      "status" : "declined",
-      "start_time" : new Date("November 12, 1955 12:55:00"),
-      "duration": "30min"
-    },
-    {
-      "company" : "Earls",
-      "address" : "Lougheed Hwy",
-      "status" : "pending",
-      "start_time" : new Date("November 12, 1955 16:55:00"),
-      "duration": "34min"
-    }];
-    res.write(JSON.stringify(mockDataObject));
-    res.end();
-    return true;
-  }
-
-
-  if (req.url.pathname.indexOf("/reservation")) {
       MongoClient.connect('mongodb://127.0.0.1:3001/reservation_system', function(err, db) {
           if(err) throw err;
-          var collection = db.collection('reservation');
 
+          var collection = db.collection('reservation');
+console.log(req);
           // Locate all the entries using find
-          collection.find().toArray(function(err, results) {
+          req.url.query.month = req.url.query.month.toString();
+          req.url.query.day = req.url.query.day.toString();
+          collection.find(
+              {
+                  day: parseInt(req.url.query.day),
+                  month: parseInt(req.url.query.month),
+                  year: parseInt(req.url.query.year)
+              }
+          ).toArray(function(err, results) {
               console.dir(results);
+              res.end(JSON.stringify(results));
               // Let's close the db
               db.close();
           });
-      })
-  }
-  
+      });
+  } else {
+
   var handler = this.handlers[req.method];
   if (!handler) {
     res.writeHead(501);
     res.end();
   } else {
     handler.call(this, req, res);
+  }
   }
 };
 

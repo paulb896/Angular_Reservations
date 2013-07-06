@@ -15,7 +15,7 @@ angular.module('userCalendar.services', []).
       "selectedDateStatus" : "Current Booking Status",
       "month" : "6",
       "time" : "12:42:11",
-      "year" : "2013",
+      "year" : 2013,
       "status" : "pending",
       "day": 1,
       "duration": "30min"
@@ -28,7 +28,7 @@ angular.module('userCalendar.services', []).
         console.log(year);
 
         // $http returns a promise, which has a then function, which also returns a promise
-        var promise = $http.get("/mock_data?day="+day+"&month="+month+"&year="+year).then(function (response) {
+        var promise = $http.get("/reservations?day="+day+"&month="+month+"&year="+year).then(function (response) {
           // The then function here is an opportunity to modify the response
           console.log(response);
           // The return value gets picked up by the then in the controller.
