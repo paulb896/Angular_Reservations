@@ -165,6 +165,15 @@ div label.day{
 
 .draggable { height: 90px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
 
+.reservation-length-indicator{
+   -webkit-transition: width 2.5s;
+   -wdebkit-transition: margin 1.5s;
+   background-color: green;
+   height: 50px;
+   position:absolute;
+   z-index: 500;
+}
+
 .calendar{
   position:absolute;
   width:40%;

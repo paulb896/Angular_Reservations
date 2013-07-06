@@ -42,5 +42,9 @@ angular.module('userCalendar.filters', []).
       return dateTime.toLocaleTimeString();
     }
   }])
-
+  .filter('minuteWidth', [function(width) {
+    return function(width) {
+        return width * 5;
+    }
+  }])
   

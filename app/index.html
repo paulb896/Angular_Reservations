@@ -28,8 +28,8 @@
         <div class="days-view">
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation">
             <div class="reservation" style="margin-left:{{reservation.start_time | getChartPosition}}px;">
-              <div style="width=200px;">
-               
+              <div style="width:200px;">
+
                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
               <input ng-model="reservation.status" class="textStatus">
               </div>
@@ -42,14 +42,13 @@
       </div>
 
       <div class="day-chart" ng-click="addOnClick($event)">
-        <div>
-           <div class="requestedTime reservation" style="width:{{requestedTime.duration_minutes}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
+           <div class="reservation-length-indicator" style="width:{{requestedTime.duration_minutes}}px; margin-left:{{requestedTime.date | getChartPosition}}px;"></div>
+           <div class="requestedTime reservation" style="width:{{requestedTime.duration_minutes | minuteWidth}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
              {{requestedTime.localized}}
-             <div class="arrow arrow-up"></div>
              <input ng-model="requestedTime.duration_minutes" class="duration">
              <button type="button" class="reserve" ng-click="requestedTime.reserve();">Reserve</button>
            </div>
-        </div>
+
       </div>
 
       <div class="calendar">
