@@ -29,9 +29,8 @@ angular.module('userCalendar.controllers', []).
   }])
 
   .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', function($scope, defaultSelectedDate, myService, monthNames, ReservationRequest, UserModel) {
-
-
-    $scope.dateNow = new Date();
+    var dateNow = new Date();
+    $scope.dateNow = dateNow;
     console.log("The following is my selectedDay: ");
     $scope.selectedDate = defaultSelectedDate;
     defaultSelectedDate.month = $scope.dateNow.getMonth();
@@ -88,6 +87,19 @@ angular.module('userCalendar.controllers', []).
 
       return currentStatus;
     }
+
+    $scope.helpers = {};
+    $scope.helpers.timeIndicators = [];
+    $scope.helpers.timeIndicators.push(
+        new Date(2013,6,6,3,0),
+        new Date(2013,6,6,6,0),
+        new Date(2013,6,6,9,0),
+        new Date(2013,6,6,12,0),
+        new Date(2013,6,6,15,0),
+        new Date(2013,6,6,18,0),
+        new Date(2013,6,6,21,0),
+        new Date(2013,6,6,23,59)
+    );
 
 
     $scope.requestedTime = {};

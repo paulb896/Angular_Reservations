@@ -168,7 +168,7 @@ div label.day{
 .reservation-length-indicator{
    -webkit-transition: width 2.5s;
    -wdebkit-transition: margin 1.5s;
-   background-color: green;
+   background-color: #0000a0;
    height: 50px;
    position:absolute;
    z-index: 500;
@@ -273,10 +273,6 @@ margin-top:50px;
   height:190px;
   width:90%;
   margin-left:50px;
-  border-width: 0 1px 5% 1px;
-  border-left-style: solid;
-  border-right-style: solid;
-  border-color: #bbbbbb;
   padding:10px;
   position:absolute;
   background-color:#ddddde;
@@ -345,6 +341,12 @@ margin-top:50px;
 .days-view{
   width:75%;
   height:400px;
+}
+
+.timeIndicator {
+    width: 100px;
+    color: #BBBBBB;
+    height: 0px;
 }
 
 /* ---------- month styles ------------- */
