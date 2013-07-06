@@ -99,6 +99,7 @@ div.status.pending{
   border:2px solid black;
   cursor: pointer;
   margin-top: 80px;
+  position:absolute;
 }
 
 .floatingTile {
@@ -271,6 +272,9 @@ ul{
 .duration{
  margin-top:25px;
  width:50px;
+ opacity: 0.8;
+ border: none;
+ font-style: italic;
 }
 
 .day-chart{
