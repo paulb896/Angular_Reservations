@@ -47,4 +47,16 @@ angular.module('userCalendar.filters', []).
         return width * 5;
     }
   }])
-  
+  .filter('reservationState', [function(requestedTime) {
+      return function(requestedTime) {
+          if (!requestedTime.hasOwnProperty("x")) {
+              return "hidden";
+          }
+          //  || $scope.requestedTime.x != null
+          //) {
+          //    $scope.requestedTime.x = null;
+          //    return;
+          //}
+          return "";
+      }
+  }])
