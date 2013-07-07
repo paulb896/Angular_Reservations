@@ -42,7 +42,7 @@
       </div>
       <div class="{{requestedTime | reservationState}} requestedTime reservation" style="width:{{requestedTime.duration_minutes | minuteWidth}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
           <div>
-            <input type="text" ng-model="requestedTime.date">
+            <input class="date-input" type="text" ng-model="requestedTime.date">
           </div>
           <input type="text" ng-model="requestedTime.duration_minutes" class="duration"><span style="color:white; margin-left: 4px;">minutes</span>
           <span class="reserve" ng-click="requestedTime.reserve();">Reserve</span>

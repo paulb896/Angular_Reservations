@@ -21,6 +21,12 @@ angular.module('userCalendar.controllers', []).
     $scope.user_name = "paul";
   }])
 
+
+  .controller('PlaceCtrl', ['$scope', function($scope) {
+
+  }])
+
+
   /**
    * 
    */

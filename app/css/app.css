@@ -10,7 +10,7 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  
+
 }
 
 ::-webkit-scrollbar {
@@ -171,6 +171,13 @@ div.status.pending{
     transform:skew(8deg) rotate(3deg);
 }
 
+
+.date-input{
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    padding:7px;
+}
 
 .selectedDate{
 width:500px;
