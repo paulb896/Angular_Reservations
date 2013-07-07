@@ -191,24 +191,16 @@ div label.day{
   font-size:300%;
 }
 
+
 .background-pattern{
-    /* IE10 Consumer Preview */
-    background-image: -ms-linear-gradient(bottom left, #000024 0%, #88A899 100%);
 
-    /* Mozilla Firefox */
-    background-image: -moz-linear-gradient(bottom left, #000024 0%, #88A899 100%);
-
-    /* Opera */
-    background-image: -o-linear-gradient(bottom left, #000024 0%, #88A899 100%);
-
-    /* Webkit (Safari/Chrome 10) */
-    background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #000024), color-stop(1, #88A899));
-
-    /* Webkit (Chrome 11+) */
-    background-image: -webkit-linear-gradient(bottom left, #000024 0%, #88A899 100%);
-
-    /* W3C Markup, IE10 Release Preview */
-    background-image: linear-gradient(to top right, #000024 0%, #88A899 100%);
+    background-color: #6d695c;
+    background-image:
+        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 160px),
+        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 160px),
+        linear-gradient(80deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+        linear-gradient(160deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
 }
 
 .calendar:hover{
