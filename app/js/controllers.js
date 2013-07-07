@@ -110,12 +110,12 @@ angular.module('userCalendar.controllers', []).
       //  return true;
       //}
 
-      if (!$scope.requestedTime.hasOwnProperty("x")
-        || $scope.requestedTime.x != null
-      ) {
-          $scope.requestedTime.x = null;
-          return;
-      }
+      //if (!$scope.requestedTime.hasOwnProperty("x")
+      //  || $scope.requestedTime.x != null
+      //) {
+      //    $scope.requestedTime.x = null;
+      //    return;
+      //}
 
       
       console.log("Add reservation request");
@@ -144,9 +144,14 @@ angular.module('userCalendar.controllers', []).
 
           $scope.requestedTime.x = event.x;
           $scope.requestedTime.date = timeSelected;
-          $scope.requestedTime.duration_minutes = 60;
+
+          $scope.requestedTime.duration_minutes = defaultSelectedDate.duration;
+
           $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
           $scope.requestedTime.nice = timeSelected.toString("hh:mm tt");
+          $scope.requestedTime.day = defaultSelectedDate.day;
+        $scope.requestedTime.month = defaultSelectedDate.month;
+        $scope.requestedTime.year = defaultSelectedDate.year;
           console.log("starting with" + event.x);
           console.log(event);
 
@@ -157,7 +162,7 @@ angular.module('userCalendar.controllers', []).
       // use s$scope.requestedTime.date
       console.log($scope.requestedTime.localized);
       console.log(" for " + $scope.requestedTime.duration_minutes + " minutes");
-      var reservation = angular.extend({start: $scope.requestedTime.date, duration_minutes: $scope.requestedTime.duration_minutes}, defaultSelectedDate, UserModel);
+      var reservation = angular.extend({start: $scope.requestedTime.date, duration: $scope.requestedTime.duration_minutes}, defaultSelectedDate, UserModel);
       ReservationRequest.async(reservation).then(function(responseMessage) {
         // Set success/failure message
       });
