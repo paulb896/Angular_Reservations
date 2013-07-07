@@ -22,7 +22,7 @@ angular.module('userCalendar.controllers', []).
   }])
 
 
-  .controller('PlaceCtrl', ['$scope', function($scope) {
+  .controller('PlaceSearchCtrl', 'defaultSelectedDate' ['$scope', function($scope, defaultSelectedDate) {
 
   }])
 
