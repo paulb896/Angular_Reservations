@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5173b81a-8be1-4b81-b746-18d9b84007bb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/app.css" afterPath="$PROJECT_DIR$/app/css/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers.js" afterPath="$PROJECT_DIR$/app/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/services.js" afterPath="$PROJECT_DIR$/app/js/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Angular_Reservations.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,7 +11,7 @@
     <file path="/index.html" changelist="5173b81a-8be1-4b81-b746-18d9b84007bb" time="1373158437965" ignored="false" />
     <file path="/app.css" changelist="5173b81a-8be1-4b81-b746-18d9b84007bb" time="1373158116245" ignored="false" />
     <file path="/services.js" changelist="5173b81a-8be1-4b81-b746-18d9b84007bb" time="1372918308243" ignored="false" />
-    <file path="/controllers.js" changelist="5173b81a-8be1-4b81-b746-18d9b84007bb" time="1373158892519" ignored="false" />
+    <file path="/controllers.js" changelist="5173b81a-8be1-4b81-b746-18d9b84007bb" time="1373165824843" ignored="false" />
     <file path="/web-server.js" changelist="5173b81a-8be1-4b81-b746-18d9b84007bb" time="1373103977219" ignored="false" />
     <file path="/filters.js" changelist="5173b81a-8be1-4b81-b746-18d9b84007bb" time="1373092444833" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +36,7 @@
       <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="82" selection-start="5563" selection-end="5563" vertical-scroll-proportion="0.45335278">
+            <state line="169" column="110" selection-start="5970" selection-end="5970" vertical-scroll-proportion="0.6938776">
               <folding />
             </state>
           </provider>
@@ -520,7 +516,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="82" selection-start="5563" selection-end="5563" vertical-scroll-proportion="0.45335278">
+        <state line="169" column="110" selection-start="5970" selection-end="5970" vertical-scroll-proportion="0.6938776">
           <folding />
         </state>
       </provider>

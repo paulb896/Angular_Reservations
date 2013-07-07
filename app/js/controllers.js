@@ -46,6 +46,8 @@ angular.module('userCalendar.controllers', []).
       });
     }
 
+    $scope.updateSelected(defaultSelectedDate.day, defaultSelectedDate.month, defaultSelectedDate.year);
+
     $scope.getMonths = function() {
       return monthNames;
     }
@@ -165,6 +167,7 @@ angular.module('userCalendar.controllers', []).
       var reservation = angular.extend({start: $scope.requestedTime.date, duration: $scope.requestedTime.duration_minutes}, defaultSelectedDate, UserModel);
       ReservationRequest.async(reservation).then(function(responseMessage) {
         // Set success/failure message
+          $scope.updateSelected(defaultSelectedDate.day, defaultSelectedDate.month, defaultSelectedDate.year);
       });
     }
 
