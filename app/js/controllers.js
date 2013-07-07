@@ -38,11 +38,10 @@ angular.module('userCalendar.controllers', []).
     var dateNow = new Date();
     $scope.dateNow = dateNow;
     console.log("The following is my selectedDay: ");
-    $scope.selectedDate = defaultSelectedDate;
-    defaultSelectedDate.month = $scope.dateNow.getMonth();
-    defaultSelectedDate.day = $scope.dateNow.getDay();
+    defaultSelectedDate.month = dateNow.getMonth();
+    defaultSelectedDate.day = dateNow.getDate();
     $scope.monthNames = monthNames;
-
+    $scope.selectedDate = defaultSelectedDate;
     $scope.updateSelected = function(day, month, year) {
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
       defaultSelectedDate.day = day;
@@ -51,7 +50,6 @@ angular.module('userCalendar.controllers', []).
         $scope.selectedDate.reservations = d;
       });
     }
-
     $scope.updateSelected(defaultSelectedDate.day, defaultSelectedDate.month, defaultSelectedDate.year);
 
     $scope.getMonths = function() {
