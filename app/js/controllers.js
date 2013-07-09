@@ -110,21 +110,7 @@ angular.module('userCalendar.controllers', []).
 
     $scope.requestedTime = {};
     $scope.addOnClick = function(event) {
-      //if ($scope.requestedTime.x
-      //  && ($scope.requestedTime.x < event.x)
-      //) {
-      //  return true;
-      //}
 
-      //if (!$scope.requestedTime.hasOwnProperty("x")
-      //  || $scope.requestedTime.x != null
-      //) {
-      //    $scope.requestedTime.x = null;
-      //    return;
-      //}
-
-      
-      console.log("Add reservation request");
       event.x = event.clientX;
       //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
       var requestedTime = (Math.floor(event.x / 60)-1) + " : " + (event.x % 60);
@@ -134,19 +120,6 @@ angular.module('userCalendar.controllers', []).
           defaultSelectedDate.month,
           defaultSelectedDate.day,
           (Math.floor(event.x / 60)-1), (event.x % 60), 0, 0);
-
-//      var timeSelected = new Date();
-//      timeSelected.setHours((Math.floor(event.x / 60)-1));
-//      //timeSelected.setMinutes((event.x % 60));
-//      timeSelected.setMinutes((event.x % 60));
-//      //timeSelected.setMinutes(15);
-//      timeSelected.setSeconds(0);
-//
-//      timeSelected.setDays(defaultSelectedDate.day);
-//      timeSelected.setMonths(defaultSelectedDate.month);
-//      timeSelected.setYears(defaultSelectedDate.year);
-
-
 
           $scope.requestedTime.x = event.x;
           $scope.requestedTime.date = timeSelected;
@@ -162,6 +135,7 @@ angular.module('userCalendar.controllers', []).
           console.log(event);
 
     };
+
 
     $scope.requestedTime.reserve = function(){
       console.log("Attempting to request time: ");
@@ -184,6 +158,11 @@ angular.module('userCalendar.controllers', []).
         }
 
         return defaultColor;
+    };
+
+
+    $scope.updateRequestToIndicator = function(date) {
+
     };
 
     return $scope.ReservationCtrl = this;

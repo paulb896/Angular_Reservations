@@ -83,14 +83,7 @@ div.status.pending{
   #-webkit-transition: border-color 1s;
 }
 
-.floatingTile:hover {
-	-webkit-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-	-moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-	-ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-	transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-	border-style:solid;
-  border-radius:10px;
-}
+
 
 .reserve{
   float:right;
@@ -103,31 +96,38 @@ div.status.pending{
 }
 
 .floatingTile {
- border-radius:5px;
- background-color: rgba(111,111,29,0.8);
- border-color:#999999;
- width: 80px;
- height: 80px;
- padding: 5px;
- color: #FFF;
- font-family: sans-serif;
- font-size: 22px;
- border-width: 1px;
- border-style: solid;
- cursor: default;
- -webkit-transition: 0.3s all;
- -moz-transition: 0.3s all;
- -ms-transition: 0.3s all;
- transition: 0.3s all;
- margin:14px;
- display:inline;
- margin-top:25px;
- float:left;
-    position:relative;
-    -webkit-box-shadow:0 1px 4px rgba(10, 10, 10, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow:0 1px 4px rgba(10, 10, 10, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow:0 1px 4px rgba(10, 10, 10, 0.5), 0 0 40px rgba(11, 11, 11, 1.0) inset;
+  background-color: rgba(111,111,29,0.8);
+  #border-color:#999999;
+  width: 80px;
+  height: 80px;
+  padding: 5px;
+  color: #FFF;
+  font-family: sans-serif;
+  font-size: 22px;
+  #border-width: 1px;
+  #border-style: solid;
+  cursor: default;
+  -webkit-transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -ms-transition: 0.3s all;
+  transition: 0.3s all;
+  margin:14px;
+  display:inline;
+  margin-top:25px;
+  float:left;
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(10, 10, 10, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(10, 10, 10, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(10, 10, 10, 0.5), 0 0 40px rgba(11, 11, 11, 1.0) inset;
 }
+
+.floatingTile:hover {
+    -webkit-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+    -moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+    -ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+    transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+}
+
 
 .box {
     width:70%;
@@ -205,7 +205,8 @@ div label.day{
   z-index:9999;
   background-color:transparent;
   opacity:0.6;
-  padding-top:28px;
+  padding-top:16px;
+
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
   letter-spacing:2px;
@@ -231,16 +232,7 @@ div label.day{
    margin-top: 58px;
 }
 
-.calendar{
-  position:absolute;
-  width:40%;
-  height:400px;
-  overflow:scroll;
-  padding-left:36px;
-  margin-top:210px;
-  -webkit-transition: all 1.4s;
-  font-size:300%;
-}
+
 
 
 .background-pattern{
@@ -254,50 +246,25 @@ div label.day{
     background-size: 70px 120px;
 }
 
+
+.calendar{
+    position:absolute;
+    width:80%;
+    height:400px;
+    overflow:scroll;
+    padding-left:36px;
+    margin-top:210px;
+    -webkit-transition: all 1.4s;
+    font-size:300%;
+}
+
 .calendar:hover{
-  margin-top:140px;
+  margin-top:170px;
   -webkit-transition: all 0.6s;
   z-index: 12002;
   background-color:rgba(50,50,50,0.4);
   height:540px;
   width:80%;
-  border-top-width: 3px;
-  border-top-style: solid;
-  border-top-color: #000044;
-
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-  border-bottom-color: #000044;
-  #padding: 100px 10px 10px 10px;
-  outline:#111111 solid 1px;
-
-
-
-
-    background-image: -moz-linear-gradient(45deg, #666 25%, transparent 25%),
-    -moz-linear-gradient(-45deg, #666 25%, transparent 25%),
-    -moz-linear-gradient(45deg, transparent 75%, #666 75%),
-    -moz-linear-gradient(-45deg, transparent 75%, #666 75%);
-    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #666), color-stop(.25, transparent)),
-    -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #666), color-stop(.25, transparent)),
-    -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #666)),
-    -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #666));
-    background-image: -webkit-linear-gradient(45deg, #666 25%, transparent 25%),
-    -webkit-linear-gradient(-45deg, #666 25%, transparent 25%),
-    -webkit-linear-gradient(45deg, transparent 75%, #666 75%),
-    -webkit-linear-gradient(-45deg, transparent 75%, #666 75%);
-    background-image: -o-linear-gradient(45deg, #666 25%, transparent 25%),
-    -o-linear-gradient(-45deg, #666 25%, transparent 25%),
-    -o-linear-gradient(45deg, transparent 75%, #666 75%),
-    -o-linear-gradient(-45deg, transparent 75%, #666 75%);
-    background-image: linear-gradient(45deg, #666 25%, transparent 25%),
-    linear-gradient(-45deg, #666 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #666 75%),
-    linear-gradient(-45deg, transparent 75%, #666 75%);
-    -moz-background-size: 2px 2px;
-    background-size: 2px 2px;
-    -webkit-background-size: 2px 2.1px; /* override value for webkit */
-    background-position: 0 0, 1px 0, 1px -1px, 0px 1px;
 }
 
 span.dayOfMonth{
@@ -423,14 +390,20 @@ input{
 }
 
 .days-view{
-  width:75%;
-  height:400px;
+  width:1440px;
+  height:500px;
 }
 
 .timeIndicator {
-    width: 100px;
+    width: 0px;
     color: #BBBBBB;
     height: 0px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.timeIndicator:hover{
+    font-weight: 600;
 }
 
 /* ---------- month styles ------------- */
