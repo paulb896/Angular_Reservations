@@ -14,9 +14,6 @@
       <div class="calendar-controls">
         <input ng-model="selectedDate.month">
         <input ng-model="selectedDate.year">
-        <select>
-          <option ng-repeat="month in ReservationCtrl.getMonths()" ng-selected="">{{month}}</option>
-        </select>
       </div>
       <div style="width:800px; height:50px; position:absolute; z-index:5000;
       font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:4px; margin-top:5px; text-shadow: 0px 0px 2px #0000a0; color:#343434">
@@ -37,14 +34,17 @@
           </div>
         </div>
       </div>
-      <div class="{{requestedTime | reservationState}} requestedTime reservation" style="width:{{requestedTime.duration_minutes | minuteWidth}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
-          <div>
-            <input class="date-input" type="text" ng-model="requestedTime.date">
-          </div>
-          <input type="text" ng-model="requestedTime.duration_minutes" class="duration"><span style="color:white; margin-left: 4px;">minutes</span>
-          <span class="reserve" ng-click="requestedTime.reserve();">Reserve</span>
-      </div>
+
       <div class="day-chart" ng-click="addOnClick($event)">
+          <div class="{{requestedTime | reservationState}} requestedTime reservation" style="width:{{requestedTime.duration_minutes | minuteWidth}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
+              <div>
+                  <input class="date-input" type="text" ng-model="requestedTime.date">
+              </div>
+              <input type="text" ng-model="requestedTime.duration_minutes" class="duration"><span style="font-size:17px; font-weight:900; color:#FFFFFF; margin-left: 5px;">minutes</span>
+              <span class="reserve" ng-click="requestedTime.reserve();">Reserve</span>
+          </div>
+
+
            <div class="reservation-length-indicator" style="width:{{requestedTime.duration_minutes}}px; margin-left:{{requestedTime.date | getChartPosition}}px;"></div>
            <div style="margin-top: 170px; margin-left:-60px;">
              <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{indicator | getChartPosition}}px;">{{indicator | niceTime}}</div>
@@ -53,7 +53,7 @@
 
       <div class="calendar">
         <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)"
-             class="floatingTile" style="background-color:#{{getColor(calendar.tile.colour, day)}};"
+             class="floatingTile day-floating-tile" style="background-color:#{{getColor(calendar.tile.colour, day)}};"
              ng-click="selectedDate.day=day; updateSelected(day, selectedDate.month, selectedDate.year);"
            >
           <span class="dayOfMonth">

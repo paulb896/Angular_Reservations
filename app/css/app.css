@@ -90,7 +90,7 @@ div.status.pending{
   background-color: #EEEEEE;
   border:2px solid black;
   cursor: pointer;
-  margin-top: 50px;
+  margin-top:5px;
   position:absolute;
   padding: 5px;
 }
@@ -102,23 +102,30 @@ div.status.pending{
   height: 80px;
   padding: 5px;
   color: #FFF;
-  font-family: sans-serif;
-  font-size: 22px;
-  #border-width: 1px;
-  #border-style: solid;
-  cursor: default;
-  -webkit-transition: 0.3s all;
-  -moz-transition: 0.3s all;
-  -ms-transition: 0.3s all;
-  transition: 0.3s all;
-  margin:14px;
-  display:inline;
-  margin-top:25px;
-  float:left;
-  position:relative;
-  -webkit-box-shadow:0 1px 4px rgba(10, 10, 10, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow:0 1px 4px rgba(10, 10, 10, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  box-shadow:0 1px 4px rgba(10, 10, 10, 0.5), 0 0 40px rgba(11, 11, 11, 1.0) inset;
+    cursor: default;
+}
+
+
+
+.day-floating-tile{
+    -webkit-box-shadow:0 1px 4px rgba(10, 10, 10, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(10, 10, 10, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(10, 10, 10, 0.5), 0 0 40px rgba(11, 11, 11, 1.0) inset;
+
+    font-family: sans-serif;
+    font-size: 22px;
+    #border-width: 1px;
+    #border-style: solid;
+    cursor: default;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+    transition: 0.3s all;
+    margin:14px;
+    display:inline;
+    margin-top:25px;
+    float:left;
+    position:relative;
 }
 
 .floatingTile:hover {
@@ -126,6 +133,13 @@ div.status.pending{
     -moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     -ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+}
+
+
+.day-of-week-indicator{
+    background-color: transparent;
+    height: 50px;
+
 }
 
 
@@ -229,7 +243,7 @@ div label.day{
    height: 20px;
    position:absolute;
    z-index: 500;
-   margin-top: 58px;
+   margin-top: 80px;
 }
 
 
@@ -249,7 +263,7 @@ div label.day{
 
 .calendar{
     position:absolute;
-    width:80%;
+    width:900px;
     height:400px;
     overflow:scroll;
     padding-left:36px;
@@ -266,6 +280,7 @@ div label.day{
   height:540px;
   width:80%;
 }
+
 
 span.dayOfMonth{
   font-size:42px;
@@ -300,7 +315,6 @@ ul{
 }
 
 .duration{
- padding-left:2px;
  font-size: 20px;
  width:40px;
  height: 25px;
@@ -318,6 +332,7 @@ ul{
 input{
     padding-left: 5px;
     rgba(255,255,255,0.4);
+    border: none;
 }
 
 .day-chart{
