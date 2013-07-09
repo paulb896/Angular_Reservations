@@ -24,7 +24,8 @@ body{
   text-align:center;
   float:right;
   font-size:14px;
-  margin-top:55px;
+  margin-top:15px;
+  padding: 2px;
 }
 
 .textStatus::-moz-selection {

@@ -10,7 +10,7 @@ angular.module('userCalendar.services', []).
     "July", "August", "September", "October", "November", "December" ])
   .factory('defaultSelectedDate', function(){
     return {
-      "company" : "Restaurant Name",
+      "company" : "each, attending, member",
       "address" : "Restaurant Address",
       "selectedDateStatus" : "Current Booking Status",
       "month" : "7",
