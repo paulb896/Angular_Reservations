@@ -25,7 +25,7 @@ angular.module('userCalendar.filters', []).
   }])
   .filter('getChartPosition', [function(dateTime) {
     return function(dateTime) {
-      //console.log("Using this datetime to determine chart position: " + dateTime);
+      console.log("Using this datetime to determine chart position: " + dateTime);
       var dateTime = new Date(dateTime);
       //console.log("AND THE HOURS IN TIME ARE: ");
       //console.log(dateTime.getHours());
@@ -44,7 +44,7 @@ angular.module('userCalendar.filters', []).
   }])
   .filter('minuteWidth', [function(width) {
     return function(width) {
-        return width * 5;
+        return width * 20;
     }
   }])
   .filter('reservationState', [function(requestedTime) {

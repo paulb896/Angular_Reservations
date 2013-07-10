@@ -113,7 +113,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
   console.log("THIS IS A REQUEST TO THE SYSTEM\n\n\n");
 
   if (req.url.pathname == "/reservations") {
-    console.log("Sending mock data");
+    console.log("Getting reservations");
     res.writeHead(200, {
       'Content-Type': 'application/json'
     });

@@ -244,7 +244,7 @@ div label.day{
    height: 20px;
    position:absolute;
    z-index: 500;
-   margin-top: 80px;
+   margin-top: 100px;
 }
 
 
@@ -338,7 +338,7 @@ input{
 
 .day-chart{
   height:215px;
-  width:90%;
+  width:1440px;
   margin-left:50px;
   position:absolute;
   background-color:#ddddde;

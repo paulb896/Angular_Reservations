@@ -46,7 +46,7 @@
 
 
             <div class="reservation-length-indicator" style="width:{{ReservationModel.duration_minutes}}px; margin-left:{{ReservationModel.date | getChartPosition}}px;"></div>
-            <div style="margin-top: 190px; margin-left:-60px;">
+            <div style="margin-top: 190px;">
                 <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{indicator | getChartPosition}}px;">{{indicator | niceTime}}</div>
             </div>
         </div>
