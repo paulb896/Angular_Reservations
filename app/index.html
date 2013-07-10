@@ -24,32 +24,35 @@
       <div class="selectedDate">
         <div class="days-view">
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation">
-            <div class="reservation" style="margin-left:{{reservation.start | getChartPosition}}px;">
-              <span >{{reservation.start | niceTime}}</span>
+            <div class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
+              <span ng-bind="reservation.date | niceTime"></span>
               <span class="reservation_company">{{reservation.company}}</span>
-              <span>{{reservation.duration}}</span>
+              <span ng-bind="reservation.duration_minutes"></span><span>min</span>
                 <input ng-model="reservation.status" class="textStatus">
                 <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
             </div>
           </div>
+
+            <div class="day-chart" ng-click="addOnClick($event)">
+
+            </div>
+            <div class="{{requestedTime | reservationState}} requestedTime reservation" style="width:100px; margin-left:{{ReservationModel.date | getChartPosition}}px;">
+                <div>
+                    <input class="date-input" type="text" ng-model="ReservationModel.date">
+                </div>
+                <input type="text" ng-model="ReservationModel.duration_minutes" class="duration"><span style="font-size:17px; font-weight:900; color:#FFFFFF; margin-left: 5px;">minutes</span>
+                <span class="reserve" ng-click="requestedTime.reserve();">Reserve</span>
+            </div>
+
+
+            <div class="reservation-length-indicator" style="width:{{ReservationModel.duration_minutes}}px; margin-left:{{ReservationModel.date | getChartPosition}}px;"></div>
+            <div style="margin-top: 190px; margin-left:-60px;">
+                <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{indicator | getChartPosition}}px;">{{indicator | niceTime}}</div>
+            </div>
         </div>
       </div>
 
-      <div class="day-chart" ng-click="addOnClick($event)">
-          <div class="{{requestedTime | reservationState}} requestedTime reservation" style="width:{{requestedTime.duration_minutes | minuteWidth}}px; margin-left:{{requestedTime.date | getChartPosition}}px;">
-              <div>
-                  <input class="date-input" type="text" ng-model="requestedTime.date">
-              </div>
-              <input type="text" ng-model="requestedTime.duration_minutes" class="duration"><span style="font-size:17px; font-weight:900; color:#FFFFFF; margin-left: 5px;">minutes</span>
-              <span class="reserve" ng-click="requestedTime.reserve();">Reserve</span>
-          </div>
 
-
-           <div class="reservation-length-indicator" style="width:{{requestedTime.duration_minutes}}px; margin-left:{{requestedTime.date | getChartPosition}}px;"></div>
-           <div style="margin-top: 170px; margin-left:-60px;">
-             <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{indicator | getChartPosition}}px;">{{indicator | niceTime}}</div>
-           </div>
-      </div>
 
       <div class="calendar">
         <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)"

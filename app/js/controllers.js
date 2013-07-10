@@ -34,14 +34,30 @@ angular.module('userCalendar.controllers', []).
 
   }])
 
-  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', function($scope, defaultSelectedDate, myService, monthNames, ReservationRequest, UserModel) {
+  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', 'ReservationModel',
+    function($scope, defaultSelectedDate, myService, monthNames, ReservationRequest, UserModel, ReservationModel) {
+
     var dateNow = new Date();
     $scope.dateNow = dateNow;
+
     console.log("The following is my selectedDay: ");
     defaultSelectedDate.month = dateNow.getMonth();
     defaultSelectedDate.day = dateNow.getDate();
     $scope.monthNames = monthNames;
     $scope.selectedDate = defaultSelectedDate;
+
+
+    $scope.ReservationModel = ReservationModel;
+
+    $scope.setReservationModel = function(date) {
+        ReservationModel.date = date;
+        ReservationModel.month = date.getMonth();
+        ReservationModel.day = date.getDate();
+        ReservationModel.year = date.getFullYear();
+    }
+
+    $scope.setReservationModel(dateNow);
+
     $scope.updateSelected = function(day, month, year) {
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
       defaultSelectedDate.day = day;
@@ -124,6 +140,9 @@ angular.module('userCalendar.controllers', []).
           $scope.requestedTime.x = event.x;
           $scope.requestedTime.date = timeSelected;
 
+          $scope.setReservationModel(timeSelected);
+          console.log(ReservationModel);
+
           $scope.requestedTime.duration_minutes = defaultSelectedDate.duration;
 
           $scope.requestedTime.localized = timeSelected.toLocaleTimeString();
@@ -139,13 +158,12 @@ angular.module('userCalendar.controllers', []).
 
     $scope.requestedTime.reserve = function(){
       console.log("Attempting to request time: ");
-      // use s$scope.requestedTime.date
-      console.log($scope.requestedTime.localized);
-      console.log(" for " + $scope.requestedTime.duration_minutes + " minutes");
-      var reservation = angular.extend({start: $scope.requestedTime.date}, defaultSelectedDate, UserModel);
-      ReservationRequest.async(reservation).then(function(responseMessage) {
+      ReservationRequest.async(ReservationModel).then(function(responseMessage) {
         // Set success/failure message
-          $scope.updateSelected(defaultSelectedDate.day, defaultSelectedDate.month, defaultSelectedDate.year);
+
+          console.log("Reservation request complete, with response: ");
+          console.log(responseMessage);
+          $scope.updateSelected(ReservationModel.day, ReservationModel.month, ReservationModel.year);
       });
     }
 
@@ -162,7 +180,7 @@ angular.module('userCalendar.controllers', []).
 
 
     $scope.updateRequestToIndicator = function(date) {
-
+        $scope.setReservationModel(date);
     };
 
     return $scope.ReservationCtrl = this;

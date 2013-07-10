@@ -74,4 +74,15 @@ angular.module('userCalendar.services', []).
         "user_name" : "paulb896",
         "user_email" : "paulb896@gmail.com"
     };
+}).factory('ReservationModel', function(){
+    return {
+        "company" : "each, attending, member",
+        "address" : "123 Street name",
+        "month" : 7,
+        "day": 1,
+        "date" : "",
+        "year" : 2013,
+        "status" : "pending",
+        "duration_minutes": 0
+    };
 });
