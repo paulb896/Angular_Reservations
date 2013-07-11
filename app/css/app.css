@@ -1,6 +1,6 @@
 
 body{
-  background-color:#ddddde;
+  background-color:#ffffff;
   position:absolute;
   z-index:99999;
   width:100%;
@@ -219,12 +219,10 @@ div label.day{
   position:absolute;
   z-index:9999;
   background-color:transparent;
-  opacity:0.6;
   padding-top:16px;
   font-size: 16px;
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
-  letter-spacing:2px;
   -webkit-transition: all 0.5s;
 }
 
@@ -232,8 +230,7 @@ div label.day{
 .reservation:hover{
   opacity:1;
   position:absolute;
-  -webkit-transition: all 2s;
-  z-index: 15002;
+  -webkit-transition: all 0.8s;
 }
 
 .draggable { height: 90px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
@@ -265,7 +262,7 @@ div label.day{
     height:400px;
     overflow:scroll;
     padding-left:36px;
-    margin-top:210px;
+    margin-top:260px;
     -webkit-transition: all 1.4s;
     font-size:300%;
 }
@@ -338,9 +335,14 @@ input{
   width:1440px;
   margin-left:50px;
   position:absolute;
-  background-color:#ddddde;
+  background-color:#a0a0a0;
   -webkit-transition: all 1s;
   z-index:6000;
+  border-top-style:dotted;
+  border-width: 2px;
+  border-bottom-left-radius:20px;
+  border-bottom-right-radius:20px;
+  opacity: 0.75;
 }
 
 .calendar-controls{
@@ -411,15 +413,16 @@ input{
 .days-view{
   width:1440px;
   height:500px;
-  margin-top:-190px;
+  margin-top: 30px;
 }
 
 .timeIndicator {
     width: 0px;
-    color: #BBBBBB;
+    color: #eeeeee;
     height: 0px;
     position: absolute;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .timeIndicator:hover{

@@ -197,7 +197,8 @@ angular.module('userCalendar.controllers', []).
 
 
     $scope.updateRequestToIndicator = function(date) {
-        $scope.setReservationModel(date);
+        ReservationModel.date.setMinutes(date.getMinutes());
+        ReservationModel.date.setHours(date.getHours());
     };
 
     return $scope.ReservationCtrl = this;

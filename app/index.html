@@ -9,13 +9,8 @@
   <script src="js/jquery.js"></script>
   <script src="js/jquery-ui.js"></script>
 </head>
-<body style="font-family: 'Noto Serif', serif;">
+<body style="font-family: 'Noto Serif', serif; background-image:url('img/background-2.jpg'); background-size: 100%;" >
 <embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:120px; height:80px; z-index: 9005; margin-left: 45px;"/>
-
-
-
-
-
 
   <div ng-controller=ReservationCtrl>
       <div class="calendar-controls">
@@ -42,11 +37,10 @@
               </div>
           </div>
 
-
         <input ng-model="selectedDate.year">
       </div>
       <div style="width:800px; height:50px; position:absolute; z-index:5000;
-      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:4px; margin-top:5px; text-shadow: 0px 0px 2px #0000a0; color:#343434">
+      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:4px; margin-top:5px; text-shadow: 0px 0px 2px #0000a0; color:#ffffff">
         <span ng-bind="ReservationModel.month | monthName" class="month-selected"></span>
         <span ng-bind="ReservationModel.day" class="day-selected"></span>
         <span ng-bind="ReservationModel.year" class="year-selected"></span>
@@ -76,7 +70,7 @@
 
 
             <div class="reservation-length-indicator" style="width:{{ReservationModel.duration_minutes}}px; margin-left:{{ReservationModel.date | getChartPosition}}px;"></div>
-            <div style="margin-top: 190px;">
+            <div style="margin-top: -35px; z-index: 9999; position: absolute;">
                 <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{indicator | getChartPosition}}px;">{{indicator | niceTime}}</div>
             </div>
         </div>
@@ -87,7 +81,7 @@
       <div class="calendar">
         <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)"
              class="floatingTile day-floating-tile" style="background-color:#{{getColor(calendar.tile.colour, day)}};"
-             ng-click="selectedDate.day=day; updateSelected(day, selectedDate.month, selectedDate.year);"
+             ng-click="ReservationModel.day=day; updateSelected(day, selectedDate.month, selectedDate.year);"
            >
           <span class="dayOfMonth">
             {{day | extractDay}}
@@ -104,7 +98,6 @@
       <script src="js/controllers.js"></script>
       <script src="js/filters.js"></script>
       <script src="js/directives.js"></script>
-      <div class="draggable ui-widget-content background-pattern" style="width:90%; height:725px; background-color:#A9A398;"></div>
   </div>
 </body>
 </html>
