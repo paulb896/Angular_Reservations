@@ -233,7 +233,7 @@ div label.day{
   opacity:1;
   position:absolute;
   -webkit-transition: all 2s;
-  z-index: 1002;
+  z-index: 15002;
 }
 
 .draggable { height: 90px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
@@ -246,9 +246,6 @@ div label.day{
    z-index: 500;
    margin-top: 100px;
 }
-
-
-
 
 .background-pattern{
 
