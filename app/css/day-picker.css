@@ -14,7 +14,7 @@
 }
 
 
-.day-picker:hover{
+.day-picker.spin{
     margin-top:140px;
     -webkit-transition: all 0.6s;
     z-index: 2002;

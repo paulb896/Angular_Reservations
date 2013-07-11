@@ -3,7 +3,7 @@
 /* Controllers */
 
 var getReservations = function(day, month, year) {
-    var monthNames = [ "January", "February", "March", "April", "May", "June",
+    var monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December" ];
   
     return [
@@ -19,6 +19,15 @@ angular.module('userCalendar.controllers', []).
     //$scope.user = "Paul";
     //user = "Paul";
     $scope.user_name = "paul";
+  }])
+
+
+  .controller('DateControlsCtrl', ['$scope', function($scope) {
+    console.log("DATE CONTROLLER LOADED");
+    $scope.controls = {};
+    $scope.controls.spinToggle = function() {
+      $('#shape').toggleClass("spin");
+    };
   }])
 
 
@@ -47,6 +56,8 @@ angular.module('userCalendar.controllers', []).
     $scope.selectedDate = defaultSelectedDate;
 
 
+
+
     $scope.ReservationModel = ReservationModel;
 
     $scope.setReservationModel = function(date) {
@@ -57,6 +68,11 @@ angular.module('userCalendar.controllers', []).
     }
 
     $scope.setReservationModel(dateNow);
+
+    $scope.setMonth = function(month) {
+        console.log("Setting month to " + month);
+        ReservationModel.month = month;
+    };
 
     $scope.updateSelected = function(day, month, year) {
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
@@ -77,7 +93,7 @@ angular.module('userCalendar.controllers', []).
     //var days = [{"date":"10/07/13"},{"date":"10/08/13"}, {"date":"10/09/13"}];
     //$scope.days = days;
     $scope.getDays = function(month, year){
-      var daysInMonth = new Date(year, month, 0).getDate(),
+      var daysInMonth = (new Date(year, month, 0).getDate())+1,
       firstDayOfWeek = new Date(year, month, 1).getDay(),
       daysObject = new Array();
 

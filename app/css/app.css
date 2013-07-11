@@ -343,12 +343,17 @@ input{
   position:absolute;
   background-color:#ddddde;
   -webkit-transition: all 1s;
+  z-index:6000;
 }
 
 .calendar-controls{
-  float:right;
+  margin-top:-130px;
+  margin-top:-130px;
+  margin-left:400px;
   background-color:111111;
   opacity:0.8;
+  position: absolute;
+  z-index:4000;
 }
 
 .reservation_company{
@@ -422,6 +427,11 @@ input{
 
 .timeIndicator:hover{
     font-weight: 600;
+}
+
+.date-controls{
+    width:600px;
+    height: 200px;
 }
 
 /* ---------- month styles ------------- */
