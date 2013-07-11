@@ -27,6 +27,7 @@ angular.module('userCalendar.controllers', []).
     $scope.controls = {};
     $scope.controls.spinToggle = function() {
       $('#shape').toggleClass("spin");
+      $('.lever').toggleClass("spin");
     };
   }])
 

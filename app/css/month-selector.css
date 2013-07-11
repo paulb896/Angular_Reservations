@@ -27,9 +27,7 @@
 }
 
 .lever{
-    #border-radius: 50px;
-    #border: solid;
-    background-color:white;
+    background-color:blue;
     #width:50px;
     #height:50px;
     margin-left:720px;
@@ -38,13 +36,11 @@
     left:1px;
     width:29px;
     height:29px;
-    #margin-top:-6px;
-    /* css3 */
-    -webkit-border-radius:16px;
-    -moz-border-radius:16px;
-    border-radius:16px;
 }
 
+.lever.spin{
+    background-color: #1bff1b;
+}
 
 
 .plane {
