@@ -38,7 +38,7 @@
           </div>
       </div>
       <div style="width:800px; height:50px; position:absolute; z-index:5000;
-      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:4px; margin-top:5px; text-shadow: 0px 0px 2px #0000a0; color:#ffffff">
+      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:4px; margin-top:5px; text-shadow: 0px 0px 2px #0000a0; color:#000000">
         <span ng-bind="ReservationModel.month | monthName" class="month-selected"></span>
         <span ng-bind="ReservationModel.day" class="day-selected"></span>
         <span ng-bind="ReservationModel.year" class="year-selected"></span>
@@ -47,7 +47,7 @@
         <div class="days-view">
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation">
             <div class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
-              <span ng-bind="reservation.date | niceTime"></span>
+              <span ng-bind="reservation.date | niceTime" class="reservation_time"></span>
               <span class="reservation_company">{{reservation.company}}</span>
               <span ng-bind="reservation.duration_minutes"></span><span>min</span>
                 <input ng-model="reservation.status" class="textStatus">
@@ -62,7 +62,7 @@
                 <div>
                     <input class="date-input" type="text" ng-model="ReservationModel.date">
                 </div>
-                <input type="text" ng-model="ReservationModel.duration_minutes" class="duration"><span style="font-size:17px; font-weight:900; color:#FFFFFF; margin-left: 5px;">minutes</span>
+                <input type="text" ng-model="ReservationModel.duration_minutes" class="duration"><span style="font-size:17px; font-weight:900; color:#000000; margin-left: 5px;">minutes</span>
                 <span class="reserve" ng-click="requestedTime.reserve();">Reserve</span>
             </div>
 
