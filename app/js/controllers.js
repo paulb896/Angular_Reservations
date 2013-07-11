@@ -72,6 +72,7 @@ angular.module('userCalendar.controllers', []).
 
     $scope.setMonth = function(month) {
         console.log("Setting month to " + month);
+        defaultSelectedDate.month = month;
         ReservationModel.month = month;
         $scope.updateSelected(ReservationModel.day, ReservationModel.month, ReservationModel.year);
     };
