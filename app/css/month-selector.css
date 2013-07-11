@@ -2,10 +2,9 @@
     width: 400px;
     height: 200px;
     -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
-    -webkit-perspective-origin: 50% 125px;
-    margin-left: 800px;
-    margin-top:-175px;
-    border-bottom: solid;
+    -webkit-perspective-origin: 150% 255px;
+    margin-left: 460px;
+    margin-top:-205px;
 }
 #stage {
     width: 100%;
@@ -30,7 +29,7 @@
     background-color:blue;
     #width:50px;
     #height:50px;
-    margin-left:720px;
+    margin-left:570px;
     margin-top: 120px;
 
     left:1px;
