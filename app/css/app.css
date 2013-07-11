@@ -263,11 +263,13 @@ div label.day{
     overflow:scroll;
     padding-left:36px;
     margin-top:260px;
+    margin-left:461px;
     -webkit-transition: all 1.4s;
     font-size:300%;
 }
 
 .calendar:hover{
+  margin-left:161px;
   margin-top:170px;
   -webkit-transition: all 0.6s;
   z-index: 12002;
