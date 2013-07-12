@@ -281,7 +281,7 @@ div label.day{
 .calendar:hover{
   z-index: 12002;
     -webkit-transition: all 0.4s;
-  background-color:rgba(10,10,15,0.17);
+  background-color:rgba(50,50,55,0.05);
   width:90%;
   margin-left:50px;
 }
@@ -365,7 +365,7 @@ input{
 .calendar-controls{
   margin-top:-130px;
   margin-top:-130px;
-  margin-left:400px;
+  margin-left:300px;
   background-color:111111;
   opacity:0.8;
   position: absolute;
