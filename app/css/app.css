@@ -97,16 +97,23 @@ div.status.pending{
 }
 
 .floatingTile {
-  background-color: rgba(111,111,29,0.8);
+  background-color: rgba(127,127,128,0.95);
   #border-color:#999999;
   width: 80px;
   height: 80px;
   padding: 5px;
-  color:#dddddd;
+  color:#ffffff;
     cursor: default;
 }
 
 
+.floatingTile:hover {
+    -webkit-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+    -moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+    -ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+    transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
+    padding: 5px;
+}
 
 .day-floating-tile{
     -webkit-box-shadow:0 1px 4px rgba(10, 10, 10, 0.7), 0 0 40px rgba(0, 0, 0, 0.4) inset;
@@ -129,12 +136,6 @@ div.status.pending{
     position:relative;
 }
 
-.floatingTile:hover {
-    -webkit-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-    -moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-    -ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-    transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
-}
 
 
 .day-of-week-indicator{
@@ -237,11 +238,16 @@ div label.day{
 
 .reservation-length-indicator{
    -webkit-transition: width 2.5s, margin 0.5s;
-   background-color: #0000a0;
+   background-color: #1111a1;
    height: 20px;
    position:absolute;
    z-index: 500;
    margin-top: 100px;
+}
+
+.selectedTile{
+    color:white;
+    background-color: steelblue;
 }
 
 .background-pattern{
@@ -262,7 +268,7 @@ div label.day{
     height:400px;
     overflow:scroll;
     padding-left:36px;
-    margin-top:260px;
+    margin-top:390px;
     margin-left:461px;
     -webkit-transition: all 1.4s;
     font-size:300%;
@@ -273,7 +279,7 @@ div label.day{
   margin-top:170px;
   -webkit-transition: all 0.6s;
   z-index: 12002;
-  background-color:rgba(50,50,50,0.4);
+  background-color:rgba(10,10,15,0.67);
   height:540px;
   width:80%;
 }
@@ -289,15 +295,18 @@ span.dayOfMonth{
 .month-selected{
   margin-left:180px;
   font-size:200%;
+  font-family: 'Noto Serif', serif;
 }
 
 .day-selected{
   font-size:200%;
   margin-right:30px;
+    font-family: 'Noto Serif', serif;
 }
 
 .year-selected{
   font-size:200%;
+    font-family: 'Noto Serif', serif;
 } 
 
 label{
@@ -419,12 +428,12 @@ input{
 .days-view{
   width:1440px;
   height:500px;
-  margin-top: 30px;
+  margin-top: 130px;
 }
 
 .timeIndicator {
     width: 0px;
-    color: #eeeeee;
+    color: #000000;
     height: 0px;
     position: absolute;
     cursor: pointer;

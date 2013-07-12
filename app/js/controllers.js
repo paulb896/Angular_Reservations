@@ -189,12 +189,12 @@ angular.module('userCalendar.controllers', []).
     $scope.getReservations = getReservations;
 
 
-    $scope.getColor = function(defaultColor, day){
+    $scope.getCalendarClass = function(day, defaultColor){
         if (day == $scope.selectedDate.day) {
-            return "0000a0";
+            return defaultColor;
         }
 
-        return defaultColor;
+        return "";
     };
 
 

@@ -10,7 +10,7 @@
   <script src="js/jquery-ui.js"></script>
 </head>
 <body style="font-family: 'Noto Serif', serif; background-image:url('img/background-2.jpg'); background-size: 100%;" >
-<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:120px; height:80px; z-index: 9005; margin-left: 45px;"/>
+<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:220px; height:160px; z-index: 9005; margin-left: 45px;"/>
 
   <div ng-controller=ReservationCtrl>
       <div class="calendar-controls">
@@ -38,7 +38,7 @@
           </div>
       </div>
       <div style="width:800px; height:50px; position:absolute; z-index:5000;
-      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:4px; margin-top:5px; text-shadow: 0px 0px 2px #0000a0; color:#000000">
+      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; margin-top:10px; text-shadow: -5px 3px 9px #eeeeee; color:#000000; margin-left: 350px;">
         <span ng-bind="ReservationModel.month | monthName" class="month-selected"></span>
         <span ng-bind="ReservationModel.day" class="day-selected"></span>
         <span ng-bind="ReservationModel.year" class="year-selected"></span>
@@ -78,7 +78,7 @@
 
       <div class="calendar">
         <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)"
-             class="floatingTile day-floating-tile" style="background-color:#{{getColor(calendar.tile.colour, day)}};"
+             class="floatingTile day-floating-tile" ng-class="getCalendarClass(day, 'selectedTile')"
              ng-click="ReservationModel.day=day; updateSelected(day, selectedDate.month, selectedDate.year);"
            >
           <span class="dayOfMonth">
