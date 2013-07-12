@@ -88,6 +88,7 @@ div.status.pending{
 
 .reserve{
   float:right;
+  color: black;
   background-color: #EEEEEE;
   border:2px solid black;
   cursor: pointer;
@@ -193,6 +194,8 @@ div.status.pending{
     font-size: 16px;
     border: none;
     padding:7px;
+    width:250px;
+    background-color: rgba(240,240,240,0.2);
 }
 
 .selectedDate{
@@ -323,7 +326,7 @@ ul{
  font-size: 20px;
  width:40px;
  height: 25px;
- opacity: 0.8;
+ background-color: rgba(240,240,240,0.2);
  border: none;
  font-style: italic;
 }
