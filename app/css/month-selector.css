@@ -3,8 +3,8 @@
     height: 200px;
     -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
     -webkit-perspective-origin: 150% 255px;
-    margin-left: 460px;
-    margin-top:-55px;
+    margin-left: 125%;
+    margin-top:-139px;
     position: absolute;
 }
 #stage {
@@ -12,6 +12,7 @@
     height: 100%;
     -webkit-transition: -webkit-transform 2s;
     -webkit-transform-style: preserve-3d;
+    -webkit-transform: translateY(100px) translateZ(-264px);
 }
 
 #shape {
@@ -27,7 +28,7 @@
 }
 
 .lever{
-    background-color:steelblue;
+    background-color:maroon;
     #width:50px;
     #height:50px;
     margin-left:570px;
@@ -36,7 +37,8 @@
     left:1px;
     width:29px;
     height:29px;
-    z-index:9999;
+    z-index:19999;
+    opacity: 0.5;
 }
 
 .lever.spin{
@@ -53,7 +55,7 @@
     text-align: center;
     font-family: Times, serif;
     font-size: 38px;
-    color: black;
+    color: darkgrey;
     background-color: transparent;
     -webkit-transition: -webkit-transform 2s, opacity 2s;
     -webkit-backface-visibility: hidden;
@@ -80,6 +82,7 @@
 
 .ring{
     cursor: pointer;
+
 }
 
 /* ---------- ring styles ------------- */

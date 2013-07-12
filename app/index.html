@@ -10,7 +10,7 @@
   <script src="js/jquery-ui.js"></script>
 </head>
 <body style="font-family: 'Noto Serif', serif; background-image:url('img/background-2.jpg'); background-size: 100%;" >
-<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:220px; height:160px; z-index: 9005; margin-left: 45px;"/>
+<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:220px; height:160px; z-index: 9005; margin-left: 195px;"/>
 
   <div ng-controller=ReservationCtrl>
       <div class="calendar-controls">
@@ -18,7 +18,7 @@
           <div ng-controller="DateControlsCtrl" class="date-controls">
               <div class="lever" ng-click="controls.spinToggle('shape', 'spin')"></div>
               <div id="month-picker">
-                  <div id="stage" style="-webkit-transform: translateZ(-700px);">
+                  <div id="stage">
                       <div id="shape" class="ring">
                           <div class="plane one" ng-click="setMonth(0);">January</div>
                           <div class="plane two" ng-click="setMonth(1);">February</div>
