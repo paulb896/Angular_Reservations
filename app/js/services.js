@@ -85,4 +85,8 @@ angular.module('userCalendar.services', []).
         "status" : "pending",
         "duration_minutes": 0
     };
+}).factory('CalendarState', function(){
+  return {
+    "date" : ""
+  };
 });

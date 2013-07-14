@@ -80,6 +80,7 @@ angular.module('userCalendar.controllers', []).
     $scope.updateSelected = function(day, month, year) {
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
       defaultSelectedDate.day = day;
+      $scope.setReservationModel(new Date(year, month, day));
       myService.async(day, month, year).then(function(d) {
         // Send view an array of reservations for the current state
         $scope.selectedDate.reservations = d;
@@ -107,6 +108,10 @@ angular.module('userCalendar.controllers', []).
       // Remove first element because my solution sucks.. REMOVE THIS
       daysObject.splice(0,1);
       console.log("Getting days" + daysInMonth);
+
+
+
+
       return daysObject;
     };
 

@@ -10,13 +10,13 @@
   <script src="js/jquery-ui.js"></script>
 </head>
 <body style="font-family: 'Noto Serif', serif; background-image:url('img/background-2.jpg'); background-size: 100%;" >
-<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:220px; height:160px; z-index: 9005; margin-left: 195px;"/>
+<embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:220px; height:160px; z-index: 9005; margin-left: 48px;"/>
 
   <div ng-controller=ReservationCtrl>
       <div class="calendar-controls">
         <input ng-model="selectedDate.month">
           <div ng-controller="DateControlsCtrl" class="date-controls">
-              <div class="lever" ng-click="controls.spinToggle('shape', 'spin')"></div>
+              <div class="lever" ng-click="controls.spinToggle('shape', 'spin')" style="background-image:url('img/gear.png');"></div>
               <div id="month-picker">
                   <div id="stage">
                       <div id="shape" class="ring">
@@ -37,8 +37,9 @@
               </div>
           </div>
       </div>
-      <div style="width:800px; height:50px; position:absolute; z-index:5000;
-      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; margin-top:10px; text-shadow: -5px 3px 9px #eeeeee; color:#000000; margin-left: 350px;">
+      <div style="width:400px; height:50px; position:absolute; z-index:5000;
+      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; margin-top:10px; text-shadow: -5px 3px 9px #eeeeee; color:#000000; margin-left: 310px;">
+        <span ng-bind="ReservationModel.date | dayOfWeek" class="day-of-week"></span>
         <span ng-bind="ReservationModel.month | monthName" class="month-selected"></span>
         <span ng-bind="ReservationModel.day" class="day-selected"></span>
         <span ng-bind="ReservationModel.year" class="year-selected"></span>
@@ -77,7 +78,7 @@
 
 
       <div class="calendar">
-        <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year)"
+        <div ng-repeat="day in getDays(selectedDate.month, selectedDate.year);"
              class="floatingTile day-floating-tile" ng-class="getCalendarClass(day, 'selectedTile')"
              ng-click="ReservationModel.day=day; updateSelected(day, selectedDate.month, selectedDate.year);"
            >

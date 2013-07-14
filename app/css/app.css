@@ -10,7 +10,7 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
+    filter: alpha(opacity=10);
 }
 
 ::-webkit-scrollbar {
@@ -224,7 +224,7 @@ div label.day{
   position:absolute;
   z-index:9999;
   background-color:transparent;
-  padding-top:16px;
+  padding-top:4px;
   font-size: 16px;
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
@@ -254,26 +254,14 @@ div label.day{
     background-color: steelblue;
 }
 
-.background-pattern{
-
-    background-color: #6d695c;
-    background-image:
-        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
-        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 10px),
-        linear-gradient(80deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(110,0,0,.1)),
-        linear-gradient(160deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(110,0,0,.1));
-    background-size: 70px 120px;
-}
-
-
 .calendar{
     position:absolute;
     width:900px;
     height:400px;
     overflow:scroll;
     padding-left:36px;
-    margin-top:390px;
-    margin-left:461px;
+    margin-top:280px;
+    margin-left:280px;
     -webkit-transition: all 2.4s;
     font-size:300%;
 }
@@ -295,7 +283,7 @@ span.dayOfMonth{
 
 
 .month-selected{
-  margin-left:180px;
+  margin-left:20px;
   font-size:200%;
   font-family: 'Noto Serif', serif;
 }
@@ -349,7 +337,7 @@ input{
 }
 
 .day-chart{
-  height:215px;
+  height:150px;
   width:1440px;
   margin-left:50px;
   position:absolute;
@@ -362,11 +350,15 @@ input{
   opacity: 0.45;
 }
 
+.day-of-week{
+    font-size: 48px;
+    font-family:"Trebuchet MS, Helvetica, sans-serif";
+}
+
 .calendar-controls{
   margin-top:-130px;
   margin-top:-130px;
   margin-left:300px;
-  background-color:111111;
   opacity:0.8;
   position: absolute;
   z-index:4000;
@@ -422,9 +414,7 @@ input{
 }
 
 .requestedTime{
-  opacity:1 !important;
   z-index:9999;
-  margin-top: 20px;
 }
 
 .days-view{
