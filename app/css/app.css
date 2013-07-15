@@ -242,11 +242,11 @@ div label.day{
 
 .reservation-length-indicator{
    -webkit-transition: width 2.5s, margin 0.5s;
-   background-color: #1111a1;
+   background-color: steelblue;
    height: 20px;
    position:absolute;
    z-index: 500;
-   margin-top: 100px;
+   margin-top: 68px;
 }
 
 .selectedTile{
@@ -256,12 +256,12 @@ div label.day{
 
 .calendar{
     position:absolute;
-    width:900px;
+    width:90%;
     height:400px;
     overflow:scroll;
     padding-left:36px;
     margin-top:280px;
-    margin-left:280px;
+    margin-left:5%;
     -webkit-transition: all 2.4s;
     font-size:300%;
 }
@@ -270,8 +270,6 @@ div label.day{
   z-index: 12002;
     -webkit-transition: all 0.4s;
   background-color:rgba(50,50,55,0.05);
-  width:90%;
-  margin-left:50px;
 }
 
 
@@ -283,7 +281,7 @@ span.dayOfMonth{
 
 
 .month-selected{
-  margin-left:20px;
+  margin-left:8px;
   font-size:200%;
   font-family: 'Noto Serif', serif;
 }
