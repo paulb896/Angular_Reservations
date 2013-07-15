@@ -256,12 +256,12 @@ div label.day{
 
 .calendar{
     position:absolute;
-    width:90%;
+    width:89%;
     height:400px;
     overflow:scroll;
     padding-left:36px;
     margin-top:280px;
-    margin-left:5%;
+    margin-left:3%;
     -webkit-transition: all 2.4s;
     font-size:300%;
 }

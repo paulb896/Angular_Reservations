@@ -66,7 +66,7 @@ angular.module('userCalendar.controllers', []).
         ReservationModel.month = date.getMonth();
         ReservationModel.day = date.getDate();
         ReservationModel.year = date.getFullYear();
-    }
+    };
 
     $scope.setReservationModel(dateNow);
 
@@ -99,14 +99,14 @@ angular.module('userCalendar.controllers', []).
 
     $scope.getMonths = function() {
       return monthNames;
-    }
+    };
 
     // Extract this function into separate module
 
     //var days = [{"date":"10/07/13"},{"date":"10/08/13"}, {"date":"10/09/13"}];
     //$scope.days = days;
     $scope.getDays = function(month, year){
-      var daysInMonth = (new Date(year, month, 0).getDate())+1,
+      var daysInMonth = (new Date(year, month+1, 0).getDate())+1,
       firstDayOfWeek = new Date(year, month, 1).getDay(),
       daysObject = new Array();
 
@@ -117,13 +117,8 @@ angular.module('userCalendar.controllers', []).
       // Remove first element because my solution sucks.. REMOVE THIS
       daysObject.splice(0,1);
       console.log("Getting days" + daysInMonth);
-
-
-
-
       return daysObject;
     };
-
 
     $scope.toggleStatus = function(selectedDate, key, currentStatus){
       var toggleStates = ["declined", "pending", "approved"];
@@ -155,7 +150,6 @@ angular.module('userCalendar.controllers', []).
         new Date(2013,6,6,21,0),
         new Date(2013,6,6,23,59)
     );
-
 
     $scope.requestedTime = {};
     $scope.addOnClick = function(event) {

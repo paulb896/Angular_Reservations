@@ -13,7 +13,7 @@ angular.module('userCalendar.services', []).
       "company" : "each, attending, member",
       "address" : "Restaurant Address",
       "selectedDateStatus" : "Current Booking Status",
-      "month" : "7",
+      "month" : "9",
       "time" : "12:42:11",
       "year" : 2013,
       "status" : "pending",
