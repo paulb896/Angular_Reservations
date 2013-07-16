@@ -207,6 +207,7 @@ padding-top:75px;
 .day-selected{
   margin-left:15px;
   font-size:40px;
+  background-color: transparent;
 }
 
 div label.day{
@@ -256,7 +257,7 @@ div label.day{
 
 .calendar{
     position:absolute;
-    width:89%;
+    width:40%;
     height:400px;
     overflow:scroll;
     padding-left:36px;
@@ -282,11 +283,16 @@ span.dayOfMonth{
   font-size:200%;
   margin-right:30px;
     font-family: 'Noto Serif', serif;
+    width:70px;
+    outline-offset: 0px;
 }
 
 .year-selected{
   font-size:200%;
     font-family: 'Noto Serif', serif;
+    background-color: transparent;
+    width:120px;
+
 } 
 
 label{
