@@ -28,6 +28,7 @@ body{
   padding: 2px;
   background-color: transparent;
   color:#000000;
+    cursor:pointer;
 }
 
 .textStatus::-moz-selection {
@@ -41,7 +42,7 @@ background-color:green;
 
 
 .textStatus::selection {
-background-color:green;
+    color:#0000a0;
 }
 
 div.status {
@@ -54,15 +55,15 @@ div.status {
   -webkit-transition: all 1s;
   float:left;
   border-radius: 15px;
+  cursor:pointer;
 }
 
 
 div.status:hover {
   border-color:#BABABA;
-  #-webkit-animation-duration: 1.5s;
-  #-webkit-transition: border-color 1s;
   -webkit-transition: all 1s;
-  opacity:0.75;
+  opacity:1;
+
 }
 
 div.status.approved{
@@ -116,6 +117,9 @@ div.status.pending{
     transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     padding: 5px;
     font-weight: 700;
+    -webkit-animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
 }
 
 .day-floating-tile{
@@ -128,10 +132,10 @@ div.status.pending{
     #border-width: 1px;
     #border-style: solid;
     cursor: default;
-    -webkit-transition: 0.2s all;
-    -moz-transition: 0.2s all;
-    -ms-transition: 0.2s all;
-    transition: 0.2s all;
+    -webkit-transition:0.28s all;
+    -moz-transition:0.28s all;
+    -ms-transition:0.28s all;
+    transition:0.28s all;
     margin:14px;
     display:inline;
     margin-top:25px;
@@ -263,7 +267,7 @@ div label.day{
     width:23.8%;
     float:right;
     margin-top: 282px;
-    margin-right:6.9%;
+    margin-right:6%;
     background-color:rgba(20,20,30,0.2);
     height:180px;
     font-family: "Trebuchet MS, Helvetica, sans-serif";
@@ -293,7 +297,7 @@ div label.day{
 .calendar{
     position:absolute;
     width:70%;
-    height:400px;
+    height:700px;
     overflow:scroll;
     padding-left:36px;
     margin-top:280px;
@@ -391,6 +395,7 @@ input{
 .reservation_company{
     font-style: italic;
     height:40px;
+    margin-top: 40px;
 }
 
 

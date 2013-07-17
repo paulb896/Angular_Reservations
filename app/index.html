@@ -48,10 +48,10 @@
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation">
             <div class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
               <span ng-bind="reservation.date | niceTime" class="reservation_time"></span>
-              <span class="reservation_company">{{reservation.company}}</span>
               <span ng-bind="reservation.duration_minutes"></span><span>min</span>
-                <input ng-model="reservation.status" class="textStatus">
-                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"></div>
+
+                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"><input ng-model="reservation.status" class="textStatus"></div>
+                <div class="reservation_company">{{reservation.company}}</div>
             </div>
           </div>
 
