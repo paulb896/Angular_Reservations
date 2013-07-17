@@ -98,7 +98,7 @@ div.status.pending{
 }
 
 .floatingTile {
-  background-color: rgba(127,127,128,0.95);
+  background-color: rgba(68,58,58,0.67);
   #border-color:#999999;
   width: 80px;
   height: 80px;
@@ -109,11 +109,13 @@ div.status.pending{
 
 
 .floatingTile:hover {
+    background-color: rgba(58,58,78,0.87);
     -webkit-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     -moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     -ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     padding: 5px;
+    font-weight: 700;
 }
 
 .day-floating-tile{
@@ -126,15 +128,16 @@ div.status.pending{
     #border-width: 1px;
     #border-style: solid;
     cursor: default;
-    -webkit-transition: 0.3s all;
-    -moz-transition: 0.3s all;
-    -ms-transition: 0.3s all;
-    transition: 0.3s all;
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -ms-transition: 0.2s all;
+    transition: 0.2s all;
     margin:14px;
     display:inline;
     margin-top:25px;
     float:left;
     position:relative;
+    cursor:pointer;
 }
 
 
@@ -253,11 +256,43 @@ div label.day{
 .selectedTile{
     color:white;
     background-color: steelblue;
+    font-weight: 800;
+}
+
+.attendees{
+    width:23.8%;
+    float:right;
+    margin-top: 282px;
+    margin-right:6.9%;
+    background-color:rgba(20,20,30,0.2);
+    height:180px;
+    font-family: "Trebuchet MS, Helvetica, sans-serif";
+    font-style: italic;
+}
+
+.add-attendee-input{
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.add-attendee-button{
+    width:100px;
+    height:50px;
+    font-size: 40px;
+    font-family: fantasy;
+    margin-left: 20px;
+    cursor: pointer;
+    color: rgba(33,33,33,0.5);
+}
+
+.add-attendee-button:hover{
+    color:#0000a0;
+    font-weight: 800;
 }
 
 .calendar{
     position:absolute;
-    width:40%;
+    width:70%;
     height:400px;
     overflow:scroll;
     padding-left:36px;
@@ -301,11 +336,6 @@ label{
 }
 
 
-ul{
-  padding:40px;
-  margin-left:100px;
-}
-
 .duration{
  font-size: 20px;
  width:40px;
@@ -337,13 +367,13 @@ input{
   width:1440px;
   margin-left:50px;
   position:absolute;
-  background-color:rgba(20,20,30,0.4);
+  background-color:rgba(20,20,30,0.2);
   -webkit-transition: all 1s;
   z-index:6000;
   border-top-style:dotted;
   border-width: 2px;
   border-top-color: #111111;
-  opacity: 0.25;
+  cursor: pointer;
 }
 
 .day-of-week{
@@ -353,9 +383,7 @@ input{
 
 .calendar-controls{
   margin-top:-130px;
-  margin-top:-130px;
-  margin-left:300px;
-  opacity:0.8;
+  margin-left:820px;
   position: absolute;
   z-index:4000;
 }

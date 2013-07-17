@@ -2,22 +2,21 @@
     width: 400px;
     height: 200px;
     -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
-    -webkit-perspective-origin: 150% 255px;
-    margin-left: 125%;
-    margin-top:-139px;
+    -webkit-perspective-origin: 0% 25px;
+    margin-left: 180px;
     position: absolute;
+    margin-top: 100px;
 }
 #stage {
     width: 100%;
     height: 100%;
     -webkit-transition: -webkit-transform 2s;
     -webkit-transform-style: preserve-3d;
-    -webkit-transform: translateY(100px) translateZ(-264px);
+    -webkit-transform: translateZ(-564px);
 }
 
 #shape {
     position: relative;
-    top: 160px;
     margin: 0 auto;
     height: 200px;
     width: 200px;
@@ -30,8 +29,8 @@
 .lever{
     #width:50px;
     #height:50px;
-    margin-left:400px;
-    margin-top: 100px;
+    margin-left:237px;
+    margin-top: 133px;
     margin-right: 50px;
     position:absolute;
     left:1px;
