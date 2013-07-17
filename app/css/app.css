@@ -109,17 +109,20 @@ div.status.pending{
 }
 
 
-.floatingTile:hover {
+.floatingTile:hover:not(.selectedTile) {
     background-color: rgba(58,58,78,0.87);
+}
+
+.floatingTile:hover{
     -webkit-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     -moz-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     -ms-transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     transform: scale(0.87) perspective(100px) rotateY(0deg) rotateX(0deg);
     padding: 5px;
     font-weight: 700;
-    -webkit-animation-timing-function: ease-out;
-    -moz-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
 }
 
 .day-floating-tile{
@@ -144,6 +147,18 @@ div.status.pending{
     cursor:pointer;
 }
 
+.selectedTile{
+    color:white;
+    background-color: steelblue;
+    font-weight: 800;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-transition:0.58s all;
+    -moz-transition:0.58s all;
+    -ms-transition:0.58s all;
+    transition:0.58s all;
+}
 
 
 .day-of-week-indicator{
@@ -257,11 +272,6 @@ div label.day{
    margin-top: 68px;
 }
 
-.selectedTile{
-    color:white;
-    background-color: steelblue;
-    font-weight: 800;
-}
 
 .attendees{
     width:23.8%;
