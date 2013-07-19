@@ -185,7 +185,6 @@ angular.module('userCalendar.controllers', []).
         $scope.requestedTime.year = defaultSelectedDate.year;
           console.log("starting with" + event.x);
           console.log(event);
-
     };
 
 
@@ -218,6 +217,15 @@ angular.module('userCalendar.controllers', []).
 
         //ReservationModel.date.setMinutes(date.getMinutes());
         //ReservationModel.date.setHours(date.getHours());
+    };
+
+    $scope.addAttendee = function(name) {
+        if (!ReservationModel.company) {
+            ReservationModel.company = name;
+        } else {
+            ReservationModel.company += ', ' + name;
+        }
+        $scope.attendee = "";
     };
 
     return $scope.ReservationCtrl = this;

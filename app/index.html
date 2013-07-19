@@ -87,15 +87,10 @@
         </div>
      </div>
 
-      <div class="attendees">
-          <ul>
-              <li>each</li>
-              <li>attending</li>
-              <li>member</li>
-          </ul>
-         <span class="add-attendee-button">+</span>
-         <input ng-model="add-attendee" class="add-attendee-input">
-
+      <div class="attendees {{requestedTime | reservationState}}" style="margin-left:{{ReservationModel.date | getChartPosition}}px;">
+         <input ng-model="attendee" class="add-attendee-input">
+          <span class="add-attendee-button" ng-click="addAttendee(attendee)">+</span>
+          <div ng-bind="ReservationModel.company" class="requested-company"></div>
       </div>
 
       <!-- In production use:

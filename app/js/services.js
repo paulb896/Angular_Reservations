@@ -76,7 +76,7 @@ angular.module('userCalendar.services', []).
     };
 }).factory('ReservationModel', function(){
     return {
-        "company" : "each, attending, member",
+        "company" : "",
         "address" : "123 Street name",
         "month" : 7,
         "day": 1,
