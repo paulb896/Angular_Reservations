@@ -50,11 +50,13 @@ angular.module('userCalendar.controllers', []).
 
   }])
 
-  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', 'ReservationModel',
-    function($scope, defaultSelectedDate, myService, monthNames, ReservationRequest, UserModel, ReservationModel) {
+  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', 'ReservationModel', 'ApplicationDataModel',
+    function($scope, defaultSelectedDate, myService, monthNames, ReservationRequest, UserModel, ReservationModel, ApplicationDataModel) {
 
     var dateNow = new Date();
     $scope.dateNow = dateNow;
+
+    $scope.ApplicationDataModel = ApplicationDataModel;
 
     console.log("The following is my selectedDay: ");
     defaultSelectedDate.month = dateNow.getMonth();
@@ -68,6 +70,8 @@ angular.module('userCalendar.controllers', []).
     $scope.ReservationModel = ReservationModel;
 
     $scope.setReservationModel = function(date) {
+        ApplicationDataModel.reservationSelected = ReservationModel;
+
         ReservationModel.date = date;
         ReservationModel.month = date.getMonth();
         ReservationModel.day = date.getDate();

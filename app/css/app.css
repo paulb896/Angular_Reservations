@@ -294,9 +294,6 @@ div label.day{
     border-left:solid;
     border-right:solid;
     border-width: 1px;
-    -webkit-box-shadow:0px 12px 15px rgba(11, 11, 11, 0.4), 0 0 20px rgba(0, 0, 0, 0.2) inset;
-    -moz-box-shadow:0px 12px 15px rgba(11, 11, 11, 0.4), 0 0 20px rgba(0, 0, 0, 0.2) inset;
-    box-shadow:0px 12px 15px  rgba(11, 11, 11, 0.4), 0 0 20px rgba(0, 0, 11, 0.2) inset;
 }
 
 .add-attendee-input{

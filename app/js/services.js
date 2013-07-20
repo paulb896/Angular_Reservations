@@ -89,4 +89,9 @@ angular.module('userCalendar.services', []).
   return {
     "date" : ""
   };
-});
+}).factory('ApplicationDataModel', function(){
+    return {
+      "users" :       [],
+      "reservations": []
+    };
+})
