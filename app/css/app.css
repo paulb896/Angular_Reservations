@@ -267,6 +267,7 @@ div label.day{
   opacity:1;
   position:absolute;
   -webkit-transition: all 0.8s;
+  z-index: 99999;
 }
 
 .reservation.selected{
