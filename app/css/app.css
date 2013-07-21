@@ -348,6 +348,10 @@ div label.day{
     cursor: pointer;
 }
 
+.attendee-icon:hover{
+    background-image:url('../img/add-user-icon-alt.png');
+}
+
 .attendee-icon-alt{
     background-image:url('../img/add-user-icon-alt.png');
     width:50px;
