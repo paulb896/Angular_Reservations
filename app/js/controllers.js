@@ -230,11 +230,9 @@ angular.module('userCalendar.controllers', []).
     };
 
     $scope.addAttendee = function(name) {
-//        if (!ReservationModel.company) {
-//            ReservationModel.company = name;
-//        } else {
-//            ReservationModel.company += ', ' + name;
-//        }
+        if (!name) {
+            return;
+        }
 
         if (!NavModel.selectedReservation.company) {
             NavModel.selectedReservation.company = name;
