@@ -72,3 +72,13 @@ angular.module('userCalendar.filters', []).
           return "";
       }
   }])
+.filter('updateState', [function(requestedTime) {
+    return function(requestedTime) {
+        if (requestedTime
+            && !requestedTime.hasOwnProperty("modified")
+            ) {
+            return "hidden";
+        }
+        return "";
+    }
+}])

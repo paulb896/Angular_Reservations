@@ -301,6 +301,10 @@ div label.day{
     border-right:solid;
     border-width: 1px;
     overflow: scroll;
+    -moz-box-shadow:    3px 3px 15px #444444;
+    -webkit-box-shadow: 3px 3px 15px #444444;
+    box-shadow:         3px 3px 15px #444444;
+
 }
 
 .add-attendee-input{
@@ -324,6 +328,14 @@ div label.day{
 .add-attendee-button:hover{
     color:rgba(10,10,30, 0.8);
     font-weight: 800;
+}
+
+.update-changes-icon{
+    background-image:url('../img/update-icon.png');
+    width:30px;
+    height:30px;
+    float:right;
+    opacity: 0.8;
 }
 
 

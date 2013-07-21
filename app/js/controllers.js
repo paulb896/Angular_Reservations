@@ -239,6 +239,7 @@ angular.module('userCalendar.controllers', []).
         } else {
             NavModel.selectedReservation.company += ', ' + name;
         }
+        NavModel.selectedReservation.modified = true;
 
         $scope.attendee = "";
     };

@@ -49,6 +49,7 @@
         <div class="days-view">
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation">
             <div class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
+                <div class="update-changes-icon" ng-class="reservation | updateState"></div>
               <span ng-bind="reservation.date | niceTime" class="reservation_time"></span>
               <span ng-bind="reservation.duration_minutes"></span><span>min</span>
 
