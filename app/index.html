@@ -78,7 +78,7 @@
 
 
             <div class="reservation-length-indicator" style="width:{{ReservationModel.duration_minutes}}px; margin-left:{{ReservationModel.date | getChartPosition}}px;"></div>
-            <div style="padding-top:5px; border-top-left-radius:7px; border-top-right-radius:7px; margin-top: -44px; z-index: 99; position: absolute; background-color: rgba(180,180,195,0.3); width: 1440px; height: 40px; margin-left: 50px; overflow: hidden;">
+            <div style="border-top:solid silver 1px; ;padding-top:5px; border-top-left-radius:7px; border-top-right-radius:7px; margin-top: -44px; z-index: 99; position: absolute; background-color: rgba(180,180,195,0.3); width: 1440px; height: 40px; margin-left: 50px; overflow: hidden;">
                 <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{(indicator | getChartPosition)-50}}px;">{{indicator | niceTime}}</div>
             </div>
         </div>
