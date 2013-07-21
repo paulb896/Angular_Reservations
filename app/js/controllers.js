@@ -191,6 +191,10 @@ angular.module('userCalendar.controllers', []).
         $scope.requestedTime.year = defaultSelectedDate.year;
           console.log("starting with" + event.x);
           console.log(event);
+
+
+        // Removing the selected state of the reservation model
+        NavModel.selectedReservation = null;
     };
 
 
