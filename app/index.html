@@ -89,14 +89,10 @@
               </div>
            </div>
 
-    <div class="attendees {{NavModel.selectedReservation | reservationState}}" style="margin-left:{{NavModel.selectedReservation.date | getChartPosition}}px;">
-      <div class=attendee-icon></div>
-       <input ng-model="attendee" class="add-attendee-input" ui-keypress="addAttendee(attendee);">
-        <span class="add-attendee-button" ng-click="addAttendee(attendee)">+</span>
-        <div ng-bind="ReservationModel.company" class="requested-company"></div>
-    </div>
-
-
+     <div class="attendees {{NavModel.selectedReservation | reservationState}}" style="margin-left:{{NavModel.selectedReservation.date | getChartPosition}}px;">
+       <div class=attendee-icon ng-click="addAttendee(attendee)"></div>
+       <input ng-model="attendee" class="add-attendee-input" ui-keypress="addAttendee(attendee);"/>
+     </div>
 
       <script src="lib/angular/angular.js"></script>
       <script src="js/app.js"></script>
