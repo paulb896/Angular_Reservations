@@ -50,8 +50,10 @@ angular.module('userCalendar.controllers', []).
 
   }])
 
-  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', 'ReservationModel', 'ApplicationDataModel',
-    function($scope, defaultSelectedDate, myService, monthNames, ReservationRequest, UserModel, ReservationModel, ApplicationDataModel) {
+
+
+  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'NavModel', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', 'ReservationModel', 'ApplicationDataModel',
+    function($scope, defaultSelectedDate, NavModel, myService, monthNames, ReservationRequest, UserModel, ReservationModel, ApplicationDataModel) {
 
     var dateNow = new Date();
     $scope.dateNow = dateNow;
@@ -224,12 +226,40 @@ angular.module('userCalendar.controllers', []).
     };
 
     $scope.addAttendee = function(name) {
-        if (!ReservationModel.company) {
-            ReservationModel.company = name;
+//        if (!ReservationModel.company) {
+//            ReservationModel.company = name;
+//        } else {
+//            ReservationModel.company += ', ' + name;
+//        }
+
+        if (!NavModel.selectedReservation.company) {
+            NavModel.selectedReservation.company = name;
         } else {
-            ReservationModel.company += ', ' + name;
+            NavModel.selectedReservation.company += ', ' + name;
         }
+
         $scope.attendee = "";
+    };
+
+
+    // Wrap this in jquery ready event
+//    $(".add-attendee-input").keypress(function(event) {
+//        console.log(event);
+//        console.log("Handler for .keypress() called.");
+//        if (event.keyCode === 13) {
+//            console.log('Enter key');
+//            $scope.addAttendee(event.target.value);
+//        }
+//
+//    });
+
+
+    $scope.NavModel = NavModel;
+
+    $scope.setReservationSelected =  function(reservation){
+        NavModel.selectedReservation = reservation;
+        console.log("Nav model is set to: ");
+        console.log(NavModel);
     };
 
     return $scope.ReservationCtrl = this;

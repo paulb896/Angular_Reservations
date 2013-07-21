@@ -12,10 +12,11 @@
 <body>
 <embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:180px; height:130px; z-index: 9005; margin-left: 48px;"/>
   <div ng-controller=ReservationCtrl>
+      <!-- Date modification controls -->
       <div class="calendar-controls">
         <input ng-model="selectedDate.month">
           <div ng-controller="DateControlsCtrl" class="date-controls">
-              <div class="lever" ng-click="controls.spinToggle()" style=";"></div>
+              <div class="lever" ng-click="controls.spinToggle()"></div>
               <div id="month-picker">
                   <div id="stage">
                       <div id="shape" class="ring">
@@ -36,16 +37,17 @@
               </div>
           </div>
       </div>
-      <div style="width:400px; height:50px; position:absolute; z-index:5000;
-      font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; text-shadow: -5px 3px 9px #eeeeee; color:#000000; margin-left: 310px;">
+      <div class="current-selected-date" style="">
         <span ng-bind="ReservationModel.date | dayOfWeek" class="day-of-week"></span>
         <span ng-bind="ReservationModel.month | monthName" class="month-selected"></span>
         <span ng-bind="ReservationModel.day" class="day-selected"></span>
         <input ng-model="ReservationModel.year" class="year-selected">
       </div>
+
+      <!-- Reservations for currently selected day -->
       <div class="selectedDate">
         <div class="days-view">
-          <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation">
+          <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation" ng-click="setReservationSelected(selectedDate.reservations[key]);">
             <div class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
               <span ng-bind="reservation.date | niceTime" class="reservation_time"></span>
               <span ng-bind="reservation.duration_minutes"></span><span>min</span>
@@ -74,8 +76,7 @@
         </div>
       </div>
 
-
-      <!-- Calendar section-->
+      <!-- Day of month selector -->
             <div class="calendar">
               <div ng-repeat="day in getDays(ReservationModel.month, ReservationModel.year);"
                    class="floatingTile day-floating-tile" ng-class="getCalendarClass(day, 'selectedTile')"
@@ -87,15 +88,15 @@
               </div>
            </div>
 
-            <div class="attendees {{requestedTime | reservationState}}" style="margin-left:{{ReservationModel.date | getChartPosition}}px;">
-               <input ng-model="attendee" class="add-attendee-input">
-                <span class="add-attendee-button" ng-click="addAttendee(attendee)">+</span>
-                <div ng-bind="ReservationModel.company" class="requested-company"></div>
-            </div>
+    <div class="attendees {{NavModel.selectedReservation | reservationState}}" style="margin-left:{{NavModel.selectedReservation.date | getChartPosition}}px;">
+      <div class=attendee-icon></div>
+       <input ng-model="attendee" class="add-attendee-input" ui-keypress="addAttendee(attendee);">
+        <span class="add-attendee-button" ng-click="addAttendee(attendee)">+</span>
+        <div ng-bind="ReservationModel.company" class="requested-company"></div>
+    </div>
 
-            <!-- In production use:
-            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-            -->
+
+
       <script src="lib/angular/angular.js"></script>
       <script src="js/app.js"></script>
       <script src="js/services.js"></script>

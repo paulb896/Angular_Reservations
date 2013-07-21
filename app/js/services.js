@@ -94,4 +94,9 @@ angular.module('userCalendar.services', []).
       "users" :       [],
       "reservations": []
     };
+}).factory('NavModel', function(){
+    return {
+        "selectedReservation" :{}
+
+    };
 })

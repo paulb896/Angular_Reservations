@@ -63,7 +63,8 @@ angular.module('userCalendar.filters', []).
   }])
   .filter('reservationState', [function(requestedTime) {
       return function(requestedTime) {
-          if (!requestedTime.hasOwnProperty("x")) {
+          if (!requestedTime.hasOwnProperty("x")
+              && !requestedTime.hasOwnProperty("date")) {
               return "hidden";
           }
           //  || $scope.requestedTime.x != null
