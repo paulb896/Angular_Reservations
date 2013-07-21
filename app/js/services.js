@@ -16,7 +16,7 @@ angular.module('userCalendar.services', []).
       "month" : "9",
       "time" : "12:42:11",
       "year" : 2013,
-      "status" : "pending",
+      "status" : "maybe",
       "day": "1",
       "duration": ""
     };
@@ -82,7 +82,7 @@ angular.module('userCalendar.services', []).
         "day": 1,
         "date" : "",
         "year" : 2013,
-        "status" : "pending",
+        "status" : "maybe",
         "duration_minutes": 0
     };
 }).factory('CalendarState', function(){

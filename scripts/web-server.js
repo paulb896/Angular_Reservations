@@ -84,19 +84,28 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
 
               var collection = db.collection('reservation');
 
-              collection.insert(JSON.parse(data), function(err, docs) {
-
-                  collection.count(function(err, count) {
-                      console.log(format("count = %s", count));
+              if (JSON.parse(data).hasOwnProperty("_id")) {
+                  console.log("Update attempt : ");
+                  console.log(data);
+                  collection.findAndModify({_id: data["_id"]}, [['_id','asc']], {$set: {status: data["status"], company: data["company"]}}, {w:1}, function(err) {
+                      if (err) console.warn(err.message);
+                      else console.log('successfully updated');
                   });
+              } else {
+                  collection.insert(JSON.parse(data), function(err, docs) {
 
-                  // Locate all the entries using find
-                  collection.find().toArray(function(err, results) {
-                      console.dir(results);
-                      // Let's close the db
-                      db.close();
+                      collection.count(function(err, count) {
+                          console.log(format("count = %s", count));
+                      });
+
+                      // Locate all the entries using find
+                      collection.find().toArray(function(err, results) {
+                          console.dir(results);
+                          // Let's close the db
+                          db.close();
+                      });
                   });
-              });
+              }
           });
 
       });

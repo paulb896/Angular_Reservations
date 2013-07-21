@@ -31,10 +31,6 @@ body{
     cursor:pointer;
 }
 
-.textStatus::-moz-selection {
-background-color:green;
-}
-
 .chart-left-time{
   float:left;
   font-size:200%;
@@ -64,19 +60,16 @@ div.status:hover {
 
 }
 
-div.status.approved{
+div.status.accept{
   background-color:green;
-#-webkit-transition: background-color 0.5s;
-#-webkit-transition: border-color 1s;
-#-webkit-transition: opacity 1s;
   -webkit-transition: all 1s;
 }
 
-div.status.declined{
+div.status.decline{
   background-color:red;
 }
 
-div.status.pending{
+div.status.maybe{
   background-color:yellow;
   -webkit-transition: background-color 3.5s
   #-webkit-transition: border-color 1s;
@@ -118,10 +111,6 @@ div.status.pending{
     -moz-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
     -webkit-transition:0.38s all;
-
-
-
-
 }
 
 .day-floating-tile{
@@ -255,7 +244,7 @@ div label.day{
   position:absolute;
   z-index:9999;
   background-color:transparent;
-  padding-top:4px;
+  padding-top:7px;
   font-size: 16px;
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
@@ -290,7 +279,7 @@ div label.day{
     width:200px;
     -webkit-transition: all 0.5s;
     position: absolute;
-    margin-top: 280px;
+    margin-top: 266px;
     margin-left:750px;
     background-color:rgba(170,170,170,0.8);
     height:45px;
@@ -301,9 +290,9 @@ div label.day{
     border-right:solid;
     border-width: 1px;
     overflow: scroll;
-    -moz-box-shadow:    3px 3px 15px #444444;
-    -webkit-box-shadow: 3px 3px 15px #444444;
-    box-shadow:         3px 3px 15px #444444;
+    -moz-box-shadow:    0px 3px 15px #444444;
+    -webkit-box-shadow: 0px 3px 15px #444444;
+    box-shadow:         0px 3px 15px #444444;
 
 }
 
@@ -332,10 +321,13 @@ div label.day{
 
 .update-changes-icon{
     background-image:url('../img/update-icon.png');
-    width:30px;
-    height:30px;
+    background-size: 100%;
+    width:26px;
+    height:26px;
     float:right;
-    opacity: 0.8;
+    opacity: 0.6;
+    cursor: pointer;
+    z-index: 9999;
 }
 
 
@@ -367,11 +359,11 @@ div label.day{
 
 .calendar{
     position:absolute;
-    width:650px;
+    width:850px;
     height:700px;
     overflow:scroll;
     padding-left:36px;
-    margin-top:280px;
+    margin-top:255px;
     -webkit-transition: all 2.4s;
     font-size:300%;
 }
@@ -442,20 +434,22 @@ input:selection{
 }
 
 .day-chart{
-  height:150px;
+  height:165px;
   width:1440px;
   margin-left:50px;
   position:absolute;
-  background-color:rgba(20,20,30,0.2);
+  background-color:rgba(124,120,122,0.2);
   -webkit-transition: all 1s;
   z-index:6000;
   border-width: 1px;
   cursor: pointer;
-  border-left: solid black 1px;
-  border-right: solid black 1px;
-  -webkit-box-shadow:0 0 20px rgba(0, 0, 0, 0.2) inset;
-  -moz-box-shadow:0 0 20px rgba(0, 0, 0, 0.2) inset;
-  box-shadow:0 0 20px rgba(0, 0, 11, 0.2) inset;
+  -webkit-box-shadow:-4px -3px 12px rgba(0, 0, 0, 0.2) inset, 4px 3px 12px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow:-4px -3px 12px rgba(0, 0, 0, 0.2) inset, 4px 3px 12px rgba(0, 0, 0, 0.2) inset;
+  box-shadow:-4px -3px 12px rgba(0, 0, 11, 0.2) inset, 4px 3px 12px rgba(0, 0, 0, 0.2) inset;
+}
+
+.day-chart.edit{
+  background-color:rgba(124,120,122,0.2);
 }
 
 .requested-company{
@@ -485,9 +479,10 @@ input:selection{
 
 .reservation_company{
     font-style: italic;
-    height:40px;
+    height:35px;
     margin-top: 40px;
     width:75%;
+    overflow:scroll;
 }
 
 
@@ -541,7 +536,7 @@ input:selection{
 .days-view{
   width:1440px;
   height:500px;
-  margin-top: 130px;
+  margin-top: 80px;
 }
 
 .timeIndicator {

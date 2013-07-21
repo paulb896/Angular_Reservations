@@ -133,7 +133,7 @@ angular.module('userCalendar.controllers', []).
     };
 
     $scope.toggleStatus = function(selectedDate, key, currentStatus){
-      var toggleStates = ["declined", "pending", "approved"];
+      var toggleStates = ["decline", "maybe", "accept"];
 
       // This way we don't have to check for the last element or null,
       // because they will have the same outcome (loop back around to first element).
@@ -146,6 +146,7 @@ angular.module('userCalendar.controllers', []).
       }
 
       selectedDate.reservations[key].status = nextStatus;
+      selectedDate.reservations[key].modified = true;
 
       return currentStatus;
     }
@@ -153,6 +154,7 @@ angular.module('userCalendar.controllers', []).
     $scope.helpers = {};
     $scope.helpers.timeIndicators = [];
     $scope.helpers.timeIndicators.push(
+        new Date(2013,6,6,1,30),
         new Date(2013,6,6,3,0),
         new Date(2013,6,6,6,0),
         new Date(2013,6,6,9,0),
@@ -198,9 +200,9 @@ angular.module('userCalendar.controllers', []).
     };
 
 
-    $scope.requestedTime.reserve = function(){
+    $scope.requestedTime.reserve = function(reservation){
       console.log("Attempting to request time: ");
-      ReservationRequest.async(ReservationModel).then(function(responseMessage) {
+      ReservationRequest.async(reservation).then(function(responseMessage) {
         // Set success/failure message
 
           console.log("Reservation request complete, with response: ");

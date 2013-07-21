@@ -46,10 +46,16 @@
 
       <!-- Reservations for currently selected day -->
       <div class="selectedDate">
+
         <div class="days-view">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width:1440px; height: 5px; margin-left: 47px; margin-bottom: -10px;">
+                <g stroke="black" stroke-width="15" >
+                    <path stroke-dasharray="1,5" d="M3 5 1440 5"/>
+                </g>
+            </svg>
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation">
             <div class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
-                <div class="update-changes-icon" ng-class="reservation | updateState"></div>
+                <div class="update-changes-icon" ng-class="reservation | updateState" ng-click="requestedTime.reserve(reservation);"></div>
               <span ng-bind="reservation.date | niceTime" class="reservation_time"></span>
               <span ng-bind="reservation.duration_minutes"></span><span>min</span>
 
@@ -67,13 +73,13 @@
                     <input class="date-input" type="text" ng-model="ReservationModel.date">
                 </div>
                 <input type="text" ng-model="ReservationModel.duration_minutes" class="duration"><span style="font-size:17px; font-weight:900; color:#ffffff; margin-left: 5px;">minutes</span>
-                <span class="reserve" ng-click="requestedTime.reserve();">Create</span>
+                <span class="reserve" ng-click="requestedTime.reserve(ReservationModel);">Create</span>
             </div>
 
 
             <div class="reservation-length-indicator" style="width:{{ReservationModel.duration_minutes}}px; margin-left:{{ReservationModel.date | getChartPosition}}px;"></div>
-            <div style="margin-top: -50px; z-index: 9999; position: absolute;">
-                <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{indicator | getChartPosition}}px;">{{indicator | niceTime}}</div>
+            <div style="padding-top:5px; border-top-left-radius:7px; border-top-right-radius:7px; margin-top: -44px; z-index: 99; position: absolute; background-color: rgba(180,180,195,0.3); width: 1440px; height: 40px; margin-left: 50px; overflow: hidden;">
+                <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{(indicator | getChartPosition)-50}}px;">{{indicator | niceTime}}</div>
             </div>
         </div>
       </div>
