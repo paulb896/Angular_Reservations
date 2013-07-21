@@ -421,6 +421,7 @@ label{
 .reservation_time{
     font-size: 20px;
     font-stretch: expanded;
+    letter-spacing:1px;
 }
 
 input{
