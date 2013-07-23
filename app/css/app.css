@@ -394,7 +394,6 @@ span.dayOfMonth{
     font-family: 'Noto Serif', serif;
     background-color: transparent;
     width:120px;
-
 } 
 
 label{
@@ -467,7 +466,7 @@ input:selection{
 }
 
 .current-selected-date{
-    width:400px; height:50px; position:absolute; z-index:5000;
+    width:600px; height:50px; position:absolute; z-index:5000;
     font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; text-shadow: -5px 3px 9px #eeeeee; color:#000000; margin-left: 310px;
 }
 
@@ -541,12 +540,14 @@ input:selection{
 }
 
 .timeIndicator {
-    width: 0px;
+    width: 50px;
     color: #000000;
     height: 0px;
     position: absolute;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
+    z-index: 99999;
+    overflow: hide;
 }
 
 .timeIndicator:hover{

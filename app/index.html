@@ -8,6 +8,7 @@
   <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic' rel='stylesheet' type='text/css'>
   <script src="js/jquery.js"></script>
   <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.mobile.js"></script>
 </head>
 <body>
 <embed src="img/calendar.svg" type="image/svg+xml" style="position: absolute; width:180px; height:130px; z-index: 9005; margin-left: 48px;"/>
@@ -37,11 +38,11 @@
               </div>
           </div>
       </div>
-      <div class="current-selected-date" style="">
+      <div class="current-selected-date">
         <span ng-bind="ReservationModel.date | dayOfWeek" class="day-of-week"></span>
         <span ng-bind="ReservationModel.month | monthName" class="month-selected"></span>
         <span ng-bind="ReservationModel.day" class="day-selected"></span>
-        <input ng-model="ReservationModel.year" class="year-selected">
+        <input ng-model="ReservationModel.year" class="year-selected"/>
       </div>
 
       <!-- Reservations for currently selected day -->
@@ -49,7 +50,7 @@
 
         <div class="days-view">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width:1440px; height: 15px; margin-left: 47px; margin-bottom: -10px;">
-                <g stroke="rgba(52,52,52,0.2)" stroke-width="8" >
+                <g stroke="rgba(92,52,32,0.3)" stroke-width="8" >
                     <path stroke-dasharray="60,1" d="M3 5 1440 5"/>
                 </g>
             </svg>

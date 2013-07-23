@@ -267,5 +267,13 @@ angular.module('userCalendar.controllers', []).
         console.log(NavModel);
     };
 
+
+    $scope.swipeHandler = function ( event ){
+        $('#shape').toggleClass("spin");
+        $('.lever').toggleClass("spin");
+    }
+
+    $( "div#month-picker" ).on( "swipe", $scope.swipeHandler);
+
     return $scope.ReservationCtrl = this;
   }]);
