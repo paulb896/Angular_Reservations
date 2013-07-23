@@ -80,7 +80,7 @@ div.status.maybe{
 .reserve{
   float:right;
   color: black;
-  background-color:rgba(166,169,199,0.5);
+  background-color:rgba(200,169,199,0.25);
   border:2px solid black;
   cursor: pointer;
   margin-top:5px;
@@ -281,7 +281,7 @@ div label.day{
     position: absolute;
     margin-top: 266px;
     margin-left:750px;
-    background-color:rgba(170,170,170,0.8);
+    background-color:rgba(170,170,170,0.9);
     height:45px;
     font-family: "Trebuchet MS, Helvetica, sans-serif";
     font-style: italic;
@@ -293,7 +293,7 @@ div label.day{
     -moz-box-shadow:    0px 3px 15px #444444;
     -webkit-box-shadow: 0px 3px 15px #444444;
     box-shadow:         0px 3px 15px #444444;
-
+    z-index: 99999;
 }
 
 .add-attendee-input{
