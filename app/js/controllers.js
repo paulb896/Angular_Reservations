@@ -246,19 +246,6 @@ angular.module('userCalendar.controllers', []).
         $scope.attendee = "";
     };
 
-
-    // Wrap this in jquery ready event
-//    $(".add-attendee-input").keypress(function(event) {
-//        console.log(event);
-//        console.log("Handler for .keypress() called.");
-//        if (event.keyCode === 13) {
-//            console.log('Enter key');
-//            $scope.addAttendee(event.target.value);
-//        }
-//
-//    });
-
-
     $scope.NavModel = NavModel;
 
     $scope.setReservationSelected =  function(reservation){
@@ -271,9 +258,19 @@ angular.module('userCalendar.controllers', []).
     $scope.swipeHandler = function ( event ){
         $('#shape').toggleClass("spin");
         $('.lever').toggleClass("spin");
+
+        console.log('Mouse current position');
+        console.log(event.pageX +', '+ event.pageY);
+
+        // e.pageX +', '+ e.pageY
     }
 
-    $( "div#month-picker" ).on( "swipe", $scope.swipeHandler);
+    $(".reservation").draggable({ axis: "x" });
+
+    $(".reservation").on( "dragstop", function( event, ui ) {
+
+        console.log("DRAG END");
+    } );
 
     return $scope.ReservationCtrl = this;
   }]);

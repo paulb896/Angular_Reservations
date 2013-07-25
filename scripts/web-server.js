@@ -87,7 +87,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
               if (JSON.parse(data).hasOwnProperty("_id")) {
                   console.log("Update attempt : ");
                   console.log(data);
-                  collection.findAndModify({_id: data["_id"]}, [['_id','asc']], {$set: {status: data["status"], company: data["company"]}}, {w:1}, function(err) {
+                  collection.findAndModify({_id: data["_id"]}, [["_id","asc"]], {$set: {status: data["status"], company: data["company"]}}, {w:1}, function(err) {
                       if (err) console.warn(err.message);
                       else console.log('successfully updated');
                   });
