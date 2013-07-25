@@ -166,8 +166,14 @@ angular.module('userCalendar.controllers', []).
     );
 
     $scope.requestedTime = {};
-    $scope.addOnClick = function(event) {
 
+
+
+
+    $scope.addOnClick = function(event) {
+if ($scope.requestedTime.x && event.type == "click") {
+    return;
+}
       event.x = event.clientX;
       //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
       var requestedTime = (Math.floor(event.x / 60)-1) + " : " + (event.x % 60);
@@ -267,10 +273,30 @@ angular.module('userCalendar.controllers', []).
 
     $(".reservation").draggable({ axis: "x" });
 
-    $(".reservation").on( "dragstop", function( event, ui ) {
 
-        console.log("DRAG END");
-    } );
+    $(".reservation").on("dragstop", function( event, ui ) {
+        $scope.$apply(function () {
+        $scope.addOnClick(event);
+        });
+        console.log("It's been dragging");
+        console.log(event.clientX);
+//        $scope.$apply(function () {
+//        var timeSelected = new Date(defaultSelectedDate.year,
+//            defaultSelectedDate.month,
+//            defaultSelectedDate.day,
+//            (Math.floor(event.x / 60)-1), (event.x % 60), 0, 0);
+//
+//        //$scope.requestedTime.x = event.x;
+//        $scope.requestedTime.date = timeSelected;
+//        $scope.ReservationModel.date = timeSelected;
+//        });
+    });
+
+    //$(".reservation").on( "drag", function( event, ui ) {
+    //    $scope.dragging = true;
+//
+//        console.log(event.clientX);
+//    });
 
     return $scope.ReservationCtrl = this;
   }]);
