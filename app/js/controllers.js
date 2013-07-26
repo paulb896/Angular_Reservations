@@ -171,18 +171,19 @@ angular.module('userCalendar.controllers', []).
 
 
     $scope.addOnClick = function(event) {
-if ($scope.requestedTime.x && event.type == "click") {
-    return;
-}
+//if ($scope.requestedTime.x && event.type == "click") {
+//    return;
+//}
 
 
 
       if (event.type == "click") {
           //$("div.requestedTime").css("margin-left") = "200px";
           //$(".reservation").style.marginLeft = "200px";
-          $(".requestedTime").css( { marginLeft : "600px"});
+          //$(".requestedTime").css( { marginLeft : "600px"});
       }
-
+console.log("Windopw information:");
+console.log($(window));
       //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
       var requestedTime = (Math.floor(event.x / 60)-1) + " : " + (event.x % 60);
 

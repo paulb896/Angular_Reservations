@@ -242,7 +242,7 @@ div label.day{
 
 .reservation{
   color: #000000;
-  width:150px;
+  width:170px;
   height:100px;
   position:absolute;
   z-index:9999;
@@ -280,7 +280,7 @@ div label.day{
 
 
 .attendees{
-    width:200px;
+    width:170px;
     -webkit-transition: all 0.5s;
     position: absolute;
     margin-top: 247px;
@@ -294,9 +294,9 @@ div label.day{
     border-right:solid;
     border-width: 1px;
     overflow: scroll;
-    -moz-box-shadow:    0px 3px 15px #444444;
-    -webkit-box-shadow: 0px 3px 15px #444444;
-    box-shadow:         0px 3px 15px #444444;
+    -moz-box-shadow:    -3px 0px 12px rgba(224,224,254, 0.9)
+    -webkit-box-shadow: -3px 0px 12px rgba(224,224,254, 0.9)
+    box-shadow:         -3px 0px 12px rgba(224,224,254, 0.9)
     z-index: 99999;
 }
 
@@ -324,7 +324,7 @@ div label.day{
 }
 
 .update-changes-icon{
-    background-image:url('../img/update-icon-alt.png');
+    background-image:url('../img/update-icon.png');
     background-size: 100%;
     width:26px;
     height:26px;
@@ -332,8 +332,21 @@ div label.day{
     opacity: 0.6;
     cursor: pointer;
     z-index: 9999;
+    -webkit-transition-duration: 1.8s;
+    -moz-transition-duration: 1.8s;
+    -o-transition-duration: 1.8s;
+    transition-duration: 1.8s;
 }
 
+.update-changes-icon:hover{
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -webkit-transition-duration: 2.8s;
+    -moz-transition-duration: 2.8s;
+    -o-transition-duration: 2.8s;
+    transition-duration: 2.8s;
+}
 
 
 .attendee-icon{
