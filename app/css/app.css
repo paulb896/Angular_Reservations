@@ -556,6 +556,15 @@ input:selection{
 
 .requestedTime{
   z-index:9999;
+  border-bottom-color: rgba(162,173,211, 0.65);
+}
+
+.requestedTime:active{
+    color:white;
+    -webkit-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
+    -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
+    box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
+    border-bottom-color: rgba(172,173,211, 1);
 }
 
 .days-view{
