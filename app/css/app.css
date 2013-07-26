@@ -289,14 +289,10 @@ div label.day{
     height:45px;
     font-family: "Trebuchet MS, Helvetica, sans-serif";
     font-style: italic;
-    border-bottom:solid;
-    border-left:solid;
-    border-right:solid;
-    border-width: 1px;
     overflow: scroll;
-    -moz-box-shadow:    -3px 0px 12px rgba(224,224,254, 0.9)
-    -webkit-box-shadow: -3px 0px 12px rgba(224,224,254, 0.9)
-    box-shadow:         -3px 0px 12px rgba(224,224,254, 0.9)
+    -moz-box-shadow:    0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
+    -webkit-box-shadow: 0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
+    box-shadow:         0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
     z-index: 99999;
 }
 
@@ -501,7 +497,7 @@ input:selection{
 
 .reservation_company{
     font-style:italic;
-    font-size: 14px;
+    font-size: 17px;
     height:35px;
     margin-top: 40px;
     width:75%;
@@ -556,7 +552,7 @@ input:selection{
 
 .requestedTime{
   z-index:9999;
-  border-bottom-color: rgba(162,173,211, 0.65);
+  border-bottom-color: rgba(135,142,168, 0.6);
 }
 
 .requestedTime:active{
@@ -564,7 +560,7 @@ input:selection{
     -webkit-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
-    border-bottom-color: rgba(172,173,211, 1);
+    border-bottom-color: rgba(135,142,168, 1);
 }
 
 .days-view{
