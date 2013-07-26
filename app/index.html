@@ -48,7 +48,7 @@
       <div class="selectedDate">
 
         <div class="days-view">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width:1440px; height: 15px; margin-left: 47px; margin-bottom: -10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width:1440px; height: 15px; margin-left: 48px; margin-bottom: -13px;">
                 <g stroke="rgba(92,52,32,0.3)" stroke-width="8" >
                     <path stroke-dasharray="60,1" d="M3 5 1440 5"/>
                 </g>
@@ -78,8 +78,13 @@
 
 
             <div class="reservation-length-indicator" style="width:{{ReservationModel.duration_minutes}}px; margin-left:{{ReservationModel.date | getChartPosition}}px;"></div>
-            <div style="border-top:solid silver 1px; ;padding-top:5px; border-top-left-radius:7px; border-top-right-radius:7px; margin-top: -44px; z-index: 99; position: absolute; background-color: rgba(180,180,195,0.1); width: 1440px; height: 40px; margin-left: 50px; overflow: hidden;">
-                <div ng-click="updateRequestToIndicator(indicator);" ng-repeat="indicator in helpers.timeIndicators" class="timeIndicator" style="margin-left:{{(indicator | getChartPosition)-50}}px;">{{indicator | niceTime}}</div>
+            <div style="border-top:solid silver 1px; ;padding-top:5px; border-top-left-radius:7px; border-top-right-radius:7px; margin-top: -44px; z-index: 99; position: absolute; background-color: rgba(180,180,195,0.1); width: 1440px; height: 50px; margin-left: 50px; overflow: hidden;">
+                <div ng-click="updateRequestToIndicator(indicator);"
+                     ng-repeat="indicator in helpers.timeIndicators"
+                     class="timeIndicator"
+                     style="margin-left:{{(indicator | getChartPosition)-50}}px;">
+                  {{indicator | niceTime}}
+                </div>
             </div>
         </div>
       </div>
