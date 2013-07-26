@@ -278,10 +278,10 @@ if ($scope.requestedTime.x && event.type == "click") {
         // e.pageX +', '+ e.pageY
     }
 
-    $(".reservation").draggable({ axis: "x", "opacity": 0.85, "revertDuration": 200 });
+    $(".reservation").draggable({ axis: "x", "opacity": 0.55, "scrollSpeed": 400, "snap": true, snapTolerance: 30 });
 
     $(".reservation").on("drag", function( event, ui ) {
-        if (event.clientX < 50 || event.clientX > 1440) {
+        if (event.x < 50 || event.x > 1440) {
             return;
         }
         $scope.$apply(function () {
