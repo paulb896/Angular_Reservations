@@ -444,7 +444,7 @@ input:selection{
 
 
 .day-chart{
-  height:165px;
+  height:102px;
   width:1440px;
   margin-left:50px;
   position:absolute;
@@ -457,6 +457,7 @@ input:selection{
   -moz-box-shadow:4px -3px 12px rgba(0, 0, 0, 0.2) inset, -4px -3px 12px rgba(0, 0, 0, 0.2) inset, 0px 4px 12px rgba(0, 0, 0, 0.2);
   box-shadow:4px -3px 12px rgba(0, 0, 11, 0.2) inset, -4px -3px 12px rgba(0, 0, 0, 0.2) inset, 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 
 .day-chart.edit{
   background-color:rgba(124,120,122,0.2);

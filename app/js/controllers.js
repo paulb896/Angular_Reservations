@@ -93,8 +93,8 @@ angular.module('userCalendar.controllers', []).
       console.log("AND NOW I WILL ATTEMPT TO UPDATE THE SELECTED DATE");
       defaultSelectedDate.day = day;
 
-      var date = defaultSelectedDate.date;
-      if (typeof defaultSelectedDate.date === 'undefined' ) {
+      var date = ReservationModel.date;
+      if (typeof date === 'undefined' ) {
           date = new Date();
       }
       date.setYear(year);
@@ -174,17 +174,24 @@ angular.module('userCalendar.controllers', []).
 if ($scope.requestedTime.x && event.type == "click") {
     return;
 }
-      event.x = event.clientX;
+
+
+
+      if (event.type == "click") {
+          //$("div.requestedTime").css("margin-left") = "200px";
+          //$(".reservation").style.marginLeft = "200px";
+          $(".requestedTime").css( { marginLeft : "600px"});
+      }
+
       //event.x = (dateTime.getHours() * 60) + dateTime.getMinutes();
       var requestedTime = (Math.floor(event.x / 60)-1) + " : " + (event.x % 60);
-
 
       var timeSelected = new Date(defaultSelectedDate.year,
       defaultSelectedDate.month,
       defaultSelectedDate.day,
-      (Math.floor(event.x / 60)-1), (event.x % 60), 0, 0);
+      (Math.floor(event.clientX / 60)-1), (event.clientX % 60), 0, 0);
 
-      $scope.requestedTime.x = event.x;
+      $scope.requestedTime.x = event.clientX;
       $scope.requestedTime.date = timeSelected;
 
       $scope.setReservationModel(timeSelected);
@@ -271,11 +278,14 @@ if ($scope.requestedTime.x && event.type == "click") {
         // e.pageX +', '+ e.pageY
     }
 
-    $(".reservation").draggable({ axis: "x" });
+    $(".reservation").draggable({ axis: "x", "opacity": 0.85, "revertDuration": 200 });
 
-
-    $(".reservation").on("dragstop", function( event, ui ) {
+    $(".reservation").on("drag", function( event, ui ) {
+        if (event.clientX < 50 || event.clientX > 1440) {
+            return;
+        }
         $scope.$apply(function () {
+        event.clientX = event.pageX;
         $scope.addOnClick(event);
         });
         console.log("It's been dragging");

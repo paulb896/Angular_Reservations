@@ -69,6 +69,7 @@ angular.module('userCalendar.filters', []).
           ) {
               return "hidden";
           }
+
           return "";
       }
   }])
