@@ -57,10 +57,10 @@
             <div class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
                 <div class="update-changes-icon" ng-class="reservation | updateState" ng-click="requestedTime.reserve(reservation);"></div>
               <span ng-bind="reservation.date | niceTime" class="reservation_time"></span>
-              <span ng-bind="reservation.duration_minutes"></span><span>min</span>
-
-                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"><input ng-model="reservation.status" class="textStatus"></div>
+              <span ng-bind="reservation.duration_minutes" class="reservation_min"></span><span class="reservation_min_label">min</span>
                 <div class="reservation_company">{{reservation.company}}</div>
+                <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"><input ng-model="reservation.status" class="textStatus"></div>
+
                 <div class="attendee-icon-alt" ng-click="setReservationSelected(selectedDate.reservations[key]);"></div>
             </div>
           </div>
@@ -101,9 +101,13 @@
               </div>
            </div>
 
-     <div class="attendees {{NavModel.selectedReservation | reservationState}}" style="margin-left:{{NavModel.selectedReservation.date | getChartPosition}}px;">
+     <div class="attendees {{NavModel.selectedReservation | reservationState}}">
+       <h3 class="attendees-header">Attendees:</h3>
+       <div class="company_selected">{{NavModel.selectedReservation.company}}</div>
+       <div class="attendee-icon-alt" style="margin-top: -86px"></div>
        <div class=attendee-icon ng-click="addAttendee(attendee)"></div>
        <input ng-model="attendee" class="add-attendee-input"/>
+
      </div>
 
       <script src="lib/angular/angular.js"></script>

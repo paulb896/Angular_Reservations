@@ -19,7 +19,7 @@ body{
 
 
 .textStatus{
-  height: 29px;
+  margin-top: -3px;
   width: 100px;
   opacity:0.35;
   text-align:center;
@@ -41,6 +41,13 @@ body{
     color:#0000a0;
 }
 
+.company_selected{
+    font-size: 22px;
+    color: blue;
+    margin-left: 20px;
+    height:50px;
+}
+
 div.status {
   -webkit-transition: background-color 0.8s ease-in-out;
   width:20px;
@@ -49,8 +56,9 @@ div.status {
   opacity:0.45;
   -webkit-transition: all 1s;
   float:left;
-  border-radius: 15px;
+  border-radius: 5px;
   cursor:pointer;
+  margin-top: 30px;
 }
 
 
@@ -82,7 +90,8 @@ div.status.maybe{
   background-color:rgba(200,169,199,0.25);
   border:2px solid transparent;
   cursor: pointer;
-  margin-top:19px;
+  margin-top:45px;
+  margin-left: -40px;
   position:absolute;
   padding: 5px;
   color:whitesmoke;
@@ -236,8 +245,13 @@ div label.day{
   background-color:green;
 }
 
-.reservation > span{
-  display:block;
+.reservation_min_label{
+    font-size: 12px;
+    margin-top: 20px;
+}
+.reservation_min{
+    font-size: 12px;
+    margin-top: 20px;
 }
 
 .reservation{
@@ -251,16 +265,21 @@ div label.day{
   font-size: 16px;
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
-  -webkit-transition: all 0.5s;
+  -webkit-transition: all 2.5s;
   border-bottom: solid rgba(170,170,170,0.9) 40px;
+    padding: 5px;
 }
 
 
 .reservation:hover{
+    -moz-box-shadow:    0px 5px 15px rgba(11,11,11, 0.9);
+    -webkit-box-shadow: 0px 5px 15px rgba(11,11,11, 0.9);
+    box-shadow:         0px 5px 15px rgba(11,11,11, 0.9);
   opacity:1;
   position:absolute;
   -webkit-transition: all 0.8s;
   z-index: 99999;
+  border-bottom: solid rgba(170,170,170,1) 40px;
 }
 
 .reservation.selected{
@@ -280,13 +299,13 @@ div label.day{
 
 
 .attendees{
-    width:170px;
+    width:638px;
     -webkit-transition: all 0.5s;
     position: absolute;
-    margin-top: 247px;
-    margin-left:750px;
+    margin-top: 278px;
+    margin-left:850px;
     background-color:rgba(170,170,170,0.9);
-    height:45px;
+    height:145px;
     font-family: "Trebuchet MS, Helvetica, sans-serif";
     font-style: italic;
     overflow: scroll;
@@ -296,11 +315,18 @@ div label.day{
     z-index: 99999;
 }
 
+.attendees-header{
+    font-size: 30px;
+    margin-left: 25px;
+    width: 100px;
+    display: inline;
+}
+
 .add-attendee-input{
     margin-top: 5px;
     margin-left: 20px;
     font-size: 25px;
-    width:100px;
+    width:300px;
 }
 
 .add-attendee-button{
@@ -352,7 +378,7 @@ div label.day{
     float:right;
     cursor: pointer;
     margin-top: 5px;
-    margin-right: 12px;
+    margin-right: 212px;
 }
 
 .attendee-icon:hover{
@@ -364,7 +390,7 @@ div label.day{
     width:50px;
     height: 50px;
     float:right;
-    margin-top: -40px;
+    margin-top: 23px;
     cursor: pointer;
 }
 
@@ -424,6 +450,7 @@ label{
  background-color: rgba(240,240,240,0.2);
  border: none;
  font-style: italic;
+
 }
 
 .hidden{
@@ -497,13 +524,13 @@ input:selection{
 
 .reservation_company{
     font-style:italic;
-    font-size: 17px;
-    height:35px;
-    margin-top: 40px;
-    width:75%;
+    font-size: 18px;
+    height:50px;
+    margin-top: 10px;
+    width:95%;
     overflow:scroll;
     padding-left: 5px;
-    color:white;
+    color:black;
 }
 
 
