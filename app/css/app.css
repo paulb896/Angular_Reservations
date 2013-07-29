@@ -90,11 +90,14 @@ div.status.maybe{
   background-color:rgba(200,169,199,0.25);
   border:2px solid transparent;
   cursor: pointer;
-  margin-top:45px;
+  margin-top:36px;
   margin-left: -40px;
   position:absolute;
   padding: 5px;
   color:whitesmoke;
+  padding: 8px;
+  width: 41px;
+  height: 20px;
 }
 
 .reserve:hover{
@@ -267,9 +270,9 @@ div label.day{
   font-size: 16px;
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
-  -webkit-transition: all 2.5s;
+  -webkit-transition: all 0.5s;
   border-bottom: solid rgba(170,170,170,0.9) 40px;
-    padding: 5px;
+  padding: 10px 10px 0 10px;
 }
 
 
@@ -279,7 +282,7 @@ div label.day{
     box-shadow:         0px 5px 15px rgba(11,11,11, 0.9);
   opacity:1;
   position:absolute;
-  -webkit-transition: all 0.8s;
+  -webkit-transition: all 1.8s;
   z-index: 99999;
   border-bottom: solid rgba(170,170,170,1) 40px;
 }
@@ -296,7 +299,7 @@ div label.day{
    height: 20px;
    position:absolute;
    z-index: 500;
-   margin-top: 68px;
+   margin-top: 74px;
 }
 
 
@@ -392,7 +395,7 @@ div label.day{
     width:50px;
     height: 50px;
     float:right;
-    margin-top: 23px;
+    margin-top: 17px;
     cursor: pointer;
 }
 
@@ -581,7 +584,7 @@ input:selection{
 
 .requestedTime{
   z-index:9999;
-  border-bottom-color: rgba(135,142,168, 0.6);
+  border-bottom-color: rgba(190,47,44, 0.9);
 }
 
 .requestedTime:active{
@@ -589,7 +592,7 @@ input:selection{
     -webkit-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
-    border-bottom-color: rgba(135,142,168, 1);
+    border-bottom-color: rgba(190,47,44, 1);
 }
 
 .days-view{

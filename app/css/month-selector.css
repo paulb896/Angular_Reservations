@@ -68,6 +68,7 @@
 
 .plane:hover{
     color: #0000a0;
+    font-weight:900;
 }
 
 #shape.backfaces .plane {

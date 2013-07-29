@@ -35,6 +35,8 @@ angular.module('userCalendar.controllers', []).
         $('.lever').removeClass("spin");
     };
 
+
+
   }])
 
 
@@ -289,18 +291,16 @@ console.log($(window));
         event.clientX = event.pageX;
         $scope.addOnClick(event);
         });
-        console.log("It's been dragging");
-        console.log(event.clientX);
-//        $scope.$apply(function () {
-//        var timeSelected = new Date(defaultSelectedDate.year,
-//            defaultSelectedDate.month,
-//            defaultSelectedDate.day,
-//            (Math.floor(event.x / 60)-1), (event.x % 60), 0, 0);
-//
-//        //$scope.requestedTime.x = event.x;
-//        $scope.requestedTime.date = timeSelected;
-//        $scope.ReservationModel.date = timeSelected;
-//        });
+        $scope.$apply(function () {
+        var timeSelected = new Date(ReservationModel.getYear(),
+            ReservationModel.getMonth(),
+            ReservationModel.getDate(),
+            // TODO: I don't know why this works, and must change it later
+            (Math.floor(event.clientX+420 / 60)-1), (event.clientX+420 % 60), 0, 0);
+        //$scope.requestedTime.x = event.x;
+        $scope.requestedTime.date = timeSelected;
+        $scope.ReservationModel.date = timeSelected;
+        });
     });
 
     //$(".reservation").on( "drag", function( event, ui ) {
