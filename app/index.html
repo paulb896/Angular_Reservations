@@ -57,7 +57,7 @@
             <div class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
                 <div class="update-changes-icon" ng-class="reservation | updateState" ng-click="requestedTime.reserve(reservation);"></div>
               <span ng-bind="reservation.date | niceTime" class="reservation_time"></span>
-              <span ng-bind="reservation.duration_minutes" class="reservation_min"></span><span class="reservation_min_label">min</span>
+              <span class="reservation_min_label">min</span><span ng-bind="reservation.duration_minutes" class="reservation_min"></span>
                 <div class="reservation_company">{{reservation.company}}</div>
                 <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"><input ng-model="reservation.status" class="textStatus"></div>
 

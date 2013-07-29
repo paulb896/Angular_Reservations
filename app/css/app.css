@@ -247,11 +247,13 @@ div label.day{
 
 .reservation_min_label{
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 6px;
+    float:right;
 }
 .reservation_min{
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 6px;
+    float:right;
 }
 
 .reservation{
