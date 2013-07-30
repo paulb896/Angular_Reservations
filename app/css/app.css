@@ -251,18 +251,19 @@ div label.day{
 
 .reservation_min_label{
     font-size: 12px;
-    margin-top: 6px;
-    float:right;
+    margin-top: 21px;
+    margin-left: 10px;
+    position: absolute;
 }
 .reservation_min{
     font-size: 12px;
-    margin-top: 6px;
-    float:right;
+    margin-top: 21px;
+    position: absolute;
 }
 
 .reservation{
   color: #000000;
-  width:122px;
+  width:112px;
   height:100px;
   position:absolute;
   z-index:9999;
@@ -272,7 +273,7 @@ div label.day{
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
   -webkit-transition: all 0.5s;
-  border-bottom: solid rgba(170,170,170,0.9) 40px;
+  border-bottom: solid rgba(170,170,170,0.3) 40px;
   padding: 10px 10px 0 10px;
 }
 
@@ -586,8 +587,12 @@ input:selection{
 }
 
 .requestedTime{
+    -webkit-transition: 1.2s all;
+    -moz-transition: 1.2s all;
+    -ms-transition: 1.2s all;
+    transition: 1.2s all;
   z-index:9999;
-  border-bottom-color: rgba(190,47,44, 0.9);
+  border-bottom-color: rgba(123, 17, 19, 0.7);
 }
 
 .requestedTime:active{
