@@ -18,7 +18,7 @@
 #shape {
     position: relative;
     margin: 0 auto;
-    height: 200px;
+    height:53px;
     width: 200px;
     -webkit-transform-style: preserve-3d;
     animation-play-state: paused;
