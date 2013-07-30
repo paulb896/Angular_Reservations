@@ -65,11 +65,11 @@
             <div class="day-chart" ng-click="addOnClick($event)">
 
             </div>
-            <div class="{{requestedTime | reservationState}} requestedTime reservation" style="width:100px; margin-left:{{ReservationModel.date | getChartPosition}}px;">
+            <div class="{{requestedTime | reservationState}} requestedTime reservation" style="margin-left:{{ReservationModel.date | getChartPosition}}px;">
                 <div>
                     <input class="date-input" type="text" ng-model="ReservationModel.date">
                 </div>
-                <input type="text" ng-model="ReservationModel.duration_minutes" class="duration"><span style="font-size:17px; font-weight:900; color:#ffffff; margin-left: 5px;">minutes</span>
+                <input type="text" ng-model="ReservationModel.duration_minutes" class="duration"><span style="font-size:17px; font-weight:900; color:#ffffff; margin-left: 5px; color:#623828;">minutes</span>
                 <span class="reserve" ng-click="requestedTime.reserve(ReservationModel);">Create</span>
             </div>
 

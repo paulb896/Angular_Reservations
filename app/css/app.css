@@ -1,6 +1,6 @@
 
 body{
-  background-color:rgba(200, 200, 200, 0.3);
+  background-color:#c9d3c8;
   position:absolute;
   z-index:99999;
   width:100%;
@@ -20,7 +20,7 @@ body{
 
 .textStatus{
   margin-top: -3px;
-  width: 100px;
+  width: 70px;
   opacity:0.35;
   text-align:center;
   float:left;
@@ -91,8 +91,8 @@ div.status.maybe{
   background-color:rgba(200,169,199,0.25);
   border:2px solid transparent;
   cursor: pointer;
-  margin-top:36px;
-  margin-left: -40px;
+  margin-top:63px;
+  margin-left: -47px;
   position:absolute;
   padding: 5px;
   color:whitesmoke;
@@ -106,7 +106,7 @@ div.status.maybe{
 }
 
 .floatingTile {
-  background-color: rgba(68,58,58,0.67);
+  background-color: rgba(127,62,73, 1);
   #border-color:#999999;
   width: 50px;
   height: 50px;
@@ -229,8 +229,9 @@ div.status.maybe{
     font-size: 16px;
     border: none;
     padding:7px;
-    width:250px;
-    background-color: rgba(240,240,240,0.2);
+    width:100px;
+    color: #623828;
+    background-color: rgba(240,240,240,0.01);
 }
 
 .selectedDate{
@@ -252,7 +253,7 @@ div label.day{
 .reservation_min_label{
     font-size: 12px;
     margin-top: 21px;
-    margin-left: 10px;
+    margin-left: 16px;
     position: absolute;
 }
 .reservation_min{
@@ -262,7 +263,9 @@ div label.day{
 }
 
 .reservation{
-  color: #000000;
+  color: #623828;
+  border-bottom-right-radius:0px;
+  border-bottom-left-radius:5px;
   width:112px;
   height:100px;
   position:absolute;
@@ -273,20 +276,21 @@ div label.day{
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
   -webkit-transition: all 0.5s;
-  border-bottom: solid rgba(170,170,170,0.3) 40px;
+  border-bottom: solid #c9c3b8 45px;
   padding: 10px 10px 0 10px;
 }
 
 
 .reservation:hover{
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:10px;
     -moz-box-shadow:    0px 5px 15px rgba(11,11,11, 0.9);
     -webkit-box-shadow: 0px 5px 15px rgba(11,11,11, 0.9);
     box-shadow:         0px 5px 15px rgba(11,11,11, 0.9);
   opacity:1;
   position:absolute;
   -webkit-transition: all 1.8s;
-  z-index: 99999;
-  border-bottom: solid rgba(170,170,170,1) 40px;
+  z-index: 10000;
 }
 
 .reservation.selected{
@@ -311,7 +315,7 @@ div label.day{
     position: absolute;
     margin-top: 278px;
     margin-left:850px;
-    background-color:rgba(170,170,170,0.9);
+    background-color:#c9c3b8;
     height:145px;
     font-family: "Trebuchet MS, Helvetica, sans-serif";
     font-style: italic;
@@ -324,10 +328,13 @@ div label.day{
 }
 
 .attendees-header{
-    font-size: 30px;
+    font-size: 38px;
+    letter-spacing: 3px;
     margin-left: 25px;
     width: 100px;
     display: inline;
+    color: #623828;
+    font-weight: 400;
 }
 
 .add-attendee-input{
@@ -443,6 +450,7 @@ span.dayOfMonth{
     font-family: 'Noto Serif', serif;
     background-color: transparent;
     width:120px;
+    color:#623828;
 } 
 
 label{
@@ -455,10 +463,10 @@ label{
  font-size: 20px;
  width:40px;
  height: 25px;
- background-color: rgba(240,240,240,0.2);
+ background-color: transparent;
  border: none;
  font-style: italic;
-
+ color:#623828;
 }
 
 .hidden{
@@ -471,6 +479,7 @@ label{
     font-size: 20px;
     font-stretch: expanded;
     letter-spacing:1px;
+    font-weight:800;
 }
 
 input{
@@ -491,7 +500,7 @@ input:selection{
   width:1440px;
   margin-left:50px;
   position:absolute;
-  background-color:rgba(124,120,122,0.2);
+  background-color:#c9c3b8;
   -webkit-transition: all 1s;
   z-index:6000;
   border-width: 1px;
@@ -521,12 +530,12 @@ input:selection{
 
 .current-selected-date{
     width:600px; height:50px; position:absolute; z-index:5000;
-    font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; text-shadow: -5px 3px 9px #eeeeee; color:#000000; margin-left: 310px;
+    font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; color:#623828; margin-left: 310px;
 }
 
 .calendar-controls{
-  margin-top:-130px;
-  margin-left:820px;
+  margin-top:-50px;
+  margin-left:263px;
   position: absolute;
   z-index:4000;
 }
@@ -591,11 +600,16 @@ input:selection{
     -moz-transition: 1.2s all;
     -ms-transition: 1.2s all;
     transition: 1.2s all;
-  z-index:9999;
-  border-bottom-color: rgba(123, 17, 19, 0.7);
+  z-index:10001;
+  border-bottom-color:#7f3e49;
+}
+
+.requestedTime:hover{
+    z-index:10001;
 }
 
 .requestedTime:active{
+    z-index:10001;
     color:white;
     -webkit-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
@@ -611,7 +625,8 @@ input:selection{
 
 .timeIndicator {
     width: 50px;
-    color: #000000;
+    color: #623828;
+    font-weight: 700;
     height: 0px;
     position: absolute;
     cursor: pointer;
@@ -621,7 +636,7 @@ input:selection{
 }
 
 .timeIndicator:hover{
-    font-weight: 600;
+    font-weight: 900;
 }
 
 .date-controls{
