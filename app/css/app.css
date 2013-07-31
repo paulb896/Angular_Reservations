@@ -87,17 +87,15 @@ div.status.maybe{
 
 
 .reserve{
-  float:right;
   background-color:rgba(200,169,199,0.25);
   border:2px solid transparent;
   cursor: pointer;
-  margin-top:63px;
-  margin-left: -47px;
+
   position:absolute;
   padding: 5px;
   color:whitesmoke;
   padding: 8px;
-  width: 41px;
+  width:50px;
   height: 20px;
 }
 
@@ -229,7 +227,7 @@ div.status.maybe{
     font-size: 16px;
     border: none;
     padding:7px;
-    width:100px;
+    width:300px;
     color: #623828;
     background-color: rgba(240,240,240,0.01);
 }
@@ -273,8 +271,9 @@ div label.day{
   font-size: 16px;
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
-  -webkit-transition: all 0.5s;
-  border-bottom: solid rgba(215,215,215,1) 62px;
+    -webkit-transition: all 1.5s;
+    border-bottom: solid silver 1px;
+
   padding: 10px 10px 0 10px;
 }
 
@@ -285,6 +284,7 @@ div label.day{
     -moz-box-shadow:    0px 5px 15px rgba(11,11,11, 0.9);
     -webkit-box-shadow: 0px 5px 15px rgba(11,11,11, 0.9);
     box-shadow:         0px 5px 15px rgba(11,11,11, 0.9);
+    border-bottom: solid rgba(215,215,215,1) 62px;
   opacity:1;
   position:absolute;
   -webkit-transition: all 1.8s;
@@ -323,6 +323,21 @@ div label.day{
     box-shadow:         0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
     z-index: 99999;
   padding-top: 10px;
+}
+
+
+.place_search{
+    margin-left: 50px;
+    font-size:50px;
+}
+
+.places{
+    font-size: 30px;
+    margin-top: 278px;
+    margin-left:850px;
+    position: absolute;
+    font-family: 'Noto Serif', serif;
+
 }
 
 .attendees-header{
@@ -504,6 +519,7 @@ input:selection{
   z-index:6000;
   border-width: 1px;
   cursor: pointer;
+  border-bottom: solid silver 1px;
 }
 
 
@@ -591,6 +607,10 @@ input:selection{
  transition: 1.2s all;
 }
 
+.place_search{
+    width: 200px;
+}
+
 .requestedTime{
     -webkit-transition: 1.2s all;
     -moz-transition: 1.2s all;
@@ -602,6 +622,10 @@ input:selection{
 
 .requestedTime:hover{
     z-index:10001;
+    border-bottom: solid rgba(77,96,44, 0.7) 60px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -webkit-transition: all 1.5s;
 }
 
 .requestedTime:active{
@@ -610,7 +634,9 @@ input:selection{
     -webkit-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
+
     border-bottom-color: rgba(190,47,44, 1);
+    -webkit-transition: all 1.5s;
 }
 
 .days-view{

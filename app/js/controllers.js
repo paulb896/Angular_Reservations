@@ -287,6 +287,7 @@ console.log($(window));
         if (event.x < 50 || event.x > 1440) {
             return;
         }
+
         $scope.$apply(function () {
         event.clientX = event.pageX;
         $scope.addOnClick(event);
