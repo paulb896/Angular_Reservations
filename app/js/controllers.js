@@ -40,11 +40,6 @@ angular.module('userCalendar.controllers', []).
   }])
 
 
-  .controller('PlaceSearchCtrl', 'defaultSelectedDate' ['$scope', function($scope, defaultSelectedDate) {
-
-  }])
-
-
   /**
    * 
    */
@@ -281,7 +276,7 @@ console.log($(window));
         // e.pageX +', '+ e.pageY
     }
 
-    $(".reservation").draggable({ axis: "x", "opacity": 0.55, "scrollSpeed": 400, "snap": true, snapTolerance: 30 });
+    $(".reservation").draggable({ axis: "x", "opacity": 0.55, snapTolerance: 30 });
 
     $(".reservation").on("drag", function( event, ui ) {
         if (event.x < 50 || event.x > 1440) {

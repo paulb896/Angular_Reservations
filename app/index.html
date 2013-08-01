@@ -105,9 +105,13 @@
        <div class=attendee-icon ng-click="addAttendee(attendee)"></div>
        <input ng-model="attendee" class="add-attendee-input"/>
      </div>
-     <div class="places">
-         WHERE<input type="input" class="place_search"/>
-     </div>
+
+      <!-- Place search -->
+      <div class="places">
+          <div>FIND A PLACE<input type="input" class="place_search"/></div>
+          <span ng-repeat="place in NavModel.places" class="floatingTile place-result">{{place.name}}<img class="place-icon" ng-src="{{place.icon}}"></span>
+
+      </div>
 
       <script src="lib/angular/angular.js"></script>
       <script src="js/app.js"></script>
@@ -116,5 +120,6 @@
       <script src="js/filters.js"></script>
       <script src="js/directives.js"></script>
   </div>
+
 </body>
 </html>

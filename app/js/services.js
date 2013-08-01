@@ -92,11 +92,19 @@ angular.module('userCalendar.services', []).
 }).factory('ApplicationDataModel', function(){
     return {
       "users" :       [],
-      "reservations": []
+      "reservations": [],
+      "places": []
     };
 }).factory('NavModel', function(){
     return {
-        "selectedReservation" :{}
-
+        "selectedReservation" :{},
+        "places":[
+            {name: "Cockney Kings Fish & Chips", rating:"4.0", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
+            {name: "Golden Fish Café", rating:"3.0", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
+            {name: "McDonald's", rating:"2.7", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
+            {name: "Szechuan House Restaurant", rating:"4.2", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
+            {name: "Miki Sushi", rating:"3.0", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
+            {name: "Earls", rating:"4.1", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"}
+        ]
     };
 })

@@ -50,10 +50,11 @@ angular.module('userCalendar.filters', []).
   .filter('niceTime', [function(time) {
     return function(time) {
       //console.log("Using this datetime to determine chart position: " + dateTime);
-      var dateTime = new Date(time);
-      //console.log("AND THE HOURS IN TIME ARE: ");
-      //console.log(dateTime.getHours());
-      return dateTime.toLocaleTimeString();
+      var dateTime = new Date(time),
+      minutes = dateTime.getMinutes();
+      if (minutes < 10) {minutes = "0"+minutes;}
+
+      return dateTime.getHours() + ":" + minutes;
     }
   }])
   .filter('minuteWidth', [function(width) {
