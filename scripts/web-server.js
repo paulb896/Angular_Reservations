@@ -109,6 +109,10 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
           });
 
       });
+
+      if (req.url == "/" || req.url == "") {
+          req.url = "index.html";
+      }
   }
 
 
