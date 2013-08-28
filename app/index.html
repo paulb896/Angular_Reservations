@@ -17,23 +17,19 @@
       <div class="calendar-controls">
         <input ng-model="selectedDate.month">
           <div ng-controller="DateControlsCtrl" class="date-controls">
-              <div id="month-picker">
-                  <div id="stage">
-                      <div id="shape" class="ring">
-                          <div class="plane seven" ng-click="setMonth(0); controls.stopSpin();">January</div>
-                          <div class="plane eight" ng-click="setMonth(1); controls.stopSpin();">February</div>
-                          <div class="plane nine" ng-click="setMonth(2); controls.stopSpin();">March</div>
-                          <div class="plane ten" ng-click="setMonth(3); controls.stopSpin();">April</div>
-                          <div class="plane eleven" ng-click="setMonth(4); controls.stopSpin();">May</div>
-                          <div class="plane twelve" ng-click="setMonth(5); controls.stopSpin();">June</div>
-                          <div class="plane one" ng-click="setMonth(6); controls.stopSpin();">July</div>
-                          <div class="plane two" ng-click="setMonth(7); controls.stopSpin();">August</div>
-                          <div class="plane three" ng-click="setMonth(8); controls.stopSpin();">September</div>
-                          <div class="plane four" ng-click="setMonth(9); controls.stopSpin();">October</div>
-                          <div class="plane five" ng-click="setMonth(10); controls.stopSpin();">November</div>
-                          <div class="plane six" ng-click="setMonth(11); controls.stopSpin();">December</div>
-                      </div>
-                  </div>
+              <div class="month-picker">
+                  <span ng-click="setMonth(0); controls.stopSpin();">January</span>
+                  <span ng-click="setMonth(1); controls.stopSpin();">February</span>
+                  <span ng-click="setMonth(2); controls.stopSpin();">March</span>
+                  <span ng-click="setMonth(3); controls.stopSpin();">April</span>
+                  <span ng-click="setMonth(4); controls.stopSpin();">May</span>
+                  <span ng-click="setMonth(5); controls.stopSpin();">June</span>
+                  <span ng-click="setMonth(6); controls.stopSpin();">July</span>
+                  <span ng-click="setMonth(7); controls.stopSpin();">August</span>
+                  <span ng-click="setMonth(8); controls.stopSpin();">September</span>
+                  <span ng-click="setMonth(9); controls.stopSpin();">October</span>
+                  <span ng-click="setMonth(10); controls.stopSpin();">November</span>
+                  <span ng-click="setMonth(11); controls.stopSpin();">December</span>
               </div>
           </div>
       </div>
@@ -102,8 +98,8 @@
        <h3 class="attendees-header">Attendees</h3>
        <div class="company_selected">{{NavModel.selectedReservation.company}}</div>
        <div class="attendee-icon-alt" style="margin-top: -86px; margin-right: 20px"></div>
-       <div class=attendee-icon ng-click="addAttendee(attendee)"></div>
-       <input ng-model="attendee" class="add-attendee-input"/>
+       <input ng-model="attendee" class="add-attendee-input"/><span class="label_emailExample">"attendee@email.com"</span>
+         <div class=attendee-icon ng-click="addAttendee(attendee)"></div>
      </div>
 
       <!-- Place search -->

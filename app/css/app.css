@@ -87,20 +87,26 @@ div.status.maybe{
 
 
 .reserve{
-  background-color:rgba(200,169,199,0.25);
+  background-color:rgba(200,169,199,0.01);
   border:2px solid transparent;
   cursor: pointer;
-
+  color:transparent;
   position:absolute;
   padding: 5px;
-  color:whitesmoke;
+
   padding: 8px;
   width:50px;
   height: 20px;
+  margin-top: 60px;
+  margin-left: -68px;
+  border-bottom-right-radius:15px;
+    -webkit-transition: background-color 4.5s;
 }
 
 .reserve:hover{
     background-color:#222222;
+    -webkit-transition: background-color 0.5s;
+    color:whitesmoke;
 }
 
 .floatingTile {
@@ -273,7 +279,7 @@ div label.day{
     border-bottom: solid silver 1px;
 
   padding: 10px 10px 0 10px;
-  overflow: hidden;
+  #overflow: hidden;
 }
 
 
@@ -308,7 +314,7 @@ div label.day{
 
 
 .attendees{
-    width:638px;
+    width:356px;
     -webkit-transition: all 0.5s;
     position: absolute;
     margin-top: 278px;
@@ -358,20 +364,32 @@ div label.day{
 }
 
 .attendees-header{
-    letter-spacing: 3px;
+    letter-spacing: 9px;
     margin-left: 25px;
     width: 100px;
     display: inline;
     color: #623828;
-    border-bottom: solid #623828 1px;
+    border-bottom: solid #623828 140px;
     font-weight: 900;
+
+}
+
+
+
+.label_emailExample{
+  font-family:sans-serif italic;
+  color:rgba(244,244,244,0.7);
+  margin-left: 26px;
+  font-weight: 500;
 }
 
 .add-attendee-input{
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-top: -55px;
+    margin-left: 25px;
     font-size: 25px;
     width:300px;
+    height: 45px;
+    margin-bottom: 4px;
 }
 
 .add-attendee-button{
@@ -422,8 +440,8 @@ div label.day{
     height:30px;
     float:right;
     cursor: pointer;
-    margin-top: 5px;
-    margin-right: 212px;
+    margin-top: -5px;
+    margin-right: 25px;
 }
 
 .attendee-icon:hover{
@@ -627,12 +645,12 @@ input:selection{
 }
 
 .requestedTime{
-    -webkit-transition: 1.2s all;
-    -moz-transition: 1.2s all;
-    -ms-transition: 1.2s all;
-    transition: 1.2s all;
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -ms-transition: 0.2s all;
+    transition: 0.2s all;
   z-index:10001;
-    border-bottom:none;
+    border-bottom:solid rgba(215,215,215,1) 2px;;
 }
 
 .requestedTime:hover{
@@ -651,10 +669,10 @@ input:selection{
     box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
 
     border-bottom-color: rgba(190,47,44, 1);
-    -webkit-transition: 1.2s all;
-    -moz-transition: 1.2s all;
-    -ms-transition: 1.2s all;
-    transition: 1.2s all;
+    -webkit-transition: 4.2s all;
+    -moz-transition: 4.2s all;
+    -ms-transition: 4.2s all;
+    transition: 4.2s all;
     border-bottom: solid rgba(215,215,215,1) 62px;
 }
 
