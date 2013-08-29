@@ -1,6 +1,6 @@
 
 body{
-  background-color:rgb(223,223,219);
+  background-color:rgba(223,223,219,0.5);
   position:absolute;
   z-index:99999;
   width:100%;
@@ -84,10 +84,13 @@ div.status.maybe{
   #-webkit-transition: border-color 1s;
 }
 
+.month-picker.span{
+  border-left:4px;
+}
 
 
 .reserve{
-  background-color:rgba(200,169,199,0.01);
+  background-color:rgba(200,169,199,0.3);
   border:2px solid transparent;
   cursor: pointer;
   color:transparent;
@@ -97,7 +100,7 @@ div.status.maybe{
   padding: 8px;
   width:50px;
   height: 20px;
-  margin-top: 60px;
+  margin-top: 52px;
   margin-left: -68px;
   border-bottom-right-radius:15px;
     -webkit-transition: background-color 4.5s;
@@ -284,6 +287,7 @@ div label.day{
 
 
 .reservation:hover{
+    background-color: rgba(191,188,199, 0.3);
     overflow: visible;
     border-bottom-right-radius:5px;
     border-bottom-left-radius:10px;
@@ -314,12 +318,12 @@ div label.day{
 
 
 .attendees{
-    width:356px;
+    width:640px;
     -webkit-transition: all 0.5s;
     position: absolute;
-    margin-top: 278px;
+    margin-top: 420px;
     margin-left:850px;
-    background-color:#c9c3b8;
+    background-color:rgba(244,244,244,0.2);
     height:145px;
     font-family: "Trebuchet MS, Helvetica, sans-serif";
     font-style: italic;
@@ -328,25 +332,30 @@ div label.day{
     -webkit-box-shadow: 0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
     box-shadow:         0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
     z-index: 99999;
-  padding-top: 10px;
+    padding: 10px;
 }
 
 
 .place_search{
     margin-left: 15px;
-    font-size:35px;
+    font-size:30px;
     padding: 10px;
-    background-color: rgba(250,250,250, 0.5);
     font-family: 'Noto Serif', serif;
+    color:black;
+    padding-right: 40px;
 }
 
 .places{
     font-size: 30px;
-    margin-top: 278px;
+    margin-top: 246px;
     margin-left:850px;
     position: absolute;
     font-family: 'Noto Serif', serif;
     width: 640px;
+    -moz-box-shadow:    0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
+    -webkit-box-shadow: 0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
+    box-shadow:         0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
+    padding: 10px;
 }
 
 .place-icon{
@@ -386,10 +395,11 @@ div label.day{
 .add-attendee-input{
     margin-top: -55px;
     margin-left: 25px;
-    font-size: 25px;
+    font-size: 30px;
     width:300px;
     height: 45px;
     margin-bottom: 4px;
+    padding: 10px;
 }
 
 .add-attendee-button{
@@ -438,10 +448,11 @@ div label.day{
     background-image:url('../img/add-alt.png');
     width:29px;
     height:30px;
-    float:right;
     cursor: pointer;
-    margin-top: -5px;
-    margin-right: 25px;
+    margin-top: -55px;
+    margin-left: 314px;
+    position: absolute;
+    z-index: 9999;
 }
 
 .attendee-icon:hover{
@@ -466,7 +477,7 @@ div label.day{
     height:700px;
     overflow:scroll;
     padding-left:36px;
-    margin-top:255px;
+    margin-top:278px;
     -webkit-transition: all 2.4s;
     font-size:300%;
 }
@@ -596,6 +607,25 @@ input:selection{
     color:black;
 }
 
+.find{
+    background-image:url('../img/find2.png');
+    width: 33px;
+    height: 34px;
+    background-size: 100%;
+    display: inline-block;
+    margin-left: -40px;
+    position:absolute;
+    margin-top: 10px;
+    -webkit-transition: 1.3s all;
+    -moz-transition: 1.3s all;
+    -ms-transition: 1.3s all;
+    transition: 1.3s all;
+}
+
+.find:hover{
+    background-image:url('../img/find-hover.png');
+    cursor: pointer;
+}
 
 .arrow{
   border-style: dashed;
@@ -641,7 +671,7 @@ input:selection{
 }
 
 .place_search{
-    width: 200px;
+    width: 140px;
 }
 
 .requestedTime{
@@ -655,7 +685,7 @@ input:selection{
 
 .requestedTime:hover{
     z-index:10001;
-    border-bottom: solid rgba(77,96,44, 0.7) 60px;
+    border-bottom: solid rgba(191,188,199, 0.9) 45px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     -webkit-transition: all 1.5s;
@@ -668,7 +698,6 @@ input:selection{
     -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
 
-    border-bottom-color: rgba(190,47,44, 1);
     -webkit-transition: 4.2s all;
     -moz-transition: 4.2s all;
     -ms-transition: 4.2s all;

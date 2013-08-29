@@ -104,9 +104,8 @@
 
       <!-- Place search -->
       <div class="places">
-          <div>FIND A PLACE<input type="input" class="place_search"/></div>
+          <span>FIND A PLACE</span><input ng-model="placeSearch" type="input" class="place_search"/><div class="find" ng-click="searchPlaces(placeSearch);"></div>
           <span ng-repeat="place in NavModel.places" class="floatingTile place-result">{{place.name}}<img class="place-icon" ng-src="{{place.icon}}"></span>
-
       </div>
 
       <script src="lib/angular/angular.js"></script>

@@ -305,5 +305,11 @@ console.log($(window));
 //        console.log(event.clientX);
 //    });
 
+
+    $scope.searchPlaces = function(searchText) {
+        console.log("SEARCH REQUEST, search text", searchText);
+
+    };
+
     return $scope.ReservationCtrl = this;
   }]);
