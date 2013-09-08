@@ -1,0 +1,9 @@
+.hour-chart{
+    background-color: rgba(199,199,199,0.2);
+    height: 200px;
+    width: 100%;
+}
+
+.chart-labels > span{
+    margin-left: 16%;
+}

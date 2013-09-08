@@ -30,6 +30,11 @@ angular.module('reserveTheTime.controllers', [])
         });
     };
 
+
+
+    $scope.updatePlace = function(place) {
+        UserSelection.place = place;
+    };
 //    $(".place_search").keypress(function(event) {
 //        if (event.which == 13) {
 //            $scope.searchPlaces(this.value);
@@ -39,7 +44,7 @@ angular.module('reserveTheTime.controllers', [])
 /**
  * Controller that handles date picker functionality
  */
-.controller('datePickerController', ['$scope', 'UserSelection', 'PageState', function($scope, UserSelection, PageState) {
+.controller('datePickerController', ['$scope', 'UserSelection', 'PageState', 'reservationSearch', function($scope, UserSelection, PageState, reservationSearch) {
     $scope.PageState = PageState;
     $scope.UserSelection = UserSelection;
     $scope.setMonth = function(monthNumber) {
@@ -50,18 +55,69 @@ angular.module('reserveTheTime.controllers', [])
         }
         newSelectedDate.setDate(UserSelection.selectedDate.getDate());
         UserSelection.selectedDate = newSelectedDate;
+        $scope.updateReservations();
     };
 
     $scope.updateSelectedDay = function(day) {
-        var newSelectedDate = new Date();
-        newSelectedDate.setFullYear(UserSelection.selectedDate.getFullYear());
-        newSelectedDate.setMonth(UserSelection.selectedDate.getMonth());
-        newSelectedDate.setDate(day);
+        var newSelectedDate = new Date(UserSelection.selectedDate.getFullYear(), UserSelection.selectedDate.getMonth(), day);
         UserSelection.selectedDate = newSelectedDate;
+        $scope.updateReservations();
     };
 
     $scope.initializeDate = function() {
         UserSelection.selectedDate = new Date();
         PageState.currentDate = new Date();
     };
+
+    $scope.updateReservations = function(){
+        reservationSearch.find(UserSelection.selectedDate.getFullYear(), UserSelection.selectedDate.getMonth(), UserSelection.selectedDate.getDate()).then(function(d) {
+            // Send view an array of reservations for the current state
+            PageState.reservations = d;
+        });
+    };
+}])
+/**
+ * Controller that handles hour chart functionality
+ */
+.controller('hourChartController', ['$scope', 'UserSelection', 'PageState', 'reservationSearch', function($scope, UserSelection, PageState, reservationSearch) {
+    $scope.PageState = PageState;
+    $scope.UserSelection = UserSelection;
+
+    $scope.initializeHours = function() {
+
+    };
+
+    $scope.updateReservations = function(){
+        reservationSearch.find(UserSelection.selectedDate.getYear(), UserSelection.selectedDate.getMonth(), UserSelection.selectedDate.getDate()).then(function(d) {
+            // Send view an array of reservations for the current state
+            PageState.reservations = d;
+        });
+    };
+}])
+/**
+ * Controller that handles hour chart functionality
+ */
+.controller('reservationController', ['$scope', 'UserSelection', 'PageState', 'reservationSearch', 'Reservation', function($scope, UserSelection, PageState, reservationSearch, Reservation) {
+    $scope.PageState = PageState;
+    $scope.UserSelection = UserSelection;
+
+    $scope.reserve = function(){
+        console.log("Attempting to request time: ");
+        var reservation = {
+            date:UserSelection.selectedDate,
+            status:"pending",
+            duration: UserSelection.duration,
+            place:UserSelection.place,
+            day:UserSelection.selectedDate.getDate(),
+            month:UserSelection.selectedDate.getMonth(),
+            year:UserSelection.selectedDate.getFullYear()
+        };
+
+        Reservation.request(reservation).then(function(responseMessage) {
+            // Set success/failure message
+
+            console.log("Reservation request complete, with response: ");
+            console.log(responseMessage);
+        });
+    }
 }]);

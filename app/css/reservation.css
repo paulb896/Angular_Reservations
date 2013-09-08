@@ -1,0 +1,54 @@
+.selected-date{
+    width: 50%;
+    font-size: 20px;
+    float: right;
+}
+
+.selected-date-label{
+
+}
+
+.duration{
+    width:50%;
+    font-size: 20px;
+    float: right;
+}
+
+.reservation-label{
+    width: 50%;
+    font-size: 20px;
+    font-style: oblique;
+}
+
+.reservation-input{
+    font-size:20px;
+    padding: 10px;
+    font-family: 'Noto Serif', serif;
+    color:black;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    width: 85%;
+    outline: none;
+    float:right;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.reservation-row{
+    height: 90px;
+}
+
+.reservation-table{
+    width:85%;
+    margin-left:5%;
+    margin-right:5%;
+}
+
+.reserve{
+    cursor: pointer;
+    text-align: center;
+}
+
+.reserve:hover{
+    background-color: rgba(177,178,188,0.4);
+}

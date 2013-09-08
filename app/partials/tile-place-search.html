@@ -1,6 +1,9 @@
 <div ng-controller="placeSearchController">
-    <span>FIND A PLACE</span><input ng-model="placeSearch" type="input" class="place_search"/><div class="find" ng-click="searchPlaces(placeSearch);"></div>
+    <h3 class="place-header">FIND A PLACE</h3><div class="find" ng-click="searchPlaces(placeSearch);"></div><input ng-model="placeSearch" type="input" class="place_search"/>
     <div class="foundPlaces">
-        <span ng-repeat="place in PageState.places" class="floatingTile place-result">{{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span></span>
+        <span ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
+          class="floatingTile place-result">
+            {{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span>
+        </span>
     </div>
 </div>

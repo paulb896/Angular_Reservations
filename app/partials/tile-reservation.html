@@ -1,0 +1,21 @@
+<h3>Reserve The Time</h3>
+<div ng-controller="reservationController" class="requestedTime reservation">
+    <table class="reservation-table">
+        <tr>
+            <td><span class="selected-date-label reservation-label">SELECTED DATE</span></td>
+            <td><input class="reservation-input" ng-model="UserSelection.selectedDate"/></td>
+        </tr>
+        <tr>
+            <td><span class="selected-date-label reservation-label">DURATION</span></td>
+            <td><input type="text" ng-model="UserSelection.duration" class="reservation-input"/></td>
+        </tr>
+        <tr>
+            <td><span class="selected-date-label reservation-label">PLACE</span></td>
+            <td><input type="text" ng-model="UserSelection.place.name" class="reservation-input"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><span class="reserve reservation-input" ng-click="reserve();">Create</span></td>
+        </tr>
+    </table>
+</div>

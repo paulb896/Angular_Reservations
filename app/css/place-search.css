@@ -4,9 +4,11 @@
     font-family: 'Noto Serif', serif;
     color:black;
     border-bottom: solid 2px black;
+    border-right: solid 2px black;
     width: 240px;
-    border-radius: 20px;
+    border-radius: 5px;
     outline: none;
+    float:right;
 }
 
 .place-icon{
@@ -28,6 +30,13 @@
     color:white;
 }
 
+.place-header{
+    margin-left: 40px;
+    width: 100px;
+    display: inline;
+    font-size: 20px;
+}
+
 .find{
     background-image:url('../img/find2.png');
     width: 50px;
@@ -38,7 +47,7 @@
     -moz-transition: 1.3s all;
     -ms-transition: 1.3s all;
     transition: 1.3s all;
-
+    float:right;
 }
 
 .find:hover{

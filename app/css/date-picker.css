@@ -59,15 +59,14 @@
 .month-picker {
     width: 780px;
     height: 25px;
-    -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
-    -webkit-perspective-origin: 0% 25px;
-    border-bottom:solid rgba(200,200,205,0.8) 5px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-size: 14px;
 }
 
 .month-picker > span{
-    margin-left:4px;
+    margin-left:10px;
+    border-bottom: solid rgba(0,0,0,0.2) 1px;
+    padding-bottom: 2px;
 }
 
 .month-picker > span:hover{
