@@ -11,6 +11,10 @@
     font-size: 14px;
 }
 
+.month-picker > span{
+    margin-left:4px;
+}
+
 .month-picker > span:hover{
   color:steelblue;
   cursor: pointer;

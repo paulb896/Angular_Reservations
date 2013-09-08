@@ -45,14 +45,14 @@
 
         <div class="days-view">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width:1440px; height: 15px; margin-left: 48px; margin-bottom: -7px;">
-                <g stroke="rgba(92,52,32,0.3)" stroke-width="8" >
+                <g stroke="rgba(92,52,32,0.3)" stroke-width="40" >
                     <path stroke-dasharray="60,1" d="M3 5 1440 5"/>
                 </g>
             </svg>
           <div ng-repeat="(key,reservation) in selectedDate.reservations" class="reservation" style="margin-left:{{reservation.date | getChartPosition}}px;">
                 <div class="update-changes-icon" ng-class="reservation | updateState" ng-click="requestedTime.reserve(reservation);"></div>
               <span ng-bind="reservation.date | niceTime" class="reservation_time"></span>
-              <span class="reservation_min_label">min</span><span ng-bind="reservation.duration_minutes" class="reservation_min"></span>
+              <span ng-bind="reservation.duration_minutes" class="reservation_min" ng-show="reservation.duration_minutes"></span><span class="reservation_min_label" ng-show="reservation.duration_minutes">min</span>
                 <div class="reservation_company">{{reservation.company}}</div>
                 <div ng-class="reservation.status" ng-model="reservation.status" class="status {{reservation.status}}" ng-click="toggleStatus(selectedDate, key, reservation.status)"><input ng-model="reservation.status" class="textStatus"></div>
                 <div class="attendee-icon-alt" ng-click="setReservationSelected(selectedDate.reservations[key]);"></div>
@@ -69,8 +69,6 @@
                 <span class="reserve" ng-click="requestedTime.reserve(ReservationModel);">Create</span>
             </div>
 
-
-            <div class="reservation-length-indicator" style="width:{{ReservationModel.duration_minutes}}px; margin-left:{{ReservationModel.date | getChartPosition}}px;"></div>
             <div style="border-top:solid silver 1px; ;padding-top:5px; border-top-left-radius:7px; border-top-right-radius:7px; margin-top: -44px; z-index: 99; position: absolute; background-color: rgba(180,180,195,0.1); width: 1440px; height: 50px; margin-left: 50px; overflow: hidden;">
                 <div ng-click="updateRequestToIndicator(indicator);"
                      ng-repeat="indicator in helpers.timeIndicators"
@@ -105,7 +103,9 @@
       <!-- Place search -->
       <div class="places">
           <span>FIND A PLACE</span><input ng-model="placeSearch" type="input" class="place_search"/><div class="find" ng-click="searchPlaces(placeSearch);"></div>
-          <span ng-repeat="place in NavModel.places" class="floatingTile place-result">{{place.name}}<img class="place-icon" ng-src="{{place.icon}}"></span>
+          <div class="foundPlaces">
+              <span ng-repeat="place in NavModel.places" class="floatingTile place-result">{{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span></span>
+          </div>
       </div>
 
       <script src="lib/angular/angular.js"></script>

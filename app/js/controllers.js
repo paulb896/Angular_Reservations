@@ -49,8 +49,8 @@ angular.module('userCalendar.controllers', []).
 
 
 
-  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'NavModel', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', 'ReservationModel', 'ApplicationDataModel',
-    function($scope, defaultSelectedDate, NavModel, myService, monthNames, ReservationRequest, UserModel, ReservationModel, ApplicationDataModel) {
+  .controller('ReservationCtrl', ['$scope', 'defaultSelectedDate', 'NavModel', 'myService', 'monthNames', 'ReservationRequest', 'UserModel', 'ReservationModel', 'ApplicationDataModel', 'placeService',
+    function($scope, defaultSelectedDate, NavModel, myService, monthNames, ReservationRequest, UserModel, ReservationModel, ApplicationDataModel, placeService) {
 
     var dateNow = new Date();
     $scope.dateNow = dateNow;
@@ -308,8 +308,21 @@ console.log($(window));
 
     $scope.searchPlaces = function(searchText) {
         console.log("SEARCH REQUEST, search text", searchText);
-
+        placeService.find("food", searchText).then(function(d) {
+            // Send view an array of reservations for the current state
+            //$scope.selectedDate.reservations = d;
+            console.log("Data from place search: ", d);
+            NavModel.places = d.results;
+        });
     };
+
+    $(".place_search").keypress(function(event) {
+        if (event.which == 13) {
+            $scope.searchPlaces(this.value);
+        }
+    });
+
+
 
     return $scope.ReservationCtrl = this;
   }]);

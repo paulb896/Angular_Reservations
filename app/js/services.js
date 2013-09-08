@@ -99,12 +99,27 @@ angular.module('userCalendar.services', []).
     return {
         "selectedReservation" :{},
         "places":[
-            {name: "Cockney Kings Fish & Chips", rating:"4.0", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
-            {name: "Golden Fish Café", rating:"3.0", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
-            {name: "McDonald's", rating:"2.7", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
-            {name: "Szechuan House Restaurant", rating:"4.2", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
-            {name: "Miki Sushi", rating:"3.0", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
-            {name: "Earls", rating:"4.1", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"}
+            {name: "Place matching search", rating:"4.5", icon: "http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"},
         ]
     };
+}).factory('placeService', function($http) {
+    var placeService = {
+        find: function(category, searchText) {
+            // $http returns a promise, which has a then function, which also returns a promise
+            var promise = $http.get("/places?category="+category+"&searchText="+searchText).then(function (response) {
+                // The then function here is an opportunity to modify the response
+                console.log(response);
+                // The return value gets picked up by the then in the controller.
+                if (response.status == 200) {
+                    return response.data;
+                }
+
+                return [];
+            });
+
+            // Return the promise to the controller
+            return promise;
+        }
+    };
+    return placeService;
 })

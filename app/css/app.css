@@ -11,6 +11,8 @@ body{
   -ms-user-select: none;
   user-select: none;
   font-family: 'Noto Serif', serif;
+  background-image:url('../img/background.jpg');
+    background-size: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -94,15 +96,11 @@ div.status.maybe{
   border:2px solid transparent;
   cursor: pointer;
   color:transparent;
-  position:absolute;
-  padding: 5px;
-
+  float:right;
   padding: 8px;
   width:50px;
   height: 20px;
-  margin-top: 52px;
-  margin-left: -68px;
-  border-bottom-right-radius:15px;
+  border-bottom-right-radius:5px;
     -webkit-transition: background-color 4.5s;
 }
 
@@ -151,7 +149,7 @@ div.status.maybe{
     -ms-transition:1.28s all;
     transition:1.28s all;
     margin:14px;
-    display:inline;
+    display:inline-table;
     margin-top:25px;
     float:left;
     position:relative;
@@ -258,16 +256,15 @@ div label.day{
 .reservation_min_label{
     font-size: 12px;
     margin-top: 21px;
-    margin-left: 16px;
-    position: absolute;
+    margin-left: 2px;
 }
 .reservation_min{
     font-size: 12px;
     margin-top: 21px;
-    position: absolute;
 }
 
 .reservation{
+  margin-top: -13px;
   color: #623828;
   width:112px;
   height:86px;
@@ -278,43 +275,27 @@ div label.day{
   font-size: 16px;
   font-family:"Trebuchet MS, Helvetica, sans-serif";
   font-weight:500;
-    -webkit-transition: all 1.5s;
-    border-bottom: solid silver 1px;
-
+    -webkit-transition-duration: 2.8s;
+    -moz-transition-duration: 2.8s;
+    -o-transition-duration: 2.8s;
+    transition-duration: 2.8s;
+  border-bottom: solid 0px transparent;
+    border-left: solid steelblue 4px;
   padding: 10px 10px 0 10px;
-  #overflow: hidden;
+  overflow: hidden;
 }
 
 
 .reservation:hover{
-    background-color: rgba(191,188,199, 0.3);
+    width:300px;
+    background-color: rgba(191,188,199, 0.9);
     overflow: visible;
-    border-bottom-right-radius:5px;
-    border-bottom-left-radius:10px;
-    -moz-box-shadow:    0px 5px 15px rgba(11,11,11, 0.9);
-    -webkit-box-shadow: 0px 5px 15px rgba(11,11,11, 0.9);
-    box-shadow:         0px 5px 15px rgba(11,11,11, 0.9);
-    border-bottom: solid rgba(215,215,215,1) 62px;
-  opacity:1;
   position:absolute;
   -webkit-transition: all 1.8s;
   z-index: 10000;
 }
 
-.reservation.selected{
-    border: solid;
-}
-
 .draggable { height: 90px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
-
-.reservation-length-indicator{
-   -webkit-transition: width 2.5s, margin 0.5s;
-   background-color: steelblue;
-   height: 20px;
-   position:absolute;
-   z-index: 500;
-   margin-top: 74px;
-}
 
 
 .attendees{
@@ -343,19 +324,26 @@ div label.day{
     font-family: 'Noto Serif', serif;
     color:black;
     padding-right: 40px;
+    float:right;
+    border-bottom: solid 2px black;
+    width: 180px;
+    border-radius: 20px;
+    outline: none;
 }
 
 .places{
     font-size: 30px;
-    margin-top: 246px;
+    margin-top: 268px;
     margin-left:850px;
     position: absolute;
     font-family: 'Noto Serif', serif;
-    width: 640px;
+    width: 615px;
     -moz-box-shadow:    0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
     -webkit-box-shadow: 0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
     box-shadow:         0px 5px 15px rgba(11,11,11, 0.9), 3px 0 40px rgba(10, 10, 10, 0.3) inset;
     padding: 10px;
+    font-style:italic;
+    letter-spacing: 4px;
 }
 
 .place-icon{
@@ -363,13 +351,18 @@ div label.day{
 }
 
 .place-result{
-    background-color: rgba(200,200,205,0.8);
-    display: inline;
+    background-color: rgba(200,200,205,0.4);
+    display: inline-table;
     margin-right: 10px;
-    border-bottom: solid black 1px;
     cursor: pointer;
     height: 80px;
     font-size: 16px;
+    color:#000000;
+    border-radius: 10px;
+}
+
+.place-result:hover{
+    color:white;
 }
 
 .attendees-header{
@@ -423,7 +416,7 @@ div label.day{
     background-size: 100%;
     width:26px;
     height:26px;
-    float:right;
+    position: absolute;
     opacity: 0.6;
     cursor: pointer;
     z-index: 9999;
@@ -508,7 +501,8 @@ span.dayOfMonth{
     font-family: 'Noto Serif', serif;
     background-color: transparent;
     width:120px;
-    color:#623828;
+    color:rgba(233,233,233,0.6);
+    font-weight: 800;
 } 
 
 label{
@@ -553,17 +547,14 @@ input:selection{
 
 
 .day-chart{
-  margin-top: -6px;
   height:102px;
   width:1440px;
   margin-left:50px;
   position:absolute;
-  background-color:rgba(215,215,215,1);
   -webkit-transition: all 1s;
   z-index:6000;
   border-width: 1px;
   cursor: pointer;
-  border-bottom: solid silver 1px;
 }
 
 
@@ -586,7 +577,8 @@ input:selection{
 
 .current-selected-date{
     width:600px; height:50px; position:absolute; z-index:5000;
-    font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; color:#623828; margin-left: 310px;
+    font-family: Impact, Charcoal, sans-serif; font-size:22px; letter-spacing:0px; color:rgba(233,233,233,0.6); margin-left: 310px;
+    font-weight: 800;
 }
 
 .calendar-controls{
@@ -594,12 +586,14 @@ input:selection{
   margin-left:263px;
   position: absolute;
   z-index:4000;
+  color:rgba(233,233,233,0.6);
+    font-weight: 800;
 }
 
 .reservation_company{
     font-style:italic;
     font-size: 18px;
-    height:50px;
+    height:8px;
     margin-top: 10px;
     width:95%;
     overflow:scroll;
@@ -607,15 +601,19 @@ input:selection{
     color:black;
 }
 
+.foundPlaces{
+    margin-top: 25px;
+}
+
 .find{
     background-image:url('../img/find2.png');
-    width: 33px;
-    height: 34px;
+    width: 50px;
+    height: 51px;
     background-size: 100%;
     display: inline-block;
-    margin-left: -40px;
-    position:absolute;
-    margin-top: 10px;
+    margin-right: -240px;
+    float:right;
+    margin-top:7px;
     -webkit-transition: 1.3s all;
     -moz-transition: 1.3s all;
     -ms-transition: 1.3s all;
@@ -670,9 +668,6 @@ input:selection{
  transition: 1.2s all;
 }
 
-.place_search{
-    width: 140px;
-}
 
 .requestedTime{
     -webkit-transition: 0.2s all;
@@ -680,14 +675,10 @@ input:selection{
     -ms-transition: 0.2s all;
     transition: 0.2s all;
   z-index:10001;
-    border-bottom:solid rgba(215,215,215,1) 2px;;
 }
 
 .requestedTime:hover{
     z-index:10001;
-    border-bottom: solid rgba(191,188,199, 0.9) 45px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
     -webkit-transition: all 1.5s;
 }
 
@@ -702,7 +693,6 @@ input:selection{
     -moz-transition: 4.2s all;
     -ms-transition: 4.2s all;
     transition: 4.2s all;
-    border-bottom: solid rgba(215,215,215,1) 62px;
 }
 
 .days-view{

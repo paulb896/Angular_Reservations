@@ -57,6 +57,8 @@ var MongoClient = require('mongodb').MongoClient
 
 HttpServer.prototype.handleRequest_ = function(req, res) {
 
+  this.host = "192.168.1.77:3001";
+
   /**
    * Handle writes to db here
    */
@@ -79,7 +81,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
           console.log(JSON.parse(data));
 
 
-          MongoClient.connect('mongodb://127.0.0.1:3001/reservation_system', function(err, db) {
+          MongoClient.connect('mongodb://192.168.1.77:3001/reservation_system', function(err, db) {
               if(err) throw err;
 
               var collection = db.collection('reservation');
@@ -132,7 +134,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
       'Content-Type': 'application/json'
     });
 
-      MongoClient.connect('mongodb://127.0.0.1:3001/reservation_system', function(err, db) {
+      MongoClient.connect('mongodb://192.168.1.77:3001/reservation_system', function(err, db) {
           if(err) throw err;
 
           var collection = db.collection('reservation');
@@ -153,6 +155,17 @@ console.log(req);
               db.close();
           });
       });
+  } else if (req.url.pathname == "/places") {
+
+
+      var request = require('request');
+      var requestUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=49.248869,-122.973796&radius=5000&types=" + req.url.query.category + "&name=" + req.url.query.searchText + "&sensor=false&key=AIzaSyAk94GtyAPwbgRSmACRRMq8aqY3eb1o_sk";
+      request(requestUrl, function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+              console.log(body) // Print the google web page.
+              res.end(body);
+          }
+      })
   } else {
 
   var handler = this.handlers[req.method];
