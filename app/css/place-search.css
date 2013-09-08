@@ -1,0 +1,47 @@
+.place_search{
+    font-size:30px;
+    padding: 10px;
+    font-family: 'Noto Serif', serif;
+    color:black;
+    border-bottom: solid 2px black;
+    width: 240px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.place-icon{
+    height: 20px;
+}
+
+.place-result{
+    background-color: rgba(200,200,205,0.4);
+    display: inline-table;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 80px;
+    font-size: 16px;
+    color:#000000;
+    border-radius: 10px;
+}
+
+.place-result:hover{
+    color:white;
+}
+
+.find{
+    background-image:url('../img/find2.png');
+    width: 50px;
+    height: 51px;
+    background-size: 100%;
+    display: inline-block;
+    -webkit-transition: 1.3s all;
+    -moz-transition: 1.3s all;
+    -ms-transition: 1.3s all;
+    transition: 1.3s all;
+
+}
+
+.find:hover{
+    background-image:url('../img/find-hover.png');
+    cursor: pointer;
+}

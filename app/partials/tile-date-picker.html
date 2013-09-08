@@ -1,0 +1,12 @@
+<div ng-controller="datePickerController" ng-init="initializeDate()" class="datePicker">
+    <div class="month-picker">
+        <span ng-repeat="(monthNumber, monthModel) in PageState.months" ng-click="setMonth(monthNumber+1);">{{monthModel.name}}</span>
+    </div>
+    <div ng-repeat="dayModel in PageState.days"
+      class="floatingTile day-floating-tile"
+      ng-click="updateSelectedDay(dayModel)">
+        <span class="dayOfMonth">
+          {{dayModel}}
+        </span>
+    </div>
+</div>

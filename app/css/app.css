@@ -117,7 +117,7 @@ div.status.maybe{
   height: 6%;
   padding: 5px;
   color:#ffffff;
-    cursor: default;
+  cursor: default;
 }
 
 
@@ -126,7 +126,6 @@ div.status.maybe{
 }
 
 .floatingTile:hover{
-
     transform: scaleZ(0.87);
     -webkit-animation-timing-function: ease-in-out;
     -moz-animation-timing-function: ease-in-out;
@@ -135,7 +134,6 @@ div.status.maybe{
 }
 
 .day-floating-tile{
-
     -webkit-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4), 0 0 40px rgba(10, 0, 0, 0.4) inset;
     -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4), 0 0 40px rgba(10, 0, 0, 0.4) inset;
     box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4), 0 0 40px rgba(11, 0, 0, 0.4) inset;
