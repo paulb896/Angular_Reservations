@@ -5,5 +5,9 @@
 }
 
 .chart-labels > span{
-    margin-left: 16%;
+margin-left: 15px;
+}
+
+.reservation{
+    border-radius: 5px;
 }

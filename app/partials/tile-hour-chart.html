@@ -8,8 +8,8 @@
     <div class="chart-labels">
         <span ng-repeat="hour in PageState.chartHours" ng-bind="hour"></span>
     </div>
-    <div ng-repeat="(key,reservation) in PageState.reservations" class="reservation" style="margin-left:{{reservation.date}}px;">
+    <div ng-repeat="(key,reservation) in PageState.reservations" class="reservation place-result" style="margin-left:{{reservation.date}}px;" ng-click="selectReservation(reservation)">
         <div class="update-changes-icon" ng-class="reservation" ng-click="requestedTime.reserve(reservation);"></div>
-        <span ng-bind="reservation.date" class="reservation_time"></span>
+        <span ng-bind="reservation.date| date:'MM/dd/yyyy @ h:mma'"  class="reservation_time"></span>
     </div>
 </div>

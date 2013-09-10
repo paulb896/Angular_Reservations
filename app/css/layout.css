@@ -26,8 +26,8 @@ h2{
     width: 42%;
     float:left;
     padding: 40px;
+    overflow:hidden;
 }
-
 
 
 .tile-navigation{

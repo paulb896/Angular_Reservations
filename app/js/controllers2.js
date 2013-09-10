@@ -25,11 +25,11 @@ angular.module('reserveTheTime.controllers', [])
     };
 
     $scope.templates =
-      [ { name: "Calendar", url: 'partials/tile-date-picker.html', imageUrl:"img/calendar.png"}
+      [ { name: "Calendar", url: 'partials/tile-hour-chart.html', imageUrl:"img/calendar.png"}
       , { name: 'Attendees', url: 'partials/tile-attendees.html', imageUrl:"img/add-user-icon.png"}
       , { name: 'Reserve', url: 'partials/tile-reservation.html', imageUrl:"img/gear.png"}
       , { name: 'Place Search', url: 'partials/tile-place-search.html', imageUrl:"img/find2.png"}
-      , { name: 'Hourly Chart', url: 'partials/tile-hour-chart.html', imageUrl:"img/clock.png"}
+      , { name: 'Hourly Chart', url: 'partials/tile-date-picker.html', imageUrl:"img/clock.png"}
       ];
 
     $scope.initializeNav = function() {
@@ -87,7 +87,15 @@ angular.module('reserveTheTime.controllers', [])
         $scope.updateReservations();
     };
 
+    $scope.updateChartHours = function(dateTime) {
+      PageState.chartHours = [];
+      for(var i = 0; i < dateTime.getHours(); i++) {
+        PageState.chartHours.push(i)
+      }
+    };
+
     $scope.updateSelectedTime = function(dateTime) {
+        $scope.updateChartHours(dateTime);
         var newSelectedDate = new Date(UserSelection.selectedDate.getFullYear(), UserSelection.selectedDate.getMonth(), UserSelection.selectedDate.getDate(), dateTime.getHours()+1);
         UserSelection.selectedDate = newSelectedDate;
     };
@@ -131,6 +139,13 @@ angular.module('reserveTheTime.controllers', [])
             // Send view an array of reservations for the current state
             PageState.reservations = d;
         });
+    };
+
+    $scope.selectReservation = function(reservation) {
+      console.log("RESERVATION HERE IS: ", reservation);
+      if (reservation.hasOwnProperty('date')) {
+          UserSelection.selectedDate = new Date(reservation.date);
+      }
     };
 }])
 /**
