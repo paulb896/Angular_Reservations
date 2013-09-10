@@ -5,10 +5,9 @@
 angular.module('reserveTheTime.filters', [])
 .filter('niceHour', [function(dateTime) {
     return function(dateTime) {
-
         var timeUnit = "am";
         var hour = dateTime.getHours();
-        if (hour > 11) {
+        if (hour >= 11 && hour != 23) {
             timeUnit = "pm";
         }
         return ((hour % 12)+1) + timeUnit;
