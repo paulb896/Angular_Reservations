@@ -4,7 +4,8 @@ var util = require('util'),
     http = require('http'),
     fs = require('fs'),
     url = require('url'),
-    events = require('events');
+    events = require('events')
+    developerKey = "";
 
 var DEFAULT_PORT = 8000;
 
@@ -159,7 +160,7 @@ console.log(req);
 
 
       var request = require('request');
-      var requestUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=49.248869,-122.973796&radius=5000&types=" + req.url.query.category + "&name=" + req.url.query.searchText + "&sensor=false&key=AIzaSyAk94GtyAPwbgRSmACRRMq8aqY3eb1o_sk";
+      var requestUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=49.248869,-122.973796&radius=5000&types=" + req.url.query.category + "&name=" + req.url.query.searchText + "&sensor=false&key="+developerKey;
       request(requestUrl, function (error, response, body) {
           if (!error && response.statusCode == 200) {
               console.log(body) // Print the google web page.
