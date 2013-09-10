@@ -83,7 +83,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
 
 
           MongoClient.connect('mongodb://192.168.1.77:3001/reservation_system', function(err, db) {
-              if(err) throw err;
+              if(err) return false;
 
               var collection = db.collection('reservation');
 
@@ -136,7 +136,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
     });
 
       MongoClient.connect('mongodb://192.168.1.77:3001/reservation_system', function(err, db) {
-          if(err) throw err;
+          if(err) return false;
 
           var collection = db.collection('reservation');
 console.log(req);
