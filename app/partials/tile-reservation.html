@@ -1,4 +1,3 @@
-<h3>Reserve The Time</h3>
 <div ng-controller="reservationController" class="requestedTime reservation">
     <table class="reservation-table">
         <tr>
@@ -6,12 +5,12 @@
             <td><input class="reservation-input" ng-model="UserSelection.selectedDate"/></td>
         </tr>
         <tr>
-            <td><span class="selected-date-label reservation-label">DURATION</span></td>
-            <td><input type="text" ng-model="UserSelection.duration" class="reservation-input"/></td>
-        </tr>
-        <tr>
             <td><span class="selected-date-label reservation-label">PLACE</span></td>
             <td><input type="text" ng-model="UserSelection.place.name" class="reservation-input"/></td>
+        </tr>
+        <tr>
+            <td><span class="selected-date-label reservation-label">ATTENDEES</span></td>
+            <td><span ng-repeat="attendee in PageState.attendees" class="attendee-name floatingTile">{{attendee}}</span></td>
         </tr>
         <tr>
             <td></td>

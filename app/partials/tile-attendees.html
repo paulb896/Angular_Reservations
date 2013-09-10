@@ -1,7 +1,8 @@
-<div class="attendees">
-    <h3 class="attendees-header">Attendees</h3>
-    <div class="company_selected">{{NavModel.selectedReservation.company}}</div>
-    <div class="attendee-icon-alt" style="margin-top: -86px; margin-right: 20px"></div>
-    <input ng-model="attendee" class="add-attendee-input"/><span class="label_emailExample">"attendee@email.com"</span>
-    <div class=attendee-icon ng-click="addAttendee(attendee)"></div>
-</div>
+<table class="attendee-table" ng-controller="attendeeController">
+    <tr>
+        <td class="attendees-header">ATTENDEES</td><td><span ng-repeat="attendee in PageState.attendees" class="attendee-name floatingTile">{{attendee}}</span></td>
+    </tr>
+    <tr>
+        <td><input type="text" class="add-attendee-input" ng-model="UserSelection.attendee"/></td><td><span ng-click="addAttendee(UserSelection.attendee);" class="reserve reservation-input">ADD ATTENDEE</span></td>
+    </tr>
+</table>

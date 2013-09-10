@@ -7,7 +7,8 @@ angular.module('reserveTheTime.services', [])
 .factory('UserSelection', function(){
     return {
         "selectedDate": "",
-        "place": {}
+        "place": {},
+        "attendee":""
     };
 })
 .factory('PageState', function(){
@@ -15,6 +16,8 @@ angular.module('reserveTheTime.services', [])
         "currentDate": "",
         "places":[],
         "reservations":[],
+        "hours":[],
+        "attendees":[],
         "days" : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
         "chartHours": [13,14,15,16,17],
         "months": [{name:"January"}, {name:"February"}, {name:"March"}, {name:"April"}, {name:"May"}, {name:"June"}, {name:"July"}, {name:"August"}, {name:"September"}, {name:"October"}, {name:"November"}, {name: "December"}]

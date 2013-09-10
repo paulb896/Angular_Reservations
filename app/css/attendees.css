@@ -1,0 +1,23 @@
+.add-attendee-input{
+    font-size:30px;
+    padding: 10px;
+    font-family: 'Noto Serif', serif;
+    color:black;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    border-radius: 5px;
+    outline: none;
+}
+
+.attendee-name{
+    margin-left: 20px;
+}
+
+.attendee-table{
+    width: 100%;
+}
+
+.attendees-header{
+    font-size: 25px;
+    letter-spacing: 2px;
+}

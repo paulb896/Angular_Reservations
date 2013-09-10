@@ -1,7 +1,6 @@
 .selected-date{
     width: 50%;
     font-size: 20px;
-    float: right;
 }
 
 .selected-date-label{
@@ -39,7 +38,7 @@
 }
 
 .reservation-table{
-    width:85%;
+    width:500px;
     margin-left:5%;
     margin-right:5%;
 }

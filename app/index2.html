@@ -11,18 +11,23 @@
         <link rel="stylesheet" href="css/place-search.css"/>
         <link rel="stylesheet" href="css/hour-chart.css"/>
         <link rel="stylesheet" href="css/reservation.css"/>
+        <link rel="stylesheet" href="css/attendees.css"/>
     </head>
     <body>
-        <div class="main-banner" ng-include="'partials/banner.html'"></div>
+
+        <span class="banner-left" ng-include="'partials/banner-left.html'"></span>
+        <span class="banner-right" ng-include="'partials/banner-right.html'"></span>
 
         <div class="tile" ng-include="'partials/tile-date-picker.html'">TILE CONTENT</div>
+        <div class="tile" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
+        <div class="tile" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
         <div class="tile" ng-include="'partials/tile-place-search.html'">TILE CONTENT</div>
-        <div class="tile" ng-include="'partials/tile-reservation.html'">TILE CONTENT</div>
-        <div class="tile" ng-include="'partials/tile-hour-chart.html'">TILE CONTENT</div>
+        <div class="tile" ng-include="'partials/tile-attendees.html'">TILE CONTENT</div>
 
         <script src="lib/angular/angular.js"></script>
         <script src="js/app2.js"></script>
         <script src="js/controllers2.js"></script>
         <script src="js/services2.js"></script>
+        <script src="js/filters2.js"></script>
     </body>
 </html>

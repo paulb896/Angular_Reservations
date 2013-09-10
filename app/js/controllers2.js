@@ -14,6 +14,30 @@ angular.module('reserveTheTime.controllers', [])
     $scope.PageState = PageState;
 }])
 /**
+ * Controller that handles data preparation for display in page banners
+ */
+.controller('tileNavigationController', ['$scope', 'UserSelection', 'PageState', function($scope, UserSelection, PageState) {
+    $scope.UserSelection = UserSelection;
+    $scope.PageState = PageState;
+
+    $scope.updateNav = function(template){
+        $scope.template = template;
+    };
+
+    $scope.templates =
+      [ { name: "Calendar", url: 'partials/tile-date-picker.html', imageUrl:"img/calendar.png"}
+      , { name: 'Attendees', url: 'partials/tile-attendees.html', imageUrl:"img/add-user-icon.png"}
+      , { name: 'Reserve', url: 'partials/tile-reservation.html', imageUrl:"img/gear.png"}
+      , { name: 'Place Search', url: 'partials/tile-place-search.html', imageUrl:"img/find2.png"}
+      , { name: 'Hourly Chart', url: 'partials/tile-hour-chart.html', imageUrl:"img/clock.png"}
+      ];
+
+    $scope.initializeNav = function() {
+        $scope.template = $scope.templates[0];
+    };
+
+}])
+/**
  * Controller that handles place search requests
  */
 .controller('placeSearchController', ['$scope', 'UserSelection', 'PageState', 'placeService', function($scope, UserSelection, PageState, placeService) {
@@ -29,8 +53,6 @@ angular.module('reserveTheTime.controllers', [])
             PageState.places = d.results;
         });
     };
-
-
 
     $scope.updatePlace = function(place) {
         UserSelection.place = place;
@@ -48,7 +70,7 @@ angular.module('reserveTheTime.controllers', [])
     $scope.PageState = PageState;
     $scope.UserSelection = UserSelection;
     $scope.setMonth = function(monthNumber) {
-        var newSelectedDate = new Date(UserSelection.selectedDate.getFullYear(), monthNumber, 0);
+        var newSelectedDate = new Date(UserSelection.selectedDate.getFullYear(), monthNumber, 0, UserSelection.selectedDate.getMinutes());
         PageState.days = new Array();
         for(var i = 1; i <= newSelectedDate.getDate(); i++) {
             PageState.days.push(i);
@@ -60,13 +82,30 @@ angular.module('reserveTheTime.controllers', [])
 
     $scope.updateSelectedDay = function(day) {
         var newSelectedDate = new Date(UserSelection.selectedDate.getFullYear(), UserSelection.selectedDate.getMonth(), day);
+        newSelectedDate.setMinutes(UserSelection.selectedDate.getMinutes());
         UserSelection.selectedDate = newSelectedDate;
         $scope.updateReservations();
+    };
+
+    $scope.updateSelectedTime = function(dateTime) {
+        var newSelectedDate = new Date(UserSelection.selectedDate.getFullYear(), UserSelection.selectedDate.getMonth(), UserSelection.selectedDate.getDate(), dateTime.getHours()+1);
+        UserSelection.selectedDate = newSelectedDate;
+    };
+
+    $scope.setTimes = function() {
+        PageState.times = new Array();
+        for(var i = 0; i <= 23; i++) {
+            var timeIndicator = new Date();
+            timeIndicator.setHours(i);
+            PageState.times.push(timeIndicator);
+        }
     };
 
     $scope.initializeDate = function() {
         UserSelection.selectedDate = new Date();
         PageState.currentDate = new Date();
+        $scope.setMonth(PageState.currentDate.getMonth());
+        $scope.setTimes();
     };
 
     $scope.updateReservations = function(){
@@ -120,4 +159,15 @@ angular.module('reserveTheTime.controllers', [])
             console.log(responseMessage);
         });
     }
+}])
+/**
+ * Controller that handles hour chart functionality
+ */
+.controller('attendeeController', ['$scope', 'UserSelection', 'PageState', 'reservationSearch', 'Reservation', function($scope, UserSelection, PageState, reservationSearch, Reservation) {
+    $scope.PageState = PageState;
+    $scope.UserSelection = UserSelection;
+
+    $scope.addAttendee = function(attendee) {
+        PageState.attendees.push(attendee);
+    };
 }]);

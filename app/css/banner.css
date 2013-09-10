@@ -1,21 +1,29 @@
-.main-banner{
-    width: 50%;
-    height: 150px;
+.attendee{
+    margin-left: 10px;
+    color:black;
+    border-bottom: solid #000000 1px;
+}
+
+.banner-left{
+    width: 45%;
+    height: 100px;
     font-size: 75%;
     padding: 15px;
-    background-color: rgba(144,144,150,0.05);
+    color:rgba(111,1,1,0.9);
+    margin-right: 20px;
+    margin-left: 20px;
+    display: inline-table;
 }
 
-.logo{
-    width:70px;
-    height:40px;
-    z-index: 9005;
-    display: inline;
-}
-
-.main-title{
-    display: inline;
-    font-size:45px;
+.banner-right{
+    color:rgba(111,1,1,0.9);
+    float:right;
+    display: inline-table;
+    height: 100px;
+    width: 40%;
+    margin-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .current-date-label{
@@ -25,5 +33,38 @@
 
 .current-date{
     font-style:italic;
-    color:steelblue;
+    color:rgba(19,19,29,0.9);
 }
+
+.logo{
+    width:70px;
+    height:40px;
+    z-index: 9005;
+    display: inline;
+}
+
+.nav-image{
+    width: 20px;
+    height: 20px;
+}
+
+.main-title{
+    display: inline;
+    font-size:45px;
+}
+
+.selected-date{
+    font-size: 20px;
+    color:black;
+    font-family: "Times New Roman";
+    font-style: oblique;
+    color: rgba(99,99,110,0.9);
+}
+
+.selected-place{
+    width: 50%;
+    color:#000000;
+}
+
+
+

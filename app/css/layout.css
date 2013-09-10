@@ -1,11 +1,63 @@
 body{
     width:100%;
     height: 800px;
+    #overflow: hidden;
+}
+
+body > div{
+    padding: 10px;
+}
+
+h1{
+    font-family: "Times New Roman";
+    letter-spacing: 9px;
+}
+
+h2{
+    margin: 0;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
 .tile{
     height:300px;
-    width: 50%;
+    width: 40%;
     float:left;
+    padding: 40px;
 }
 
+.tile-navigation{
+    list-style-type: none;
+    float: right;
+    #margin-left:38%;
+    width: 5%;
+    display: inline-table;
+}
+
+.inner-tile{
+    display: inline-table;
+    position:absolute;
+    width: 15%;
+}
+
+.tile-navigation > li{
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    height: 20px;
+}
+
+.tile-navigation > li:hover{
+    -webkit-box-shadow:0 0 40px rgba(10, 0, 0, 0.2) inset;
+    -moz-box-shadow:0 0 40px rgba(10, 0, 0, 0.2) inset;
+    box-shadow:0 0 40px rgba(11, 0, 0, 0.2) inset;
+}
+
+.tile-navigation > * {
+    -webkit-transition:1.28s all;
+    -moz-transition:1.28s all;
+    -ms-transition:1.28s all;
+    transition:1.28s all;
+}
