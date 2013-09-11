@@ -5,7 +5,8 @@ var util = require('util'),
     fs = require('fs'),
     url = require('url'),
     events = require('events')
-    developerKey = "";
+    developerKey = "",
+    dbHost = 'mongodb://192.168.1.77:3001/reservation_system';
 
 var DEFAULT_PORT = 8000;
 
@@ -82,7 +83,7 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
           console.log(JSON.parse(data));
 
 
-          MongoClient.connect('mongodb://192.168.1.77:3001/reservation_system', function(err, db) {
+          MongoClient.connect(dbHost, function(err, db) {
               if(err) return false;
 
               var collection = db.collection('reservation');
@@ -115,8 +116,9 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
 
   }
 
-
-
+    /**
+     * Hack to boot to index todo: remove comment
+     */
     if (req.url == "/" || req.url == "") {
         req.url = "index.html";
     }
@@ -129,17 +131,20 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
   req.url = this.parseUrl_(req.url);
   console.log("THIS IS A REQUEST TO THE SYSTEM\n\n\n");
 
+    /**
+     * Search for reservations with parameters
+     */
   if (req.url.pathname == "/reservations") {
     console.log("Getting reservations");
     res.writeHead(200, {
       'Content-Type': 'application/json'
     });
 
-      MongoClient.connect('mongodb://192.168.1.77:3001/reservation_system', function(err, db) {
+      MongoClient.connect(dbHost, function(err, db) {
           if(err) return false;
 
           var collection = db.collection('reservation');
-console.log(req);
+          console.log(req);
           // Locate all the entries using find
           req.url.query.month = req.url.query.month.toString();
           req.url.query.day = req.url.query.day.toString();
@@ -156,9 +161,10 @@ console.log(req);
               db.close();
           });
       });
+      /**
+       * Search for places with parameters
+       */
   } else if (req.url.pathname == "/places") {
-
-
       var request = require('request');
       var requestUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=49.248869,-122.973796&radius=5000&types=" + req.url.query.category + "&name=" + req.url.query.searchText + "&sensor=false&key="+developerKey;
       request(requestUrl, function (error, response, body) {

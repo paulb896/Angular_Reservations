@@ -89,7 +89,23 @@ angular.module('reserveTheTime.controllers', [])
 
     $scope.updateChartHours = function(dateTime) {
       PageState.chartHours = [];
-      for(var i = 0; i < dateTime.getHours(); i++) {
+      var currentHour = dateTime.getHours(),
+      endHour = currentHour + 3,
+      startHour = currentHour - 2;
+
+      // Set lowest shown hour
+      if (startHour < 1) {
+          startHour = 1;
+          endHour = 6;
+      }
+
+      // Set highest show hour
+      if (endHour > 23) {
+          endHour = 23;
+          startHour = endHour - 5;
+      }
+
+      for(var i = startHour; i < endHour; i++) {
         PageState.chartHours.push(i)
       }
     };
@@ -141,6 +157,10 @@ angular.module('reserveTheTime.controllers', [])
         });
     };
 
+    $scope.addAttendee = function(attendee) {
+        PageState.attendees.push(attendee);
+    };
+
     $scope.selectReservation = function(reservation) {
       console.log("RESERVATION HERE IS: ", reservation);
       if (reservation.hasOwnProperty('date')) {
@@ -164,7 +184,8 @@ angular.module('reserveTheTime.controllers', [])
             place:UserSelection.place,
             day:UserSelection.selectedDate.getDate(),
             month:UserSelection.selectedDate.getMonth(),
-            year:UserSelection.selectedDate.getFullYear()
+            year:UserSelection.selectedDate.getFullYear(),
+            attendees:PageState.attendees
         };
 
         Reservation.request(reservation).then(function(responseMessage) {

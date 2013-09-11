@@ -13,6 +13,15 @@ angular.module('reserveTheTime.filters', [])
         return ((hour % 12)+1) + timeUnit;
     }
 }])
+.filter('betterHour', [function(hour) {
+    return function(hour) {
+        var timeUnit = "am";
+        if (hour >= 11 && hour != 23) {
+            timeUnit = "pm";
+        }
+        return ((hour % 12)+1) + timeUnit;
+    }
+}])
 .filter('niceDate', [function(dateTime) {
     return function(dateTime) {
         var minutes = dateTime.getMinutes();
