@@ -24,6 +24,7 @@ angular.module('reserveTheTime.controllers', [])
         $scope.template = template;
     };
 
+    // Bind templates specific to this controllers scope
     $scope.templates =
       [ { name: "Calendar", url: 'partials/tile-hour-chart.html', imageUrl:"img/calendar.png"}
       , { name: 'Attendees', url: 'partials/tile-attendees.html', imageUrl:"img/add-user-icon.png"}
