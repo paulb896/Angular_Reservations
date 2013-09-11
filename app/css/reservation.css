@@ -13,6 +13,10 @@
     float: right;
 }
 
+.requestedTime{
+    width: 100%
+}
+
 .reservation-label{
     width: 50%;
     font-size: 20px;
