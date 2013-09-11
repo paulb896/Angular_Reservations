@@ -47,7 +47,7 @@ h2{
 .tile-navigation > li{
     padding: 20px;
     cursor: pointer;
-    height: 20px;
+    height: 27px;
 }
 
 .tile-navigation > li:hover{
@@ -57,7 +57,6 @@ h2{
 }
 
 .tile-navigation > * {
-    border-radius: 5px;
     -webkit-transition:1.28s all;
     -moz-transition:1.28s all;
     -ms-transition:1.28s all;
