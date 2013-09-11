@@ -13,9 +13,15 @@
         <div><span>Attendees:</span><span ng-click="addAttendee(attendee);" class="attendee" ng-repeat="attendee in reservation.attendees" ng-bind="attendee"></span></div>
     </div>
     <div class="reservation">
+        <div>
+            <h2>CURRENT RESERVATION</h2>
+        </div>
         <span ng-bind="UserSelection.selectedDate| date:'MM/dd/yyyy @ h:mma'"  class="reservation_time"></span>
         <div><span>Attendees:</span>
             <span class="attendee" ng-repeat="attendee in reservation.attendees" ng-bind="attendee"></span>
+        </div>
+        <div><span>Place:</span>
+            <span ng-bind="UserSelection.place.name"></span>
         </div>
     </div>
 </div>
