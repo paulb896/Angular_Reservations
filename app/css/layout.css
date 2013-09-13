@@ -1,12 +1,4 @@
-body{
-    width:100%;
-    height: 800px;
-    #overflow: hidden;
-}
 
-body > div{
-    padding: 10px;
-}
 
 @media only screen and (min-width: 1201px) {
     .tile-size{
@@ -28,10 +20,20 @@ body > div{
     }
 
     .tile-navigation-position{
-        margin-right:20px
+        margin-right:10%;
     }
 }
 
+
+body{
+    width:100%;
+    height: 800px;
+    #overflow: hidden;
+}
+
+body > div{
+    padding: 10px;
+}
 
 .tile{
     #height:300px;

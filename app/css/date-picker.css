@@ -1,7 +1,4 @@
 
-
-
-
 .floatingTile {
     background-color: rgba(78,62,73, 0.75);
     width: 6%;
@@ -11,7 +8,7 @@
 }
 
 .date-picker{
-    display: block;
+    display: inline-block;
     width: 100%;
 }
 
