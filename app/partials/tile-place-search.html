@@ -1,5 +1,5 @@
 <div ng-controller="placeSearchController">
-    <h2 class="place-header">CITY</h2>
+    <h2 class="place-header">City</h2>
     <input ng-model="citySearch" type="input" class="city-search"/>
 
     <div class="found-cities">
@@ -9,7 +9,17 @@
         </span>
     </div>
 
-    <h2 class="place-header">FIND A PLACE</h2>
+    <h2 class="place-header">Type of place</h2>
+    <input ng-model="placeTypeSearch" type="input" class="place-type-search" ng-init="placeTypeSearch='food'"/>
+
+    <div class="found-place-types">
+        <span ng-repeat="placeType in PageState.placeTypes | filter:placeTypeSearch" ng-click="updatePlaceType(placeType)"
+              class="floatingTile city-result">
+            {{placeType}}
+        </span>
+    </div>
+
+    <h2 class="place-header">Find a {{UserSelection.placeType}}</h2>
 
     <div class="find" ng-click="searchPlaces(placeSearch);"></div>
     <input ng-model="placeSearch" type="input" class="place-search"/>

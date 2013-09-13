@@ -47,7 +47,7 @@ angular.module('reserveTheTime.controllers', [])
 
     $scope.searchPlaces = function(searchText) {
         console.log("SEARCH REQUEST, search text", searchText);
-        placeService.find("food", searchText).then(function(d) {
+        placeService.find(UserSelection.placeType, searchText).then(function(d) {
             // Send view an array of reservations for the current state
             //$scope.selectedDate.reservations = d;
             console.log("Data from place search: ", d);
@@ -61,6 +61,10 @@ angular.module('reserveTheTime.controllers', [])
 
     $scope.updatePlace = function(place) {
         UserSelection.place = place;
+    };
+
+    $scope.updatePlaceType = function(placeType) {
+        UserSelection.placeType = placeType;
     };
 //    $(".place_search").keypress(function(event) {
 //        if (event.which == 13) {

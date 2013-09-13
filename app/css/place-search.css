@@ -11,6 +11,7 @@
 
 .city-result{
     cursor: pointer;
+    margin: 20px;
 }
 
 .find{
@@ -30,6 +31,11 @@
 .find:hover{
     background-image:url('../img/find-hover.png');
     cursor: pointer;
+}
+
+.found-place-types{
+    height: 200px;
+    overflow: auto;
 }
 
 .place-icon{
