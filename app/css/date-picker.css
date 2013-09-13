@@ -1,3 +1,7 @@
+
+
+
+
 .floatingTile {
     background-color: rgba(78,62,73, 0.75);
     width: 6%;
@@ -63,7 +67,17 @@
 .month-picker {
     height: 25px;
     letter-spacing: 2px;
-    font-size: 12px;
+    font-size: 80%;
+}
+
+.month-picker > * {
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-transition:0.58s all;
+    -moz-transition:0.58s all;
+    -ms-transition:0.58s all;
+    transition:0.58s all;
 }
 
 .month-picker > span{
