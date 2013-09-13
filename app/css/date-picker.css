@@ -7,8 +7,8 @@
 }
 
 .date-picker{
-    display: inline-table;
-    width: 200px;
+    display: block;
+    width: 100%;
 }
 
 .floatingTile:hover:not(.selectedTile) {
