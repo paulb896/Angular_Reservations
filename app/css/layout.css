@@ -8,6 +8,34 @@ body > div{
     padding: 10px;
 }
 
+@media only screen and (min-width: 1201px) {
+    .tile-size{
+        width: 40%;
+    }
+
+    .inner-tile-size{
+        width:35%
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .tile-size{
+        width: 95%;
+    }
+
+    .inner-tile-size{
+        width: 80%;
+    }
+}
+
+
+.tile{
+    #height:300px;
+    float:left;
+    padding: 40px;
+    overflow:hidden;
+}
+
 h1{
     font-family: "Times New Roman";
     letter-spacing: 9px;
@@ -19,14 +47,6 @@ h2{
     font-weight: 500;
     letter-spacing: 2px;
     margin-bottom: 10px;
-}
-
-.tile{
-    height:300px;
-    width: 42%;
-    float:left;
-    padding: 40px;
-    overflow:hidden;
 }
 
 
@@ -41,7 +61,6 @@ h2{
 .inner-tile{
     display: inline-table;
     position:absolute;
-    width: 38%;
 }
 
 .tile-navigation > li{
