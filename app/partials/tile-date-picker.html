@@ -1,21 +1,22 @@
 <div ng-controller="datePickerController" ng-init="initializeDate()" class="date-picker">
-    <span class="month-picker">
+    <div class="month-picker">
         <span ng-repeat="(monthNumber, monthModel) in PageState.months" ng-click="setMonth(monthNumber+1);">{{monthModel.name}}</span>
-    </span>
-    <span class="day-picker">
+    </div>
+    <div class="day-picker">
         <div ng-repeat="dayModel in PageState.days"
              class="floatingTile day-floating-tile"
+             ng-class="{true:'selected-tile', false:''}[dayModel==UserSelection.selectedDate]"
              ng-click="updateSelectedDay(dayModel)">
         <span class="dayOfMonth">
           {{dayModel}}
         </span>
         </div>
-    </span>
-    <span>
+    </div>
+    <div>
         <table class="time-picker-table">
             <tr>
                 <td ng-repeat="time in PageState.times"><span ng-click="updateSelectedTime(time)" ng-bind="time | niceHour" class="time-indicator"></span></td>
             </tr>
         </table>
-    </span>
+    </div>
 </div>

@@ -26,6 +26,10 @@ body > div{
     .inner-tile-size{
         width: 80%;
     }
+
+    .tile-navigation-position{
+        margin-right:20px
+    }
 }
 
 
@@ -34,6 +38,7 @@ body > div{
     float:left;
     padding: 40px;
     overflow:hidden;
+    margin: 5px;
 }
 
 h1{
