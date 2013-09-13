@@ -14,6 +14,7 @@
     margin-left: 10px;
     color:black;
     border-bottom: solid #000000 1px;
+    font-size: 170%;
 }
 
 .banner-left{
@@ -74,7 +75,6 @@
     padding-left: 40px;
     font-style: oblique;
     letter-spacing: 2px;
-    text-shadow: 2px 2px rgba(200,200,200,1);
     font-style: italic;
     font-weight:900;
 }
@@ -85,7 +85,6 @@
     padding-left: 14px;
     font-style: oblique;
     letter-spacing: 2px;
-    text-shadow: 2px 2px rgba(200,200,200,1);
     font-style: italic;
     font-weight:900;
 }

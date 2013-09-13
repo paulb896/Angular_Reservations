@@ -81,8 +81,8 @@ h2{
 }
 
 .tile-navigation > * {
-    -webkit-transition:1.28s all;
-    -moz-transition:1.28s all;
-    -ms-transition:1.28s all;
-    transition:1.28s all;
+    -webkit-transition:0.28s all;
+    -moz-transition:0.28s all;
+    -ms-transition:0.28s all;
+    transition:0.28s all;
 }
