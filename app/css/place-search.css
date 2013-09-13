@@ -1,4 +1,4 @@
-.place-search{
+.city-search{
     font-size:30px;
     padding: 10px;
     font-family: 'Noto Serif', serif;
@@ -9,8 +9,50 @@
     outline: none;
 }
 
+.city-result{
+    cursor: pointer;
+}
+
+.find{
+    background-image:url('../img/find2.png');
+    width: 50px;
+    height: 51px;
+    background-size: 100%;
+    display: inline-block;
+    -webkit-transition: 1.3s all;
+    -moz-transition: 1.3s all;
+    -ms-transition: 1.3s all;
+    transition: 1.3s all;
+    float:right;
+    margin-right: 29%;
+}
+
+.find:hover{
+    background-image:url('../img/find-hover.png');
+    cursor: pointer;
+}
+
 .place-icon{
     height: 20px;
+}
+
+.place-header{
+    display: block;
+    letter-spacing: 2px;
+    width: 50%;
+    font-size: 25px;
+    color:rgba(111,1,1,0.9);
+}
+
+.place-search{
+    font-size:30px;
+    padding: 10px;
+    font-family: 'Noto Serif', serif;
+    color:black;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    border-radius: 5px;
+    outline: none;
 }
 
 .place-result{
@@ -29,29 +71,7 @@
 }
 
 
-.place-header{
-    letter-spacing: 2px;
-    width: 100px;
-    display: inline;
-    font-size: 25px;
-}
 
-.find{
-    background-image:url('../img/find2.png');
-    width: 50px;
-    height: 51px;
-    background-size: 100%;
-    display: inline-block;
-    -webkit-transition: 1.3s all;
-    -moz-transition: 1.3s all;
-    -ms-transition: 1.3s all;
-    transition: 1.3s all;
-    float:right;
-    margin-right: 20%;
-    margin-top: 5%;
-}
 
-.find:hover{
-    background-image:url('../img/find-hover.png');
-    cursor: pointer;
-}
+
+

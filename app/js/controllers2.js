@@ -55,6 +55,10 @@ angular.module('reserveTheTime.controllers', [])
         });
     };
 
+    $scope.updateCity = function(city) {
+        UserSelection.city = city;
+    };
+
     $scope.updatePlace = function(place) {
         UserSelection.place = place;
     };

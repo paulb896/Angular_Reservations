@@ -8,11 +8,13 @@ angular.module('reserveTheTime.services', [])
     return {
         "selectedDate": "",
         "place": {},
-        "attendee":""
+        "attendee":"",
+        "city":""
     };
 })
 .factory('PageState', function(){
     return {
+        "cities":[{name:"Calgary"}, {name:"Burnaby"}],
         "currentDate": "",
         "places":[],
         "reservations":[],
