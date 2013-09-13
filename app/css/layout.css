@@ -63,6 +63,15 @@ h2{
     display: inline-table;
 }
 
+.nav-image{
+    width: 40px;
+    height: 40px;
+    padding-bottom: 30px;
+    position: absolute;
+    z-index: 10;
+}
+
+
 .inner-tile{
     display: inline-table;
     position:absolute;
@@ -72,12 +81,11 @@ h2{
     padding: 20px;
     cursor: pointer;
     height: 27px;
+    opacity: 0.5;
 }
 
 .tile-navigation > li:hover{
-    -webkit-box-shadow:0 0 40px rgba(10, 0, 0, 0.2) inset;
-    -moz-box-shadow:0 0 40px rgba(10, 0, 0, 0.2) inset;
-    box-shadow:0 0 40px rgba(11, 0, 0, 0.2) inset;
+    opacity: 1;
 }
 
 .tile-navigation > * {

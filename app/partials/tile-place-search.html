@@ -1,5 +1,12 @@
 <div ng-controller="placeSearchController">
-    <h3 class="place-header">FIND A PLACE</h3><div class="find" ng-click="searchPlaces(placeSearch);"></div><input ng-model="placeSearch" type="input" class="place_search"/>
+    <h3 class="place-header">FIND A PLACE</h3>
+
+    <div class="find" ng-click="searchPlaces(placeSearch);"></div>
+    <input ng-model="placeSearch" type="input" class="place-search"/>
+
+    <h3 class="place-header">CITY</h3>
+    <input ng-model="citySearch" type="input" class="city-search"/>
+
     <div class="foundPlaces">
         <span ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
           class="floatingTile place-result">
