@@ -65,13 +65,12 @@
 }
 
 .selected-date{
-    font-size: 30px;
+    font-size: 146%;
     color:rgba(8,8,78,0.87);
-    padding-left: 40px;
-    font-style: oblique;
     letter-spacing: 2px;
     font-style: italic;
     font-weight:900;
+
 }
 
 .selected-place{
