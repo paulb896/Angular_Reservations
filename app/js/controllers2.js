@@ -135,9 +135,12 @@ angular.module('reserveTheTime.controllers', [])
     };
 
     $scope.initializeDate = function() {
-        UserSelection.selectedDate = new Date();
         PageState.currentDate = new Date();
-        $scope.setMonth(0);
+
+        if (!UserSelection.selectedDate) {
+            UserSelection.selectedDate = new Date();
+            $scope.setMonth(PageState.currentDate.getMonth());
+        }
         $scope.setTimes();
     };
 
