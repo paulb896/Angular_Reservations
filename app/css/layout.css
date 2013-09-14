@@ -1,31 +1,42 @@
 
 
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 1401px) {
     .tile-size{
-        width: 40%;
+        width: 44%;
     }
 
     .inner-tile-size{
-        width:35%
+        width:33%
+    }
+
+    . nav-image-size{
+        height: 100%;
+        width: 100%;
+    }
+
+    .tile-navigation > li{
+        height: 100px;
+        width: 100px;
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1400px) {
     .tile-size{
         width: 95%;
-    }
-
-    .nav-nav-size{
-        width: 200%;
-        height: 200%;
     }
 
     .inner-tile-size{
         width: 80%;
     }
 
-    .tile-navigation-position{
-        margin-right:10%;
+    . nav-image-size{
+        height: 100%;
+        width: 100%;
+    }
+
+    .tile-navigation > li{
+        height: 100px;
+        width: 100px;
     }
 }
 
@@ -66,14 +77,14 @@ h2{
     list-style-type: none;
     float: right;
     #margin-left:38%;
+    margin-right: 10px;
     width: 5%;
     display: inline-table;
 }
 
 .nav-image{
-    width: 40px;
-    height: 40px;
-    padding-bottom: 30px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     z-index: 10;
 }
@@ -85,9 +96,7 @@ h2{
 }
 
 .tile-navigation > li{
-    padding: 20px;
     cursor: pointer;
-    height: 27px;
     opacity: 0.5;
 }
 

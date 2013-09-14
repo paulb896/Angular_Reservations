@@ -18,7 +18,7 @@
         </div>
         <span ng-bind="UserSelection.selectedDate| date:'MM/dd/yyyy @ h:mma'"  class="reservation_time"></span>
         <div><span>Attendees:</span>
-            <span class="attendee" ng-repeat="attendee in reservation.attendees" ng-bind="attendee"></span>
+            <span class="attendee" ng-repeat="attendee in PageState.attendees" ng-bind="attendee"></span>
         </div>
         <div><span>Place:</span>
             <span ng-bind="UserSelection.place.name"></span>

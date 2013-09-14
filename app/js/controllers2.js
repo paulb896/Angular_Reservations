@@ -217,5 +217,6 @@ angular.module('reserveTheTime.controllers', [])
 
     $scope.addAttendee = function(attendee) {
         PageState.attendees.push(attendee);
+        UserSelection.attendee = "";
     };
 }]);

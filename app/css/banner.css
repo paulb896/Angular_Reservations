@@ -1,10 +1,10 @@
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 1401px) {
     .banner-height{
         height: 200px;
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1400px) {
     .banner-height{
         height: 300px;
     }

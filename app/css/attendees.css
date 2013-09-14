@@ -7,10 +7,12 @@
     border-right: solid 2px black;
     border-radius: 5px;
     outline: none;
+    margin-right: 40px;
 }
 
 .attendee-name{
-    margin-left: 20px;
+    letter-spacing: 3px;
+    font-size: 30px;
 }
 
 .attendee-table{

@@ -34,7 +34,7 @@
 }
 
 .found-place-types{
-    height: 132px;
+    height: 60px;
     overflow: auto;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .place-header{
-    display: block;
+    display: inline;
     letter-spacing: 2px;
     width: 50%;
     font-size: 25px;
@@ -74,10 +74,19 @@
 }
 
 .place-result:hover{
-    color:transparent;
+    color:white;
 }
 
-
+.place-type-search{
+    font-size:30px;
+    padding: 10px;
+    font-family: 'Noto Serif', serif;
+    color:black;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    border-radius: 5px;
+    outline: none;
+}
 
 
 
