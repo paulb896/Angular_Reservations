@@ -9,6 +9,7 @@
     .inner-tile-size{
         width:33%;
         padding-bottom: 10px;
+        padding-left: 10px;
     }
 
     . nav-image-size{
@@ -31,6 +32,7 @@
     .inner-tile-size{
         width: 80%;
         border-bottom: solid blue 1px;
+        padding-left: 15px;
     }
 
     . nav-image-size{
@@ -106,6 +108,8 @@ h2{
     border-top: solid rgba(50,50,65,0.7) 5px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-right: solid black 1px;
+    border-left: solid black 1px;
 
 }
 
