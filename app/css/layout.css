@@ -16,8 +16,8 @@
     }
 
     .tile-navigation > li{
-        height: 100px;
-        width: 100px;
+        height: 70px;
+        width: 70px;
     }
 }
 
@@ -98,10 +98,10 @@ h2{
     position:absolute;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: solid rgba(50,50,65,0.1) 10px;
+    border-bottom: solid rgba(50,50,65,0.7) 5px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    border-top: solid rgba(50,50,65,0.1) 10px;
+    border-top: solid rgba(50,50,65,0.7) 5px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
