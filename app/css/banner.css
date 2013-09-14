@@ -1,12 +1,13 @@
 @media only screen and (min-width: 1401px) {
     .banner-height{
-        height: 200px;
+        height: 300px;
     }
 }
 
 @media only screen and (max-width: 1400px) {
     .banner-height{
-        height: 300px;
+        height: 200px;
+        margin-bottom: 50px;
     }
 }
 
