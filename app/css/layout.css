@@ -3,6 +3,7 @@
 @media only screen and (min-width: 1401px) {
     .tile-size{
         width: 44%;
+        margin-bottom: 80px;
     }
 
     .inner-tile-size{
@@ -24,6 +25,7 @@
 @media only screen and (max-width: 1400px) {
     .tile-size{
         width: 95%;
+        margin-bottom: 10px;
     }
 
     .inner-tile-size{
@@ -58,7 +60,7 @@ body > div{
     float:left;
     padding: 40px;
     overflow:hidden;
-    border-bottom: solid blue 1px;
+
 }
 
 h1{

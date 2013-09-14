@@ -1,34 +1,50 @@
 <div ng-controller="placeSearchController">
-    <h2 class="place-header">City</h2>
-    <input ng-model="citySearch" type="input" class="city-search"/>
+    <table>
+        <tr>
+            <td>
+                <h2 class="place-header">City</h2>
 
-    <div class="found-cities">
-        <span ng-repeat="city in PageState.cities" ng-click="updateCity(city)"
-              class="floatingTile city-result">
-            {{city.name}}
-        </span>
-    </div>
-
-    <h2 class="place-header">Type of place</h2>
-    <input ng-model="placeTypeSearch" type="input" class="place-type-search" ng-init="placeTypeSearch='food'"/>
-
-    <div class="found-place-types">
-        <span ng-repeat="placeType in PageState.placeTypes | filter:placeTypeSearch" ng-click="updatePlaceType(placeType)"
-              class="floatingTile city-result">
-            {{placeType}}
-        </span>
-    </div>
-
-    <h2 class="place-header">Find {{UserSelection.placeType}}</h2>
-
-    <div class="find" ng-click="searchPlaces(placeSearch);"></div>
-    <input ng-model="placeSearch" type="input" class="place-search"/>
-
-    <div class="foundPlaces">
-        <span ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
-          class="floatingTile place-result">
-            {{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span>
-        </span>
-    </div>
-
+            </td>
+            <td>
+                <input ng-model="citySearch" type="input" class="city-search"/>
+            </td>
+            <td>
+                <div class="found-cities">
+                    <span ng-repeat="city in PageState.cities" ng-click="updateCity(city)"
+                          class="floatingTile city-result">
+                        {{city.name}}
+                    </span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><h2 class="place-header">Type of place</h2></td>
+            <td>
+                <input ng-model="placeTypeSearch" type="input" class="place-type-search" ng-init="placeTypeSearch='food'"/>
+            </td>
+            <td>
+                <div class="found-place-types">
+                <span ng-repeat="placeType in PageState.placeTypes | filter:placeTypeSearch" ng-click="updatePlaceType(placeType)"
+                      class="floatingTile city-result">
+                    {{placeType}}
+                </span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><h2 class="place-header">Find {{UserSelection.placeType}}</h2></td>
+            <td><input ng-model="placeSearch" type="input" class="place-search"/></td>
+            <td><div class="find" ng-click="searchPlaces(placeSearch);"></div></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="foundPlaces">
+                    <span ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
+                          class="floatingTile place-result">
+                        {{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span>
+                    </span>
+                </div>
+            </td>
+        </tr>
+    </table>
 </div>

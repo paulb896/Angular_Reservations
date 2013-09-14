@@ -63,8 +63,6 @@
 
 .month-picker {
     height: 25px;
-    letter-spacing: 2px;
-    font-size: 80%;
 }
 
 .month-picker > * {
