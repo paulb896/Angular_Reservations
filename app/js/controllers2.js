@@ -215,7 +215,14 @@ angular.module('reserveTheTime.controllers', [])
     $scope.PageState = PageState;
     $scope.UserSelection = UserSelection;
 
+    /**
+     * Add an attendee to the page state
+     * @param attendee
+     */
     $scope.addAttendee = function(attendee) {
+        if (!attendee) {
+            return;
+        }
         PageState.attendees.push(attendee);
         UserSelection.attendee = "";
     };
