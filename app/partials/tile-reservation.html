@@ -2,11 +2,11 @@
     <table class="reservation-table">
         <tr>
             <td><span class="selected-date-label reservation-label">SELECTED DATE</span></td>
-            <td><input class="reservation-input" ng-model="UserSelection.selectedDate"/></td>
+            <td><span ng-bind="UserSelection.selectedDate | date:'EEEE, MMMM d @ h:mma'"></span></td>
         </tr>
         <tr>
             <td><span class="selected-date-label reservation-label">PLACE</span></td>
-            <td><input type="text" ng-model="UserSelection.place.name" class="reservation-input"/></td>
+            <td><span ng-bind="UserSelection.place.name"></span></td>
         </tr>
         <tr>
             <td><span class="selected-date-label reservation-label">ATTENDEES</span></td>
@@ -14,7 +14,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><span class="reserve reservation-input" ng-click="reserve();">Request Time</span></td>
+            <td><span ng-show="UserSelection.place && UserSelection.selectedDate" class="reserve reservation-input" ng-click="reserve();">Email Request to {{UserSelection.place.name}}</span></td>
         </tr>
     </table>
 </div>

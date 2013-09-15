@@ -1,6 +1,6 @@
 @media only screen and (min-width: 1401px) {
     .banner-height{
-        height: 300px;
+        height: 200px;
     }
 }
 
@@ -43,7 +43,7 @@
 
 .current-date-label{
     font-style: oblique;
-    font-size: 200%;
+    font-size: 120%;
 }
 
 .current-date{
@@ -66,7 +66,7 @@
 }
 
 .selected-date{
-    font-size: 146%;
+    font-size: 126%;
     color:rgba(8,8,78,0.87);
     letter-spacing: 2px;
     font-style: italic;

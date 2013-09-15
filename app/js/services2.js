@@ -97,4 +97,24 @@ angular.module('reserveTheTime.services', [])
         }
     };
     return Reservation;
+}).factory('Attendee', function($http) {
+    var Attendee = {
+        email: function(attendeeEmail) {
+            var promise = $http.post("/notification", {"email": attendeeEmail}).then(function (response) {
+                // The then function here is an opportunity to modify the response
+                console.log("response from post");
+                console.log(response);
+                // The return value gets picked up by the then in the controller.
+                if (response.status == 200) {
+                    return response.data;
+                }
+
+                return [];
+            });
+
+            // Return the promise to the controller
+            return promise;
+        }
+    };
+    return Attendee;
 })

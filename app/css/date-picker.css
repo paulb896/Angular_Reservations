@@ -28,7 +28,7 @@
     -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4), 0 0 40px rgba(10, 0, 0, 0.4) inset;
     box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4), 0 0 40px rgba(11, 0, 0, 0.4) inset;
     font-family: sans-serif;
-    font-size: 200%;
+    font-size: 140%;
     -webkit-transition:0.28s all;
     -moz-transition:0.28s all;
     -ms-transition:0.28s all;
@@ -59,6 +59,13 @@
     -moz-transition:0.58s all;
     -ms-transition:0.58s all;
     transition:0.58s all;
+}
+
+.minute-picker{
+    height: 50px;
+    cursor: pointer;
+    width: 80%;
+    cursor: pointer;
 }
 
 .month-picker {
@@ -101,7 +108,8 @@
 }
 
 .time-picker-table{
-    font-size: 40px;
+    height: 50px;
+    margin-top: -20px;
 }
 
 .time-indicator{

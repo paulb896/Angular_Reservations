@@ -119,6 +119,12 @@ angular.module('reserveTheTime.controllers', [])
       }
     };
 
+    $scope.updateSelectedMinute =function($event) {
+        // I'm putting this in because I would like to avoid using jquery if possible
+        UserSelection.selectedDate.setMinutes(Math.round(($event.offsetX / 629) * 60));
+
+    };
+
     $scope.updateSelectedTime = function(dateTime) {
         $scope.updateChartHours(dateTime);
         var newSelectedDate = new Date(UserSelection.selectedDate.getFullYear(), UserSelection.selectedDate.getMonth(), UserSelection.selectedDate.getDate(), dateTime.getHours()+1);
@@ -211,9 +217,17 @@ angular.module('reserveTheTime.controllers', [])
 /**
  * Controller that handles hour chart functionality
  */
-.controller('attendeeController', ['$scope', 'UserSelection', 'PageState', 'reservationSearch', 'Reservation', function($scope, UserSelection, PageState, reservationSearch, Reservation) {
+.controller('attendeeController', ['$scope', 'UserSelection', 'PageState', 'Attendee', function($scope, UserSelection, PageState, Attendee) {
     $scope.PageState = PageState;
     $scope.UserSelection = UserSelection;
+
+    /**
+     * Send reservation notification email
+     * @param attendee
+     */
+    $scope.sendEmailNotification = function(attendee) {
+         Attendee.email(attendee);
+    };
 
     /**
      * Add an attendee to the page state
