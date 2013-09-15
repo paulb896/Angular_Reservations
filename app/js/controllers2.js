@@ -143,7 +143,7 @@ angular.module('reserveTheTime.controllers', [])
     $scope.initializeDate = function() {
         $scope.PageState.currentDate = new Date();
 
-        if (! $scope.UserSelection.selectedDate.hasOwnProperty('getMonth')) {
+        if (!$scope.UserSelection.selectedDate) {
             $scope.UserSelection.selectedDate = new Date();
             $scope.setMonth($scope.UserSelection.selectedDate.getMonth()+1);
             console.log("DATE initialized");
