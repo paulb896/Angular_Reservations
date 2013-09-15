@@ -170,6 +170,12 @@ angular.module('reserveTheTime.controllers', [])
 
     };
 
+        $scope.updateSelectedMinute =function($event) {
+            // I'm putting this in because I would like to avoid using jquery if possible
+            UserSelection.selectedDate.setMinutes(Math.round(($event.offsetX / 629) * 60));
+
+        };
+
     $scope.updateReservations = function(){
         reservationSearch.find(UserSelection.selectedDate.getYear(), UserSelection.selectedDate.getMonth(), UserSelection.selectedDate.getDate()).then(function(d) {
             // Send view an array of reservations for the current state

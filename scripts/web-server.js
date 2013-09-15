@@ -82,21 +82,14 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
           console.log("Complete data");
           console.log(JSON.parse(data));
 
+          console.log("REQUEST URL sldjfklsdajfklsjdflkjflksjdf",req.url);
+          if (req.url.href == "/notification") {
+              MongoClient.connect(dbHost, function(err, db) {
+                  if(err) return false;
 
-          MongoClient.connect(dbHost, function(err, db) {
-              if(err) return false;
+                  var collection = db.collection('notification');
 
-              var collection = db.collection('reservation');
-
-              if (JSON.parse(data).hasOwnProperty("_id")) {
-                  console.log("Update attempt : ");
-                  console.log(data);
-                  collection.findAndModify({_id: data["_id"]}, [["_id","asc"]], {$set: {status: data["status"], company: data["company"]}}, {w:1}, function(err) {
-                      if (err) console.warn(err.message);
-                      else console.log('successfully updated');
-                  });
-              } else {
-                  collection.insert(JSON.parse(data), function(err, docs) {
+                      collection.insert(JSON.parse(data), function(err, docs) {
 
                       collection.count(function(err, count) {
                           console.log(format("count = %s", count));
@@ -109,9 +102,37 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
                           db.close();
                       });
                   });
-              }
-          });
+              });
+          } else {
+              MongoClient.connect(dbHost, function(err, db) {
+                  if(err) return false;
 
+                  var collection = db.collection('reservation');
+
+                  if (JSON.parse(data).hasOwnProperty("_id")) {
+                      console.log("Update attempt : ");
+                      console.log(data);
+                      collection.findAndModify({_id: data["_id"]}, [["_id","asc"]], {$set: {status: data["status"], company: data["company"]}}, {w:1}, function(err) {
+                          if (err) console.warn(err.message);
+                          else console.log('successfully updated');
+                      });
+                  } else {
+                      collection.insert(JSON.parse(data), function(err, docs) {
+
+                          collection.count(function(err, count) {
+                              console.log(format("count = %s", count));
+                          });
+
+                          // Locate all the entries using find
+                          collection.find().toArray(function(err, results) {
+                              console.dir(results);
+                              // Let's close the db
+                              db.close();
+                          });
+                      });
+                  }
+              });
+          }
       });
 
   }

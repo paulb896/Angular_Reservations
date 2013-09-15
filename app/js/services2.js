@@ -97,10 +97,15 @@ angular.module('reserveTheTime.services', [])
         }
     };
     return Reservation;
-}).factory('Attendee', function($http) {
+}).factory('Attendee', function($http, UserSelection) {
     var Attendee = {
         email: function(attendeeEmail) {
-            var promise = $http.post("/notification", {"email": attendeeEmail}).then(function (response) {
+            var promise = $http.post("/notification",
+                {
+                    "email": attendeeEmail,
+                    "date": UserSelection.selectedDate,
+                    "place": UserSelection.place
+                }).then(function (response) {
                 // The then function here is an opportunity to modify the response
                 console.log("response from post");
                 console.log(response);
