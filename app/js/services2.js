@@ -7,7 +7,7 @@ angular.module('reserveTheTime.services', [])
 .factory('UserSelection', function(){
     return {
         "selectedDate": "",
-        "place": {},
+        "place": null,
         "attendee":"",
         "city":"",
         "placeType":""

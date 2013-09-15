@@ -10,8 +10,10 @@
     <tr ng-repeat="attendee in PageState.attendees">
         <td ng-bind="attendee" class="attendee-name"></td>
         <td>
-            <span>SEND EMAIL REQUEST</span>
-            <div class="email-attendee"></div>
+            <div class="email-attendee-request" ng-show="UserSelection.place && UserSelection.selectedDate">
+                <span>SEND EMAIL REQUEST</span>
+                <div class="email-attendee"></div>
+            </div>
         </td>
     </tr>
 </table>

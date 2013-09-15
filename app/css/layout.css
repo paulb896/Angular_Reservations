@@ -107,6 +107,7 @@ h2{
     border-right: solid black 1px;
     border-left: solid black 1px;
     overflow-y: scroll;
+    background-color: rgba(200,205,205,0.1);
 }
 
 .tile-navigation > li{
