@@ -79,13 +79,13 @@ angular.module('reserveTheTime.controllers', [])
     $scope.PageState = PageState;
     $scope.UserSelection = UserSelection;
     $scope.setMonth = function(monthNumber) {
-        var newSelectedDate = new Date(UserSelection.selectedDate.getFullYear(), monthNumber, 0, UserSelection.selectedDate.getMinutes());
-        PageState.days = new Array();
+        var newSelectedDate = new Date($scope.UserSelection.selectedDate.getFullYear(), monthNumber, 0, $scope.UserSelection.selectedDate.getMinutes());
+        $scope.PageState.days = new Array();
         for(var i = 1; i <= newSelectedDate.getDate(); i++) {
             PageState.days.push(i);
         }
         newSelectedDate.setDate(UserSelection.selectedDate.getDate());
-        UserSelection.selectedDate = newSelectedDate;
+        $scope.UserSelection.selectedDate = newSelectedDate;
         $scope.updateReservations();
     };
 
@@ -141,13 +141,15 @@ angular.module('reserveTheTime.controllers', [])
     };
 
     $scope.initializeDate = function() {
-        PageState.currentDate = new Date();
+        $scope.PageState.currentDate = new Date();
 
-        if (!UserSelection.selectedDate.hasOwnProperty('getMonth')) {
-            UserSelection.selectedDate = new Date();
-            $scope.setMonth(UserSelection.selectedDate.getMonth()+1);
+        if (! $scope.UserSelection.selectedDate.hasOwnProperty('getMonth')) {
+            $scope.UserSelection.selectedDate = new Date();
+            $scope.setMonth($scope.UserSelection.selectedDate.getMonth()+1);
+            console.log("DATE initialized");
         }
         $scope.setTimes();
+
     };
 
     $scope.updateReservations = function(){
