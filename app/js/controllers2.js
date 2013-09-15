@@ -26,11 +26,12 @@ angular.module('reserveTheTime.controllers', [])
 
     // Bind templates specific to this controllers scope
     $scope.templates =
-      [ { name: "Calendar", url: 'partials/tile-hour-chart.html', imageUrl:"img/calendar.png"}
-      , { name: 'Hourly Chart', url: 'partials/tile-date-picker.html', imageUrl:"img/clock.png"}
+      [{ name: 'Hourly Chart', url: 'partials/tile-date-picker.html', imageUrl:"img/clock.png"}
       , { name: 'Attendees', url: 'partials/tile-attendees.html', imageUrl:"img/add-user-icon.png"}
-      , { name: 'Reserve', url: 'partials/tile-reservation.html', imageUrl:"img/gear.png"}
       , { name: 'Place Search', url: 'partials/tile-place-search.html', imageUrl:"img/find2.png"}
+      , { name: 'Place Details', url: 'partials/tile-place-details.html', imageUrl:"img/map-icon.png"}
+      , { name: 'Reserve', url: 'partials/tile-reservation.html', imageUrl:"img/gear.png"}
+      , { name: "Calendar", url: 'partials/tile-hour-chart.html', imageUrl:"img/calendar.png"}
       ];
 
     $scope.initializeNav = function() {
