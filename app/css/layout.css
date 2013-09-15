@@ -57,6 +57,10 @@ body > div{
     padding: 10px;
 }
 
+h2{
+    color:rgba(111,1,1,0.9);
+}
+
 .tile{
     #height:300px;
     float:left;
@@ -107,7 +111,7 @@ h2{
     border-right: solid black 1px;
     border-left: solid black 1px;
     overflow-y: scroll;
-    background-color: rgba(200,205,205,0.1);
+    background-color: rgba(200,205,205,0.01);
 }
 
 .tile-navigation > li{
