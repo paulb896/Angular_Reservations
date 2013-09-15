@@ -1,12 +1,17 @@
 <table class="attendee-table" ng-controller="attendeeController">
     <tr>
-        <td class="attendees-header">ATTENDEE</td><td>STATUS</td>
+        <th class="attendees-header">ATTENDEE</th>
+        <th></th>
     </tr>
     <tr>
-        <td><input type="text" class="add-attendee-input" ng-model="UserSelection.attendee"/></td><td><span ng-click="addAttendee(UserSelection.attendee);" class="reserve reservation-input">ADD ATTENDEE</span></td>
+        <td><input type="text" class="add-attendee-input" ng-model="UserSelection.attendee"/></td>
+        <td><span ng-click="addAttendee(UserSelection.attendee);" class="reserve reservation-input">ADD ATTENDEE</span></td>
     </tr>
     <tr ng-repeat="attendee in PageState.attendees">
         <td ng-bind="attendee" class="attendee-name"></td>
-        <td>PENDING</td>
+        <td>
+            <span>SEND EMAIL REQUEST</span>
+            <div class="email-attendee"></div>
+        </td>
     </tr>
 </table>

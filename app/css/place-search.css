@@ -15,7 +15,7 @@
 }
 
 .find{
-    background-image:url('../img/find2.png');
+    background-image:url('../img/find-hover.png');
     width: 50px;
     height: 51px;
     background-size: 100%;
@@ -26,11 +26,12 @@
     transition: 1.3s all;
     float:right;
     margin-right: 29%;
+    cursor: pointer;
+    opacity: 0.2;
 }
 
 .find:hover{
-    background-image:url('../img/find-hover.png');
-    cursor: pointer;
+    opacity: 1;
 }
 
 .found-place-types{
