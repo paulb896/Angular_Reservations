@@ -117,6 +117,7 @@
     font-size: 9px;
     letter-spacing: 1px;
     cursor: pointer;
+    margin-left: 3px;
 }
 
 .time-indicator:hover{

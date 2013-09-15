@@ -7,7 +7,7 @@
             <path stroke-dasharray="1,5" d="M3 5 1440 5"/>
         </g>
     </svg>
-    <div ng-repeat="(key,reservation) in PageState.reservations" class="reservation" style="margin-left:{{reservation.date}}px;" ng-click="selectReservation(reservation)">
+    <div ng-repeat="(key,reservation) in PageState.reservations" class="reservation" ng-click="selectReservation(reservation)">
         <div class="update-changes-icon" ng-class="reservation" ng-click="requestedTime.reserve(reservation);"></div>
         <span ng-bind="reservation.date| date:'MM/dd/yyyy @ h:mma'"  class="reservation_time"></span>
         <div><span>Attendees:</span><span ng-click="addAttendee(attendee);" class="attendee" ng-repeat="attendee in reservation.attendees" ng-bind="attendee"></span></div>

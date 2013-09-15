@@ -143,9 +143,9 @@ angular.module('reserveTheTime.controllers', [])
     $scope.initializeDate = function() {
         PageState.currentDate = new Date();
 
-        if (!UserSelection.selectedDate) {
+        if (!UserSelection.selectedDate.hasOwnProperty('getMonth')) {
             UserSelection.selectedDate = new Date();
-            $scope.setMonth(PageState.currentDate.getMonth());
+            $scope.setMonth(UserSelection.selectedDate.getMonth()+1);
         }
         $scope.setTimes();
     };
@@ -183,6 +183,14 @@ angular.module('reserveTheTime.controllers', [])
       console.log("RESERVATION HERE IS: ", reservation);
       if (reservation.hasOwnProperty('date')) {
           UserSelection.selectedDate = new Date(reservation.date);
+      }
+
+      if (reservation.place.hasOwnProperty('name')) {
+          UserSelection.place = reservation.place;
+      }
+
+      if (reservation.attendees) {
+          PageState.attendees = reservation.attendees;
       }
     };
 }])
