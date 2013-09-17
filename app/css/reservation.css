@@ -38,6 +38,17 @@
     margin-right: 20px;
 }
 
+.reservation-place-name{
+    font-size: 150%;
+    color: darkred;
+    cursor: pointer;
+}
+
+.reservation-place-name:hover{
+    font-style: oblique;
+    font-weight:900;
+}
+
 .reservation-row{
     height: 90px;
 }

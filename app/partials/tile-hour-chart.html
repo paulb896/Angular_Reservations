@@ -10,6 +10,7 @@
     <div ng-repeat="(key,reservation) in PageState.reservations" class="reservation" ng-click="selectReservation(reservation)">
         <div class="update-changes-icon" ng-class="reservation" ng-click="requestedTime.reserve(reservation);"></div>
         <span ng-bind="reservation.date| date:'MM/dd/yyyy @ h:mma'"  class="reservation_time"></span>
+        <div ng-bind="reservation.place.name"  class="reservation-place-name"></div>
         <div><span>Attendees:</span><span ng-click="addAttendee(attendee);" class="attendee" ng-repeat="attendee in reservation.attendees" ng-bind="attendee"></span></div>
     </div>
     <div class="reservation">
