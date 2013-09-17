@@ -3,9 +3,23 @@
     font-size: 160%;
 }
 
+.map-size{
+    height: 300px;
+}
+
+.phone-number{
+    font-size: 200%;
+    color: rgba(8,8,78,0.87);
+    font-weight: 900;
+    font-style: italic;
+    margin-top: 10px;
+    letter-spacing: 5px;
+}
+
 .rating{
     font-size: 250%;
     display: inline;
+    text-shadow: 2px 2px rgba(100,100,100,0.5);
 }
 
 .refresh{

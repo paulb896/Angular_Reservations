@@ -19,6 +19,14 @@ angular.module('reserveTheTime.place.controller', [])
         ) {
             placeService.details(UserSelection.place.reference).then(function(details) {
                 UserSelection.place = details.result;
+                var mapOptions = {
+                    zoom: 15,
+                    center: new google.maps.LatLng(details.result.geometry.location.lat, details.result.geometry.location.lng),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
             });
         }
     };
