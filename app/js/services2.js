@@ -6,7 +6,7 @@
 angular.module('reserveTheTime.services', [])
 .factory('UserSelection', function(){
     return {
-        "selectedDate": "",
+        "selectedDate": new Date(),
         "place": null,
         "attendee":"",
         "city":"",
@@ -32,6 +32,21 @@ angular.module('reserveTheTime.services', [])
         find: function(category, searchText) {
             // $http returns a promise, which has a then function, which also returns a promise
             var promise = $http.get("/places?category="+category+"&searchText="+searchText).then(function (response) {
+                // The then function here is an opportunity to modify the response
+                console.log(response);
+                // The return value gets picked up by the then in the controller.
+                if (response.status == 200) {
+                    return response.data;
+                }
+
+                return [];
+            });
+
+            // Return the promise to the controller
+            return promise;
+        },
+        details: function(reference) {
+            var promise = $http.get("/place-details?reference="+reference).then(function (response) {
                 // The then function here is an opportunity to modify the response
                 console.log(response);
                 // The return value gets picked up by the then in the controller.

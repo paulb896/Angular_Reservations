@@ -52,13 +52,10 @@
     color:white;
     background-color: #000014;
     font-weight: 400;
-    -webkit-animation-timing-function: ease-in-out;
-    -moz-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-transition:0.58s all;
-    -moz-transition:0.58s all;
-    -ms-transition:0.58s all;
-    transition:0.58s all;
+    -webkit-transition:0.18s all;
+    -moz-transition:0.18s all;
+    -ms-transition:0.18s all;
+    transition:0.18s all;
 }
 
 .minute-picker{

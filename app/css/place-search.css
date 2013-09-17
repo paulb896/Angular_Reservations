@@ -12,6 +12,15 @@
 .city-result{
     cursor: pointer;
     margin: 20px;
+    -webkit-transition: 1.3s all;
+    -moz-transition: 1.3s all;
+    -ms-transition: 1.3s all;
+    transition: 1.3s all;
+}
+
+.city-result:hover{
+   font-size: 200%;
+
 }
 
 .find{
@@ -61,6 +70,7 @@
     border-right: solid 2px black;
     border-radius: 5px;
     outline: none;
+    width: 120px;
 }
 
 .place-result{
@@ -87,6 +97,7 @@
     border-right: solid 2px black;
     border-radius: 5px;
     outline: none;
+    width:120px;
 }
 
 

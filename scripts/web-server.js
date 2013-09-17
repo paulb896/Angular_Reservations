@@ -194,6 +194,18 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
               res.end(body);
           }
       })
+  } else if (req.url.pathname == "/place-details") {
+      var request = require('request');
+      var requestUrl = "https://maps.googleapis.com/maps/api/place/details/json?sensor=true&reference=" + req.url.query.reference + "&sensor=true&key="+developerKey;
+      console.log("ATTEMPTING TO HIT " + requestUrl + " FOR PLACE DETAILS")
+      request(requestUrl, function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+              console.log(body) // Print the google web page.
+              res.end(body);
+          }
+      })
+      // console.log("PLACE DETAIL REQUEST");
+      // res.end("PLACE DETAILS ARE GOING TO BE HERE");
   } else {
 
   var handler = this.handlers[req.method];

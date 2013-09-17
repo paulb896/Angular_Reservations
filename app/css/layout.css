@@ -1,6 +1,6 @@
 
 
-@media only screen and (min-width: 1401px) {
+@media only screen and (min-width: 1501px) {
     .tile-size{
         width: 44%;
         margin-bottom: 80px;
@@ -23,7 +23,7 @@
     }
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1500px) {
     .tile-size{
         width: 95%;
         margin-bottom: 10px;
@@ -64,9 +64,7 @@ h2{
 .tile{
     #height:300px;
     float:left;
-    padding: 40px;
     overflow:hidden;
-
 }
 
 h1{

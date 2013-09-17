@@ -1,10 +1,10 @@
-@media only screen and (min-width: 1401px) {
+@media only screen and (min-width: 1501px) {
     .banner-height{
         height: 200px;
     }
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1500px) {
     .banner-height{
         height: 175px;
         margin-bottom: 50px;
@@ -35,6 +35,16 @@
     margin-right: 20px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.spin-component{
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg); /* Safari and Chrome */
+    -webkit-transition:1.28s all;
+    -moz-transition:1.28s all;
+    -ms-transition:1.28s all;
+    transition:1.28s all;
+    perspective-origin: 50% 50%;
 }
 
 .banner-content{
