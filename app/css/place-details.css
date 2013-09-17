@@ -1,0 +1,20 @@
+
+.area{
+    font-size: 160%;
+}
+
+.rating{
+    font-size: 250%;
+    display: inline;
+}
+
+.refresh{
+    background-image:url('../img/refresh.png');
+    width: 70px;
+    height:70px;
+    background-size: 100%;
+    float:right;
+}
+
+
+
