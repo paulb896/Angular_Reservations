@@ -1,4 +1,4 @@
-<div class="hour-chart" ng-controller="hourChartController">
+<div class="hour-chart" ng-controller="hourChartController" ng-init="initializeHours();">
     <div class="chart-labels">
         <span ng-repeat="hour in PageState.chartHours" ng-bind="hour|betterHour"></span>
     </div>

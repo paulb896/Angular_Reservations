@@ -26,16 +26,44 @@ angular.module('reserveTheTime.controllers', [])
 
     // Bind templates specific to this controllers scope
     $scope.templates =
-      [{ name: 'Hourly Chart', url: 'partials/tile-date-picker.html', imageUrl:"img/clock.png"}
-      , { name: 'Place Search', url: 'partials/tile-place-search.html', imageUrl:"img/find2.png"}
-      , { name: 'Place Details', url: 'partials/tile-place-details.html', imageUrl:"img/map-icon.png"}
-      , { name: 'Reserve', url: 'partials/tile-reservation.html', imageUrl:"img/gear.png"}
-      , { name: 'Attendees', url: 'partials/tile-attendees.html', imageUrl:"img/add-user-icon.png"}
-      , { name: "Calendar", url: 'partials/tile-hour-chart.html', imageUrl:"img/calendar.png"}
+      [{ name: 'Hourly Chart', url: 'partials/tile-date-picker.html', imageUrl:"img/clock.png",
+          completed:function() {
+              return true
+          }
+      }
+      , { name: 'Place Search', url: 'partials/tile-place-search.html', imageUrl:"img/find2.png",
+          completed:function() {
+              return UserSelection.place
+          }
+      }
+      , { name: 'Place Details', url: 'partials/tile-place-details.html', imageUrl:"img/map-icon.png",
+          completed:function() {
+              return UserSelection.place
+          }
+      }
+      , { name: 'Reserve', url: 'partials/tile-reservation.html', imageUrl:"img/gear.png",
+          completed:function() {
+              return false;
+          }
+      }
+      , { name: 'Attendees', url: 'partials/tile-attendees.html', imageUrl:"img/add-user-icon.png",
+          completed:function() {
+              return PageState.attendees.length < 1;
+          }
+      }
+      , { name: "Calendar", url: 'partials/tile-hour-chart.html', imageUrl:"img/calendar.png",
+          completed:function() {
+              return true;
+          }
+      }
       ];
 
     $scope.initializeNav = function() {
         $scope.template = $scope.templates[0];
+    };
+
+    $scope.isComplete = function() {
+        return true;
     };
 
 }])
@@ -48,11 +76,13 @@ angular.module('reserveTheTime.controllers', [])
 
     $scope.searchPlaces = function(searchText) {
         console.log("SEARCH REQUEST, search text", searchText);
+        Pace.start();
         placeService.find(UserSelection.placeType, searchText).then(function(d) {
             // Send view an array of reservations for the current state
             //$scope.selectedDate.reservations = d;
             console.log("Data from place search: ", d);
             PageState.places = d.results;
+            Pace.stop();
         });
     };
 
@@ -154,9 +184,11 @@ angular.module('reserveTheTime.controllers', [])
     };
 
     $scope.updateReservations = function(){
+        Pace.start();
         reservationSearch.find(UserSelection.selectedDate.getFullYear(), UserSelection.selectedDate.getMonth(), UserSelection.selectedDate.getDate()).then(function(d) {
             // Send view an array of reservations for the current state
             PageState.reservations = d;
+            Pace.stop();
         });
     };
 }])
@@ -168,20 +200,28 @@ angular.module('reserveTheTime.controllers', [])
     $scope.UserSelection = UserSelection;
 
     $scope.initializeHours = function() {
-
+        console.log("SDFEFESESFSE");
+        $scope.updateReservations();
+        if (!$scope.UserSelection.selectedDate) {
+            $scope.UserSelection.selectedDate = new Date();
+        }
+        $scope.updateReservations();
     };
 
-        $scope.updateSelectedMinute =function($event) {
-            // I'm putting this in because I would like to avoid using jquery if possible
-            UserSelection.selectedDate.setMinutes(Math.round(($event.offsetX / 629) * 60));
-
-        };
-
     $scope.updateReservations = function(){
-        reservationSearch.find(UserSelection.selectedDate.getYear(), UserSelection.selectedDate.getMonth(), UserSelection.selectedDate.getDate()).then(function(d) {
+        console.log("ATTEMPTING TO GET RESERVATIONS FOR", $scope.UserSelection.selectedDate);
+        reservationSearch.find($scope.UserSelection.selectedDate.getFullYear(), $scope.UserSelection.selectedDate.getMonth(), $scope.UserSelection.selectedDate.getDate()).then(function(d) {
             // Send view an array of reservations for the current state
-            PageState.reservations = d;
+            console.log("RESERVATIONS RETURNED: ", d);
+            $scope.PageState.reservations = d;
         });
+    };
+
+
+    $scope.updateSelectedMinute =function($event) {
+        // I'm putting this in because I would like to avoid using jquery if possible
+        UserSelection.selectedDate.setMinutes(Math.round(($event.offsetX / 629) * 60));
+
     };
 
     $scope.addAttendee = function(attendee) {
