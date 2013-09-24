@@ -37,13 +37,14 @@
     padding-right: 10px;
 }
 
+
 .spin-component{
     transform: rotateY(360deg);
     -webkit-transform: rotateY(360deg); /* Safari and Chrome */
-    -webkit-transition:1.28s all;
-    -moz-transition:1.28s all;
-    -ms-transition:1.28s all;
-    transition:1.28s all;
+    -webkit-transition:1.88s all;
+    -moz-transition:1.88s all;
+    -ms-transition:1.88s all;
+    transition:1.88s all;
     perspective-origin: 50% 50%;
 }
 

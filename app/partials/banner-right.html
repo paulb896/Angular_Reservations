@@ -1,4 +1,4 @@
-<div ng-controller="bannerController" class="banner-content">
+<div ng-controller="bannerController" class="banner-content" ng-class="{'spin-component': UserSelection.place.name.length > 0}">
     <div>
         <h2 class="current-date-label">SELECTED DATE</h2>
         <span class="selected-date" ng-bind="UserSelection.selectedDate | date:'EEEE, MMMM d,y'"></span>
