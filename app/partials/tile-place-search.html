@@ -1,7 +1,4 @@
 <div ng-controller="placeSearchController">
-    <h2>
-        Current Selected Place
-    </h2>
     <table>
         <tr ng-show="false">
             <td>
@@ -21,22 +18,12 @@
             </td>
         </tr>
         <tr>
-            <td><h2 class="place-header">Type of place</h2></td>
-            <td>
-                <input ng-model="placeTypeSearch" type="input" class="place-type-search" ng-init="placeTypeSearch='food'"/>
-            </td>
-            <td>
-                <div class="found-place-types">
-                <span ng-repeat="placeType in PageState.placeTypes | filter:placeTypeSearch" ng-click="updatePlaceType(placeType)"
-                      class="floatingTile city-result">
-                    {{placeType}}
-                </span>
-                </div>
-            </td>
+            <td><h2 class="place-header">Find {{UserSelection.placeType}}</h2></td>
+            <td></td>
+            <td></td>
         </tr>
         <tr>
-            <td><h2 class="place-header">Find {{UserSelection.placeType}}</h2></td>
-            <td><input ng-model="placeSearch" type="input" class="place-search"/></td>
+            <td colspan="2"><input ng-model="placeSearch" type="input" class="place-search"/></td>
             <td><div class="find" ng-click="searchPlaces(placeSearch);"></div></td>
         </tr>
         <tr>
@@ -46,6 +33,16 @@
                           class="floatingTile place-result">
                         {{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span>
                     </span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="found-place-types">
+                <div ng-repeat="placeType in PageState.placeTypesShort" ng-click="updatePlaceType(placeType.name)"
+                      style="background-image:url('{{placeType.src}}'); background-size: 100%"
+                      class="floatingTile place-type">
+                </div>
                 </div>
             </td>
         </tr>

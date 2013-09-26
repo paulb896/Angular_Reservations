@@ -33,7 +33,8 @@ angular.module('reserveTheTime.place.controller', [])
                 var marker = new google.maps.Marker({
                     position: placeLatlng,
                     map: map,
-                    title: UserSelection.place.name
+                    title: UserSelection.place.name,
+                    animation: google.maps.Animation.DROP
                 });
             });
         }

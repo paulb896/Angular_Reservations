@@ -50,11 +50,13 @@
 
 .banner-content{
     height: 50px;
+    list-style-type:none;
 }
 
 .current-date-label{
     font-style: oblique;
     font-size: 120%;
+    width: 35%;
 }
 
 .current-date{
@@ -89,7 +91,6 @@
 .selected-place{
     font-size: 22px;
     color:rgba(8,8,78,0.87);
-    padding-left: 14px;
     font-style: oblique;
     letter-spacing: 2px;
     font-style: italic;

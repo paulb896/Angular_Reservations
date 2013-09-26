@@ -1,18 +1,18 @@
-<div ng-controller="bannerController" class="banner-content" ng-class="{'spin-component': UserSelection.place.name.length > 0}">
-    <div>
+<ul ng-controller="bannerController" class="banner-content" ng-class="{'spin-component': UserSelection.place.name.length > 0}">
+    <li>
         <h2 class="current-date-label">SELECTED DATE</h2>
         <span class="selected-date" ng-bind="UserSelection.selectedDate | date:'EEEE, MMMM d,y'"></span>
-    </div>
-    <div>
+    </li>
+    <li>
         <h2 class="current-date-label">SELECTED TIME</h2>
         <span class="selected-date" ng-bind="UserSelection.selectedDate | date:'h:mma'"></span>
-    </div>
-    <div>
+    </li>
+    <li>
         <h2 class="current-date-label">SELECTED PLACE</h2>
         <span class="selected-place" ng-bind="UserSelection.place.name"></span>
-    </div>
-    <div>
+    </li>
+    <li>
         <h2 class="current-date-label attendees-label">ATTENDEES</h2>
         <span class="attendee" ng-repeat="attendee in PageState.attendees" ng-bind="attendee"></span>
-    </div>
-</div>
+    </li>
+</ul>

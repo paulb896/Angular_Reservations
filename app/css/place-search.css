@@ -34,7 +34,6 @@
     -ms-transition: 1.3s all;
     transition: 1.3s all;
     float:right;
-    margin-right: 29%;
     cursor: pointer;
     opacity: 0.2;
 }
@@ -61,6 +60,17 @@
     margin-top: 20px;
 }
 
+.place-type{
+    width:75px;
+    height:75px;
+    display: inline-block;
+    background-color: transparent;
+}
+
+.place-type:hover{
+    border-radius: 50px;
+}
+
 .place-search{
     font-size:30px;
     padding: 10px;
@@ -71,6 +81,10 @@
     border-radius: 5px;
     outline: none;
     width: 120px;
+}
+
+td{
+    vertical-align: top;
 }
 
 .place-result{

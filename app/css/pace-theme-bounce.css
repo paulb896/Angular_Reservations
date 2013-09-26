@@ -27,8 +27,8 @@
 }
 
 .pace .pace-activity {
-  width: 25px;
-  height: 160px;
+  width: 85px;
+  height: 85px;
   background: rgba(111,1,1,0.9);
   background-image:url('../img/wait.png');
   position: absolute;
@@ -52,7 +52,6 @@
   height: 75px;
   background: rgba(20, 20, 20, .1);
   box-shadow: 0 0 20px 35px rgba(20, 20, 20, .1);
-  border-radius: 30px / 40px;
   -webkit-transform: scaleY(.3);
   -moz-transform: scaleY(.3);
   -ms-transform: scaleY(.3);
@@ -79,13 +78,13 @@
   55% {
     top: 160px;
     height: 120px;
-    border-radius: 70px / 60px;
+
     -webkit-animation-timing-function: ease-in;
   }
   65% {
     top: 120px;
     height: 140px;
-    border-radius: 70px;
+
     -webkit-animation-timing-function: ease-out;
   }
   95% {
@@ -112,13 +111,13 @@
   55% {
     top: 160px;
     height: 120px;
-    border-radius: 70px / 60px;
+
     -moz-animation-timing-function: ease-in;
   }
   65% {
     top: 120px;
     height: 140px;
-    border-radius: 70px;
+
     -moz-animation-timing-function: ease-out;}
   95% {
     top: 0;
@@ -142,13 +141,13 @@
   55% {
     top: 160px;
     height: 120px;
-    border-radius: 70px / 60px;
+
     animation-timing-function: ease-in;
   }
   65% {
     top: 120px;
     height: 140px;
-    border-radius: 70px;
+
     animation-timing-function: ease-out;
   }
   95% {
@@ -169,7 +168,7 @@
     height: 75px;
     background: rgba(20, 20, 20, .1);
     box-shadow: 0 0 20px 35px rgba(20, 20, 20, .1);
-    border-radius: 30px / 40px;
+
     -webkit-animation-timing-function: ease-in;
   }
   100% {
@@ -179,7 +178,7 @@
     height: 5px;
     background: rgba(20, 20, 20, .3);
     box-shadow: 0 0 20px 35px rgba(20, 20, 20, .3);
-    border-radius: 20px / 20px;
+
     -webkit-animation-timing-function: ease-out;
   }
 }
@@ -192,7 +191,7 @@
     height: 75px;
     background: rgba(20, 20, 20, .1);
     box-shadow: 0 0 20px 35px rgba(20, 20, 20, .1);
-    border-radius: 30px / 40px;
+
     -moz-animation-timing-function: ease-in;
   }
   100% {
@@ -202,7 +201,7 @@
     height: 5px;
     background: rgba(20, 20, 20, .3);
     box-shadow: 0 0 20px 35px rgba(20, 20, 20, .3);
-    border-radius: 20px / 20px;
+
     -moz-animation-timing-function: ease-out;
   }
 }
@@ -215,7 +214,7 @@
     height: 75px;
     background: rgba(20, 20, 20, .1);
     box-shadow: 0 0 20px 35px rgba(20, 20, 20, .1);
-    border-radius: 30px / 40px;
+
     animation-timing-function: ease-in;
   }
   100% {
@@ -225,7 +224,7 @@
     height: 5px;
     background: rgba(20, 20, 20, .3);
     box-shadow: 0 0 20px 35px rgba(20, 20, 20, .3);
-    border-radius: 20px / 20px;
+
     animation-timing-function: ease-out;
   }
 }
