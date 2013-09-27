@@ -16,7 +16,7 @@ angular.module('reserveTheTime.controllers', [])
 /**
  * Controller that handles data preparation for display in page banners
  */
-.controller('tileNavigationController', ['$scope', 'UserSelection', 'PageState', function($scope, UserSelection, PageState) {
+.controller('tileNavigationController', ['$scope', 'UserSelection', 'PageState', '$rootScope', function($scope, UserSelection, PageState, $rootScope) {
     $scope.UserSelection = UserSelection;
     $scope.PageState = PageState;
 
@@ -94,8 +94,14 @@ angular.module('reserveTheTime.controllers', [])
         UserSelection.place = place;
     };
 
-    $scope.updatePlaceType = function(placeType) {
+    $scope.updatePlaceType = function(searchText, placeType) {
         UserSelection.placeType = placeType;
+        if (!searchText || !searchText.length) {
+            console.log("SEARCHING WITH PLACE TYPE");
+            $scope.searchPlaces(placeType.substr(0, placeType.charAt('_')));
+        } else {
+            $scope.searchPlaces(searchText);
+        }
     };
 //    $(".place_search").keypress(function(event) {
 //        if (event.which == 13) {
@@ -109,6 +115,7 @@ angular.module('reserveTheTime.controllers', [])
 .controller('datePickerController', ['$scope', 'UserSelection', 'PageState', 'reservationSearch', function($scope, UserSelection, PageState, reservationSearch) {
     $scope.PageState = PageState;
     $scope.UserSelection = UserSelection;
+
     $scope.setMonth = function(monthNumber) {
         var newSelectedDate = new Date($scope.UserSelection.selectedDate.getFullYear(), monthNumber, 0, $scope.UserSelection.selectedDate.getMinutes());
         $scope.PageState.days = new Array();

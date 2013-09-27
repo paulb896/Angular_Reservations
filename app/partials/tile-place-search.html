@@ -1,5 +1,5 @@
 <div ng-controller="placeSearchController">
-    <table>
+    <table class="place-table">
         <tr ng-show="false">
             <td>
                 <h2 class="place-header">City</h2>
@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <div class="foundPlaces">
+                <div class="found-places">
                     <span ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
                           class="floatingTile place-result">
                         {{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span>
@@ -39,7 +39,7 @@
         <tr>
             <td colspan="3">
                 <div class="found-place-types">
-                <div ng-repeat="placeType in PageState.placeTypesShort" ng-click="updatePlaceType(placeType.name)"
+                <div ng-repeat="placeType in PageState.placeTypesShort" ng-click="updatePlaceType(placeSearch, placeType.name)"
                       style="background-image:url('{{placeType.src}}'); background-size: 100%"
                       class="floatingTile place-type">
                 </div>

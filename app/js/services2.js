@@ -29,7 +29,14 @@ angular.module('reserveTheTime.services', [])
         "attendees":[],
         "days" : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
         "chartHours": [13,14,15,16,17],
-        "months": [{name:"J"}, {name:"F"}, {name:"M"}, {name:"A"}, {name:"M"}, {name:"J"}, {name:"J"}, {name:"A"}, {name:"S"}, {name:"O"}, {name:"N"}, {name: "D"}]
+        "months": [{name:"J", fullName:"January"},
+            {name:"F", fullName:"February"},
+            {name:"M", fullName:"March"},
+            {name:"A", fullName:"April"},
+            {name:"M", fullName:"May"},
+            {name:"J", fullName:"June"}, {name:"J", fullName:"Juy"},
+            {name:"A", fullName:"August"}, {name:"S", fullName:"September"}, {name:"O", fullName:"October"}, {name:"N", fullName:"November"},
+            {name: "D", fullName:"December"}]
     };
 })
 .factory('placeService', function($http) {

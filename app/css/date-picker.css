@@ -52,10 +52,13 @@
     color:white;
     background-color: #000014;
     font-weight: 400;
-    -webkit-transition:0.18s all;
-    -moz-transition:0.18s all;
-    -ms-transition:0.18s all;
-    transition:0.18s all;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-transition:0.58s all;
+    -moz-transition:0.58s all;
+    -ms-transition:0.58s all;
+    transition:0.58s all;
 }
 
 .minute-picker{
@@ -63,10 +66,11 @@
     cursor: pointer;
     width: 80%;
     cursor: pointer;
+    width:100%; height:30px; cursor: pointer;
 }
 
 .month-picker {
-    height: 50px;
+    height: 66px;
 }
 
 .month-picker > * {
@@ -80,11 +84,9 @@
 }
 
 .month-picker > span{
-    margin-left:7px;
     border-bottom: solid rgba(0,0,0,0.2) 2px;
-    letter-spacing: 2px;
     font-size: 44px;
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
 .month-selected{
