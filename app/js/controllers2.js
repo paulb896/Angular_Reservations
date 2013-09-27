@@ -103,11 +103,16 @@ angular.module('reserveTheTime.controllers', [])
             $scope.searchPlaces(searchText);
         }
     };
-//    $(".place_search").keypress(function(event) {
-//        if (event.which == 13) {
-//            $scope.searchPlaces(this.value);
-//        }
-//    });
+
+    $scope.initialize = function() {
+        $scope.$watch('placeSearch', function() {
+            if ($scope.placeSearch && $scope.placeSearch.length > 3) {
+                $scope.searchPlaces($scope.placeSearch);
+            }
+        });
+    };
+
+
 }])
 /**
  * Controller that handles date picker functionality
