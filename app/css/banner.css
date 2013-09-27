@@ -27,6 +27,13 @@
     display: inline-table;
 }
 
+.powered-by-google{
+    background-image:url('../img/powered-by-google-on-white.png');
+    width: 104px;
+    height: 16px;
+    background-size: 100%;
+}
+
 .banner-right{
     color:rgba(111,1,1,0.9);
     float:right;
