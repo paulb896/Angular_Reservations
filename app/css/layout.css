@@ -62,7 +62,7 @@ h2{
 }
 
 .tile{
-    #height:300px;
+    height:500px;
     float:left;
     overflow:hidden;
 }
@@ -115,10 +115,12 @@ h2{
 .tile-navigation > li{
     cursor: pointer;
     opacity: 0.5;
+    margin-right: -50px;
 }
 
 .tile-navigation > li:hover{
     opacity: 1;
+    padding: 10px;
 }
 
 .tile-navigation > * {
