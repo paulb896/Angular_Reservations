@@ -191,6 +191,23 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
       request(requestUrl, function (error, response, body) {
           if (!error && response.statusCode == 200) {
               console.log(body) // Print the google web page.
+              MongoClient.connect(dbHost, function(err, db) {
+                  var collection = db.collection('places');
+
+                  collection.insert(JSON.parse(body), function(err, docs) {
+
+                      collection.count(function(err, count) {
+                          console.log(format("count = %s", count));
+                      });
+
+                      // Locate all the entries using find
+                      collection.find().toArray(function(err, results) {
+                          console.dir(results);
+                          // Let's close the db
+                          db.close();
+                      });
+                  });
+              });
               res.end(body);
           }
       })
@@ -200,6 +217,24 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
       console.log("ATTEMPTING TO HIT " + requestUrl + " FOR PLACE DETAILS")
       request(requestUrl, function (error, response, body) {
           if (!error && response.statusCode == 200) {
+              MongoClient.connect(dbHost, function(err, db) {
+                  var collection = db.collection('placeDetails');
+
+                  collection.insert(JSON.parse(body), function(err, docs) {
+
+                      collection.count(function(err, count) {
+                          console.log(format("count = %s", count));
+                      });
+
+                      // Locate all the entries using find
+                      collection.find().toArray(function(err, results) {
+                          console.dir(results);
+                          // Let's close the db
+                          db.close();
+                      });
+                  });
+              });
+              res.end(body);
               console.log(body) // Print the google web page.
               res.end(body);
           }

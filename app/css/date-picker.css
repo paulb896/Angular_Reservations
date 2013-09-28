@@ -24,11 +24,11 @@
 }
 
 .day-floating-tile{
-    -webkit-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4), 0 0 40px rgba(10, 0, 0, 0.4) inset;
-    -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4), 0 0 40px rgba(10, 0, 0, 0.4) inset;
-    box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4), 0 0 40px rgba(11, 0, 0, 0.4) inset;
+    -webkit-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
+    -moz-box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
+    box-shadow:1px 4px 10px rgba(10, 10, 10, 0.4);
     font-family: sans-serif;
-    font-size: 110%;
+    font-size: 140%;
     -webkit-transition:0.28s all;
     -moz-transition:0.28s all;
     -ms-transition:0.28s all;

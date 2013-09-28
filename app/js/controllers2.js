@@ -41,7 +41,7 @@ angular.module('reserveTheTime.controllers', [])
               return UserSelection.place
           }
       }
-      , { name: 'Reserve', url: 'partials/tile-reservation.html', imageUrl:"img/gear.png",
+      , { name: 'Reserve', url: 'partials/tile-user.html', imageUrl:"img/user.png",
           completed:function() {
               return false;
           }
