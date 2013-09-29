@@ -24,6 +24,12 @@
 }
 
 .banner-left{
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    box-shadow: 5px 5px 15px rgba(10,10,10,0.2);
+    background-color: white;
+    z-index: 10;
     width: 25%;
     font-size: 108%;
     color:rgba(111,1,1,0.9);
@@ -34,6 +40,10 @@
 }
 
 .banner-right{
+    padding-bottom: 10px;
+    box-shadow: 5px 5px 15px rgba(10,10,10,0.2);
+    background-color: white;
+    z-index: 10;
     margin-left: 50%;
     position: fixed;
     color:rgba(111,1,1,0.9);
