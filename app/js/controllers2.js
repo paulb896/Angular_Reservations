@@ -264,6 +264,7 @@ angular.module('reserveTheTime.controllers', [])
 
     $scope.reserve = function(){
         console.log("Attempting to request time: ");
+        if (Pace) Pace.start();
         var reservation = {
             date:UserSelection.selectedDate,
             status:"pending",
@@ -280,6 +281,7 @@ angular.module('reserveTheTime.controllers', [])
 
             console.log("Reservation request complete, with response: ");
             console.log(responseMessage);
+            if (Pace) Pace.stop();
         });
     }
 }])

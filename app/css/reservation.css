@@ -60,10 +60,30 @@
 }
 
 .reserve{
+    width: 60%;
     cursor: pointer;
     text-align: center;
+    float: left;
+    margin-top: 20px;
+    -webkit-transition:1.28s all;
+    -moz-transition:1.28s all;
+    -ms-transition:1.28s all;
+    transition:1.28s all;
 }
 
 .reserve:hover{
-    background-color: rgba(107,219,211,0.9);
+    background-color: steelblue;
+    color: white;
+    font-weight: 700;
+    -webkit-transition:1.28s all;
+    -moz-transition:1.28s all;
+    -ms-transition:1.28s all;
+    transition:1.28s all;
+}
+
+.reservation-input:hover{
+    cursor: pointer;
+    background-color: steelblue;
+    color: white;
+    font-weight: 700;
 }

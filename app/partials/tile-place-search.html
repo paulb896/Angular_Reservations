@@ -28,12 +28,12 @@
         </tr>
         <tr>
             <td colspan="3">
-                <div class="found-places">
-                    <span ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
-                          class="floatingTile place-result">
+                <ul class="found-places">
+                    <li ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
+                          class="place-result">
                         {{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span>
-                    </span>
-                </div>
+                    </li>
+                </ul>
             </td>
         </tr>
         <tr>

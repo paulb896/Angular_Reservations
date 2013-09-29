@@ -6,7 +6,7 @@
     </tr>
     <tr>
         <td><input type="text" class="add-attendee-input" ng-model="UserSelection.attendee"/></td>
-        <td><span ng-click="addAttendee(UserSelection.attendee);" class="reserve reservation-input">ADD ATTENDEE</span></td>
+        <td><span ng-click="addAttendee(UserSelection.attendee);" class="reservation-input">ADD ATTENDEE</span></td>
     </tr>
     <tr ng-repeat="attendee in PageState.attendees">
         <td ng-bind="attendee" class="attendee-name"></td>
