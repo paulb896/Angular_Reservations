@@ -1,10 +1,14 @@
 
 .area{
     font-size: 160%;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 25px;
 }
 
 .map-size{
     height: 300px;
+    width: 90%;
 }
 
 .phone-number{
@@ -24,11 +28,16 @@
 
 .refresh{
     background-image:url('../img/refresh.png');
-    width: 70px;
-    height:70px;
+    width: 40px;
+    height:40px;
     background-size: 100%;
     float:right;
 }
 
-
+.refresh:hover{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -webkit-transition:1.88s all;
+    -moz-transition:1.88s all;
+}
 

@@ -108,19 +108,18 @@ h2{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-left: solid black 1px;
-    overflow: scroll;
+    overflow: hidden;
     background-color: rgba(200,205,205,0.01);
+    height: 400px;
 }
 
 .tile-navigation > li{
     cursor: pointer;
     opacity: 0.5;
-    margin-right: -50px;
 }
 
-.tile-navigation > li:hover{
+.nav-image:hover{
     opacity: 1;
-    padding: 10px;
 }
 
 .tile-navigation > * {

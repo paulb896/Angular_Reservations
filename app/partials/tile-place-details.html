@@ -1,5 +1,6 @@
 <div ng-controller="placeController" ng-init="getPlaceDetails(UserSelection.place);">
     <h2>{{UserSelection.place.name}} Details</h2>
+    <div class="refresh" ng-click="getPlaceDetails(UserSelection.place);"></div>
     <div class="area">
         {{UserSelection.place.formatted_address}}
     </div>
@@ -8,5 +9,5 @@
     </div>
     <div class="rating" ng-repeat="n in ratings | limitTo:UserSelection.place.rating">&#9734;</div>
     <div id="map-canvas" class="map-size"></div>
-    <div class="refresh" ng-click="getPlaceDetails(UserSelection.place);"></div>
+
 </div>
