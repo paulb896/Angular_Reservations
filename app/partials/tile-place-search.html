@@ -30,7 +30,8 @@
             <td colspan="3">
                 <ul class="found-places">
                     <li ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
-                          class="place-result">
+                          class="place-result"
+                          ng-class="{'stripe': {{$even}}}">
                         {{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span>
                     </li>
                 </ul>

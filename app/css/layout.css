@@ -21,6 +21,10 @@
         height: 70px;
         width: 70px;
     }
+
+    .tiles{
+        padding-top: 180px;
+    }
 }
 
 @media only screen and (max-width: 1500px) {
@@ -43,6 +47,10 @@
     .tile-navigation > li{
         height: 70px;
         width: 70px;
+    }
+
+    .tiles{
+        padding-top: 280px;
     }
 }
 
@@ -79,6 +87,8 @@ h2{
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
+
+
 
 
 .tile-navigation{
