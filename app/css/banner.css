@@ -1,13 +1,12 @@
 @media only screen and (min-width: 1501px) {
     .banner-height{
-        height: 200px;
+        height: 160px;
     }
 }
 
 @media only screen and (max-width: 1500px) {
     .banner-height{
-        height: 175px;
-        margin-bottom: 50px;
+        height: 280px;
     }
 }
 
@@ -21,30 +20,33 @@
 .banner-content{
     height: 50px;
     list-style-type:none;
+    padding-left: 0;
+}
+
+.banner-content > li{
+    margin-top: 10px;
 }
 
 .banner-left{
     padding-left: 20px;
     padding-right: 50px;
     padding-bottom: 10px;
-    box-shadow: 5px 5px 15px rgba(10,10,10,0.2);
+    box-shadow: 0px 0px 15px rgba(10,10,110,0.4);
     background-color: white;
     z-index: 10;
-    width: 25%;
-    font-size: 108%;
+    width: 38%;
+    font-size: 138%;
     color:rgba(111,1,1,0.9);
-    margin-right: 20px;
-    margin-left: 20px;
     display: inline-table;
     position: fixed;
 }
 
 .banner-right{
     padding-bottom: 10px;
-    box-shadow: 5px 5px 15px rgba(10,10,10,0.2);
+    box-shadow: 0px 0px 15px rgba(10,10,110,0.4);
     background-color: white;
     z-index: 10;
-    margin-left: 50%;
+    margin-left: 48%;
     position: fixed;
     color:rgba(111,1,1,0.9);
     float:right;
@@ -58,13 +60,15 @@
 .current-date-label{
     font-style: oblique;
     font-size: 120%;
-    width: 35%;
-    display: inline-block;
+    width: 25%;
+    display: inline;
+    margin-right: 5px;
 }
 
 .current-date{
     font-style:italic;
     color:rgba(19,19,29,0.9);
+    display: block;
 }
 
 .logo{
@@ -86,6 +90,7 @@
     height: 16px;
     background-size: 100%;
     display: inline-block;
+    vertical-align: text-bottom;
 }
 
 .spin-component{
@@ -105,7 +110,6 @@
     font-style: italic;
     font-weight:900;
     margin-right: 6%;
-
 }
 
 .selected-place{

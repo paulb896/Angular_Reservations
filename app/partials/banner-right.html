@@ -4,22 +4,18 @@
 <ul class="banner-content">
     <li>
         <h2 class="current-date-label">SELECTED DATE</h2>
-        <span class="selected-date" ng-bind="UserSelection.selectedDate | date:'EEEE, MMMM d,y'"></span>
+        <div class="selected-date" ng-bind="UserSelection.selectedDate | date:'EEEE, MMMM d,y'"></div>
     </li>
     <li>
         <h2 class="current-date-label">SELECTED TIME</h2>
-        <span class="selected-date" ng-bind="UserSelection.selectedDate | date:'h:mma'"></span>
+        <div class="selected-date" ng-bind="UserSelection.selectedDate | date:'h:mma'"></div>
     </li>
     <li ng-show="UserSelection.place.name">
         <h2 class="current-date-label">SELECTED PLACE</h2>
-        <span class="selected-place" ng-bind="UserSelection.place.name"></span>
-    </li>
-    <li ng-show="PageState.attendees.length > 0">
-        <h2 class="current-date-label attendees-label">ATTENDEES</h2>
-        <span class="attendee" ng-repeat="attendee in PageState.attendees" ng-bind="attendee"></span>
+        <div class="selected-place" ng-bind="UserSelection.place.name"></div>
     </li>
     <li ng-controller="reservationController" ng-click="reserve();">
-        <span class="reservation-input reserve">Save Current Details</span>
+        <div class="reservation-input reserve">Save Current Details</div>
     </li>
 </ul>
 
