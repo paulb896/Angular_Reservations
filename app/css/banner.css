@@ -21,6 +21,7 @@
     height: 50px;
     list-style-type:none;
     padding-left: 0;
+    text-align: center;
 }
 
 .banner-content > li{
