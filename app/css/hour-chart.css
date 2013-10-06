@@ -22,18 +22,17 @@
 
 .hour-chart{
     height: 300px;
-    width: 100%;
-    margin-top: -10px;
-    overflow: auto;
+    width: 90%;
 }
 
 .reservation{
+    text-align: center;
     border-radius: 5px;
     background-color: rgba(176,196,222,0.4);
     padding: 10px;
     margin-right: 10px;
     cursor: pointer;
-    height: 80px;
+    height: 55px;
     font-size: 16px;
     color:rgba(8,8,78,0.87);
     border-radius: 10px;

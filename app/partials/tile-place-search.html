@@ -24,14 +24,21 @@
         </tr>
         <tr>
             <td colspan="2"><input ng-model="placeSearch" type="input" class="place-search"/></td>
-            <td><div class="find" ng-click="searchPlaces(placeSearch);"></div></td>
+            <td>
+                <div class="found-place-types">
+                    <div ng-repeat="placeType in PageState.placeTypesShort" ng-click="updatePlaceType(placeSearch, placeType.name)"
+                         style="background-image:url('{{placeType.src}}'); background-size: 100%"
+                         class="place-type">
+                    </div>
+                </div>
+            </td>
         </tr>
         <tr>
             <td colspan="3">
                 <ul class="found-places">
                     <li ng-repeat="place in PageState.places" ng-click="updatePlace(place)"
                           class="place-result"
-                          ng-class="{'stripe': {{$even}}}">
+                         >
                         {{place.name}}<img class="place-icon" ng-src="{{place.icon}}"><span ng-bind="place.rating"></span>
                     </li>
                 </ul>
@@ -39,12 +46,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <div class="found-place-types">
-                <div ng-repeat="placeType in PageState.placeTypesShort" ng-click="updatePlaceType(placeSearch, placeType.name)"
-                      style="background-image:url('{{placeType.src}}'); background-size: 100%"
-                      class="place-type">
-                </div>
-                </div>
+
             </td>
         </tr>
     </table>

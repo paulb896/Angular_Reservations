@@ -23,18 +23,18 @@
     }
 
     .tiles{
-        padding-top: 220px;
+        padding-top: 260px;
     }
 }
 
 @media only screen and (max-width: 1500px) {
     .tile-size{
-        width: 95%;
+        width: 100%;
         margin-bottom: 10px;
     }
 
     .inner-tile-size{
-        width: 70%;
+        width: 83%;
         border-bottom: solid blue 1px;
         padding-left: 15px;
     }
@@ -88,17 +88,13 @@ h2{
     margin-bottom: 10px;
 }
 
-
-
-
 .tile-navigation{
     list-style-type: none;
     float: right;
     width: 6%;
     display: inline-block;
     background-size: 100%;
-    margin-right: 130px;
-
+    margin-right: 15%;
 }
 
 .nav-image{

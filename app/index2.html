@@ -23,12 +23,12 @@
         <span class="banner-right banner-height" ng-include="'partials/banner-right.html'"></span>
 
         <div class="tiles">
-            <div class="tile tile-size" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
-            <div class="tile tile-size" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
-            <div class="tile tile-size" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
-            <div class="tile tile-size" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
-            <div class="tile tile-size" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
-            <div class="tile tile-size" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
+            <div class="tile tile-size" ng-controller="tileNavigationController" ng-include="'partials/tile-navigation.html'" onload="initializeNav()">TILE CONTENT</div>
+            <div class="tile tile-size" ng-controller="tileNavigationController" ng-include="'partials/tile-navigation.html'" onload="initializeNav(1)">TILE CONTENT</div>
+            <div class="tile tile-size" ng-controller="tileNavigationController" ng-include="'partials/tile-navigation.html'" onload="initializeNav(2)">TILE CONTENT</div>
+            <div class="tile tile-size" ng-controller="tileNavigationController" ng-include="'partials/tile-navigation.html'" onload="initializeNav(3)">TILE CONTENT</div>
+            <div class="tile tile-size" ng-controller="tileNavigationController" ng-include="'partials/tile-navigation.html'" onload="initializeNav(4)">TILE CONTENT</div>
+            <div class="tile tile-size" ng-controller="tileNavigationController" ng-include="'partials/tile-navigation.html'">TILE CONTENT</div>
         </div>
 
         <script src="lib/angular/angular.js"></script>

@@ -13,6 +13,7 @@ angular.module('reserveTheTime.controllers', [])
     $scope.UserSelection = UserSelection;
     $scope.PageState = PageState;
 }])
+
 /**
  * Controller that handles data preparation for display in page banners
  */
@@ -24,42 +25,42 @@ angular.module('reserveTheTime.controllers', [])
         $scope.template = template;
     };
 
-    // Bind templates specific to this controllers scope
-    $scope.templates =
-      [{ name: 'Hourly Chart', url: 'partials/tile-date-picker.html', imageUrl:"img/clock.png",
-          completed:function() {
-              return true
-          }
-      }
-      , { name: 'Place Search', url: 'partials/tile-place-search.html', imageUrl:"img/find2.png",
-          completed:function() {
-              return UserSelection.place
-          }
-      }
-      , { name: 'Place Details', url: 'partials/tile-place-details.html', imageUrl:"img/map-icon.png",
-          completed:function() {
-              return UserSelection.place
-          }
-      }
-      , { name: 'Reserve', url: 'partials/tile-user.html', imageUrl:"img/user.png",
-          completed:function() {
-              return false;
-          }
-      }
-      , { name: 'Attendees', url: 'partials/tile-attendees.html', imageUrl:"img/add-user-icon.png",
-          completed:function() {
-              return PageState.attendees.length < 1;
-          }
-      }
-      , { name: "Calendar", url: 'partials/tile-hour-chart.html', imageUrl:"img/calendar.png",
-          completed:function() {
-              return true;
-          }
-      }
-      ];
+    $scope.initializeNav = function(navNumber) {
+        // Bind templates specific to this controllers scope
+        $rootScope.templates =
+            [{ name: 'Hourly Chart', url: 'partials/tile-date-picker.html', imageUrl:"img/clock.png",
+                completed:function() {
+                    return true
+                }
+            }
+                , { name: 'Place Search', url: 'partials/tile-place-search.html', imageUrl:"img/find2.png",
+                completed:function() {
+                    return UserSelection.place
+                }
+            }
+                , { name: 'Place Details', url: 'partials/tile-place-details.html', imageUrl:"img/map-icon.png",
+                completed:function() {
+                    return UserSelection.place
+                }
+            }
+                , { name: 'Reserve', url: 'partials/tile-user.html', imageUrl:"img/user.png",
+                completed:function() {
+                    return false;
+                }
+            }
+                , { name: 'Attendees', url: 'partials/tile-attendees.html', imageUrl:"img/add-user-icon.png",
+                completed:function() {
+                    return PageState.attendees.length < 1;
+                }
+            }
+                , { name: "Calendar", url: 'partials/tile-hour-chart.html', imageUrl:"img/calendar.png",
+                completed:function() {
+                    return true;
+                }
+            }
+        ];
 
-    $scope.initializeNav = function() {
-        $scope.template = $scope.templates[0];
+        $scope.template = $rootScope.templates[navNumber || 0];
     };
 
     $scope.isComplete = function() {
