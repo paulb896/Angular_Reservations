@@ -10,21 +10,14 @@
     <ul class="reservation-list">
         <li ng-repeat="(key,reservation) in PageState.reservations" class="reservation" ng-click="selectReservation(reservation)">
             <div class="update-changes-icon" ng-class="reservation" ng-click="requestedTime.reserve(reservation);"></div>
+            <span ng-bind="reservation.place.name"  class="reservation-place-name"></span>
             <span ng-bind="reservation.date| date:'MM/dd/yyyy @ h:mma'"  class="reservation_time"></span>
-            <div ng-bind="reservation.place.name"  class="reservation-place-name"></div>
-            <div><span>Attendees:</span><span ng-click="addAttendee(attendee);" class="attendee" ng-repeat="attendee in reservation.attendees" ng-bind="attendee"></span></div>
         </li>
-        <li class="reservation">
+        <li class="reservation current-reservation">
             <div>
                 <h2>CURRENT RESERVATION</h2>
             </div>
             <span ng-bind="UserSelection.selectedDate| date:'MM/dd/yyyy @ h:mma'"  class="reservation_time"></span>
-            <div><span>Attendees:</span>
-                <span class="attendee" ng-repeat="attendee in PageState.attendees" ng-bind="attendee"></span>
-            </div>
-            <div><span>Place:</span>
-                <span ng-bind="UserSelection.place.name"></span>
-            </div>
         </li>
     </ul>
 </div>

@@ -2,11 +2,21 @@
     .banner-height{
         height: 225px;
     }
+
+    .banner-content > li{
+        margin-bottom: 5px;
+        height: 25px;
+    }
 }
 
 @media only screen and (max-width: 1500px) {
     .banner-height{
         height: 255px;
+    }
+
+    .banner-content > li{
+        margin-bottom: 15px;
+        height: 35px;
     }
 }
 
@@ -21,13 +31,10 @@
     height: 50px;
     list-style-type:none;
     padding-left: 0;
-    text-align: center;
+    text-align: left;
 }
 
-.banner-content > li{
-    margin-bottom: 10px;
-    height: 40px;
-}
+
 
 .banner-left{
     padding-left: 20px;
@@ -59,17 +66,23 @@
     padding-right: 10px;
 }
 
+.current-date-info{
+    margin-top: 20px;
+}
+
 .current-date-label{
-    font-size: 100%;
+    font-size: 120%;
     width: 25%;
     display: inline;
     margin-right: 5px;
 }
 
 .current-date{
-    font-style:italic;
-    color:rgba(19,19,29,0.9);
+    color:rgba(8,8,78,0.87);
     display: block;
+    font-size: 110%;
+    font-family: 'Libre Baskerville', serif;
+    text-shadow: 2px 2px rgba(188,188,188,0.8);
 }
 
 .logo{
@@ -105,7 +118,7 @@
 }
 
 .selected-date{
-    font-size: 126%;
+    font-size: 134%;
     color:rgba(8,8,78,0.87);
     letter-spacing: 2px;
     font-style: italic;
@@ -113,8 +126,21 @@
     margin-right: 6%;
 }
 
+.reserve{
+    margin-top: 21px;
+}
+
+.reserve:hover{
+    transform: scale(1.2,1.4);
+    -ms-transform: scale(1.2,1.4); /* IE 9 */
+    -webkit-transform: scale(1.2,1.4); /* Safari and Chrome */
+    -webkit-transition:1.88s all;
+    -moz-transition:1.88s all;
+    -ms-transition:1.88s all;
+}
+
 .selected-place{
-    font-size: 22px;
+    font-size: 134%;
     color:rgba(8,8,78,0.87);
     font-style: oblique;
     letter-spacing: 2px;
