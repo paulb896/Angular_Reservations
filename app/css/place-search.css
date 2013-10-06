@@ -23,6 +23,22 @@
 
 }
 
+.bank{
+    background-image: url('../img/atm.png');;
+}
+
+.car_repair{
+    background-image: url('../img/car-repair.png');;
+}
+
+.food{
+    background-image: url('../img/food.png');;
+}
+
+.store{
+    background-image: url('../img/store.png');;
+}
+
 .find{
     background-image:url('../img/find-hover.png');
     background-size: 100%;
@@ -64,6 +80,7 @@
     height:70px;
     display: inline-block;
     background-color: transparent;
+    background-size: 100%;
 }
 
 .place-type:hover{

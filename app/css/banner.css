@@ -33,8 +33,8 @@
     padding-left: 20px;
     padding-right: 50px;
     padding-bottom: 10px;
-    box-shadow: 2px 2px 1px rgba(10,10,10,0.8);
-    background-color: rgba(250,250,250,0.8);
+    box-shadow: 2px 2px 1px rgba(10,10,10,0.86);
+    background-color: rgba(255,255,255,0.8);
     z-index: 10;
     width: 38%;
     font-size: 138%;
@@ -46,7 +46,7 @@
 .banner-right{
     padding-bottom: 10px;
     box-shadow: 2px 2px 1px rgba(10,10,10,0.8);
-    background-color: rgba(250,250,250,0.8);
+    background-color: rgba(255,255,255,0.86);
     z-index: 10;
     margin-left: 50%;
     position: fixed;
