@@ -85,6 +85,9 @@ h2{
 h1{
     font-family: "Times New Roman";
     letter-spacing: 0px;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 5px;
 }
 
 h2{

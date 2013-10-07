@@ -5,7 +5,7 @@
 
     .banner-content > li{
         margin-bottom: 5px;
-        height: 25px;
+        height: 20px;
     }
 }
 
@@ -16,7 +16,7 @@
 
     .banner-content > li{
         margin-bottom: 15px;
-        height: 35px;
+        height: 15px;
     }
 }
 
@@ -41,7 +41,7 @@
     padding-right: 50px;
     padding-bottom: 10px;
     box-shadow: 2px 2px 1px rgba(10,10,10,0.86);
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(245,245,246,0.5);
     z-index: 10;
     width: 38%;
     font-size: 138%;
@@ -53,7 +53,7 @@
 .banner-right{
     padding-bottom: 10px;
     box-shadow: 2px 2px 1px rgba(10,10,10,0.8);
-    background-color: rgba(255,255,255,0.86);
+    background-color: rgba(245,245,246,0.5);
     z-index: 10;
     margin-left: 50%;
     position: fixed;
@@ -131,12 +131,12 @@
 }
 
 .reserve:hover{
-    transform: scale(1.2,1.4);
-    -ms-transform: scale(1.2,1.4); /* IE 9 */
-    -webkit-transform: scale(1.2,1.4); /* Safari and Chrome */
-    -webkit-transition:1.88s all;
-    -moz-transition:1.88s all;
-    -ms-transition:1.88s all;
+    transform: scale(0.95,0.95);
+    -ms-transform: scale(0.95,0.95);
+    -webkit-transform: scale(0.95,0.95);
+    -webkit-transition:1.88s all ease-in;
+    -moz-transition:1.88s all ease-in;
+    -ms-transition:1.88s all ease-in;
 }
 
 .selected-place{

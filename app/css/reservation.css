@@ -25,9 +25,9 @@
 }
 
 .reservation-input{
-    font-size:20px;
     padding: 10px;
     font-family: 'Noto Serif', serif;
+    font-size: 120%;
     color:black;
     border-bottom: solid 2px black;
     border-right: solid 2px black;
@@ -77,7 +77,7 @@
 }
 
 .reserve:hover{
-    background-color: steelblue;
+    background-color: rgba(111,1,1,0.9);;
     color: white;
     -webkit-transition:0.78s all;
     -moz-transition:0.78s all;
@@ -87,6 +87,6 @@
 
 .reservation-input:hover{
     cursor: pointer;
-    background-color: steelblue;
+    background-color: rgba(111,1,1,0.9);
     color: white;
 }
