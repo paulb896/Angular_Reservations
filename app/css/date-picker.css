@@ -1,6 +1,6 @@
 
 .floatingTile {
-    background-color: rgba(78,62,73, 0.75);
+    background-color: rgba(20,20,20,0.7);
     width: 6%;
     height: 4%;
     padding: 5px;
@@ -12,15 +12,13 @@
     width: 100%;
 }
 
-.floatingTile:hover:not(.day-selected) {
-    background-color: rgba(111,1,1,0.9);
-}
 
 .floatingTile:hover{
     -webkit-animation-timing-function: ease-in-out;
     -moz-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
     -webkit-transition:0.38s all;
+    background-color: rgba(111,1,1,0.9);
 }
 
 .day-floating-tile{
@@ -81,12 +79,14 @@
     -moz-transition:0.58s all;
     -ms-transition:0.58s all;
     transition:0.58s all;
+    font-family: "Arial Black", Gadget, sans-serif;
 }
 
 .month-picker > span{
     border-bottom: solid rgba(0,0,0,0.2) 2px;
-    font-size: 44px;
+    font-size: 230%;
     margin-left: 5px;
+    font-style: oblique;
 }
 
 .month-selected{
@@ -98,7 +98,7 @@
 }
 
 .day-selected{
-    background-color: rgba(8,8,78,0.87);
+    background-color: rgba(86,1,1,0.89);
 
 }
 
